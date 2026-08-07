@@ -1,80 +1,54 @@
 {
-  "slug": "claude-code-permission-escapes",
-  "title": "Claude Code's Permission Sandbox: Four Escapes Closed in Five Days",
-  "caption": "Four Claude Code releases in five days, every one of them closing a permission-sandbox hole.\n\nTabs and invisible Unicode kept part of a command out of the approval dialog you clicked (2.1.223). A zsh [[ ]] regex conditional ran commands the Bash permission check never saw (2.1.221). Worktree-isolated sessions could still run destructive git against the main checkout (2.1.222). And denyRead \"~/.aws/\" was silently bypassable because of the trailing slash (2.1.224).\n\nIf you hand an agent permissions, the fence is only as good as the version you are on.\n\nWhat version are you on?",
+  "slug": "mcp-python-sdk-v2-fastmcp-renamed",
+  "title": "MCP Python SDK v2: FastMCP Is Now MCPServer",
+  "caption": "I pinned mcp<2 and went back to bed.\n\nMCP Python SDK v2 landed July 28. FastMCP is now MCPServer, and the old import path wasn't deprecated, it was deleted. Anything without an upper bound in pyproject.toml crashes with ModuleNotFoundError. The protocol went stateless in the same release: no initialize handshake, no Mcp-Session-Id.\n\nHonestly the rename is the right call. I just wish it hadn't shipped the same week as the spec.\n\nPinned or ported?",
   "hashtags": [
-    "#claudecode",
-    "#aicoding",
-    "#devtools",
-    "#codingagents",
-    "#softwareengineering",
-    "#indiehackers",
-    "#buildinpublic",
-    "#solofounder",
     "#mcp",
-    "#appsec",
-    "#terminal",
-    "#developerlife"
+    "#modelcontextprotocol",
+    "#python",
+    "#aiagents",
+    "#devtools",
+    "#claudecode",
+    "#buildinpublic",
+    "#indiehackers",
+    "#solofounder",
+    "#softwareengineering",
+    "#opensource",
+    "#coding"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Tabs hid the command\nyou approved",
-      "sub": "Four Claude Code releases in five days. Each one closed a way an agent got past your permission checks.",
+      "headline": "FastMCP is gone",
+      "sub": "MCP Python SDK v2 shipped July 28. The class every Python MCP server imports is now MCPServer, and the old path was removed, not deprecated.",
       "icons": [
-        { "slug": "claude", "label": "Claude Code" },
-        { "slug": "gnubash", "label": "Bash" }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Five days, four releases",
-      "items": [
-        "2.1.221 (Aug 3) zsh [[ ]] conditionals ran hidden commands",
-        "2.1.222 (Aug 4) worktree isolation missed git and hooks",
-        "2.1.223 (Aug 5) tabs and invisible Unicode hid commands",
-        "2.1.224 (Aug 7) sandbox deny paths silently bypassable"
+        { "slug": "modelcontextprotocol", "label": "MCP" },
+        { "slug": "python", "label": "Python SDK", "color": "#2b5b84" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code" },
-      "title": "Padding hid the command",
-      "sub": "Tabs or invisible Unicode kept part of a command out of the approval dialog you clicked. Fixed in 2.1.223."
+      "icon": { "slug": "python", "label": "Python", "color": "#2b5b84" },
+      "title": "One import, renamed",
+      "sub": "from mcp.server.fastmcp import FastMCP is now from mcp.server import MCPServer. Unpinned installs crash with ModuleNotFoundError."
     },
     {
       "type": "feature",
-      "icon": { "slug": "gnubash", "label": "Bash" },
-      "title": "zsh ran hidden commands",
-      "sub": "A [[ ]] regex conditional could execute commands the Bash permission check never saw. Fixed in 2.1.221."
+      "icon": { "slug": "modelcontextprotocol", "label": "MCP" },
+      "title": "Sessions are gone",
+      "sub": "The protocol is stateless. No initialize handshake, no Mcp-Session-Id header. Any request can land on any instance."
     },
     {
       "type": "feature",
-      "icon": { "slug": "git", "label": "Git" },
-      "title": "Worktrees were not isolated",
-      "sub": "Isolated sessions and their subagents could still run destructive git against the main checkout. Fixed in 2.1.222."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "linux", "label": "Linux + macOS" },
-      "title": "One trailing slash",
-      "sub": "denyRead \"~/.aws/\" was silently bypassable on Linux and macOS. Drop the slash. Fixed in 2.1.224."
-    },
-    {
-      "type": "list",
-      "title": "Do this today",
-      "items": [
-        "Update. Be on 2.1.224 or newer.",
-        "Grep settings for denyRead and denyWrite trailing slashes",
-        "Audit every PreToolUse hook that auto-allows a tool",
-        "Sandbox denials now surface in Bash results. Read them."
-      ]
+      "icon": { "slug": "pypi", "label": "PyPI", "color": "#006dad" },
+      "title": "Pin it or port it",
+      "sub": "Not ready? mcp>=1.28,<2 holds you on v1.x. But that branch is critical bug fixes and security patches only."
     },
     {
       "type": "cta",
-      "headline": "Check your version",
-      "keyword": "SANDBOX",
-      "sub": "and I'll send the four changelog entries"
+      "headline": "Check your pyproject",
+      "keyword": "MCP2",
+      "sub": "and I'll send the migration notes"
     }
   ]
 }
