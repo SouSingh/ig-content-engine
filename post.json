@@ -1,0 +1,80 @@
+{
+  "slug": "claude-code-permission-escapes",
+  "title": "Claude Code's Permission Sandbox: Four Escapes Closed in Five Days",
+  "caption": "Four Claude Code releases in five days, every one of them closing a permission-sandbox hole.\n\nTabs and invisible Unicode kept part of a command out of the approval dialog you clicked (2.1.223). A zsh [[ ]] regex conditional ran commands the Bash permission check never saw (2.1.221). Worktree-isolated sessions could still run destructive git against the main checkout (2.1.222). And denyRead \"~/.aws/\" was silently bypassable because of the trailing slash (2.1.224).\n\nIf you hand an agent permissions, the fence is only as good as the version you are on.\n\nWhat version are you on?",
+  "hashtags": [
+    "#claudecode",
+    "#aicoding",
+    "#devtools",
+    "#codingagents",
+    "#softwareengineering",
+    "#indiehackers",
+    "#buildinpublic",
+    "#solofounder",
+    "#mcp",
+    "#appsec",
+    "#terminal",
+    "#developerlife"
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "Tabs hid the command\nyou approved",
+      "sub": "Four Claude Code releases in five days. Each one closed a way an agent got past your permission checks.",
+      "icons": [
+        { "slug": "claude", "label": "Claude Code" },
+        { "slug": "gnubash", "label": "Bash" }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Five days, four releases",
+      "items": [
+        "2.1.221 (Aug 3) zsh [[ ]] conditionals ran hidden commands",
+        "2.1.222 (Aug 4) worktree isolation missed git and hooks",
+        "2.1.223 (Aug 5) tabs and invisible Unicode hid commands",
+        "2.1.224 (Aug 7) sandbox deny paths silently bypassable"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "Claude Code" },
+      "title": "Padding hid the command",
+      "sub": "Tabs or invisible Unicode kept part of a command out of the approval dialog you clicked. Fixed in 2.1.223."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "gnubash", "label": "Bash" },
+      "title": "zsh ran hidden commands",
+      "sub": "A [[ ]] regex conditional could execute commands the Bash permission check never saw. Fixed in 2.1.221."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "git", "label": "Git" },
+      "title": "Worktrees were not isolated",
+      "sub": "Isolated sessions and their subagents could still run destructive git against the main checkout. Fixed in 2.1.222."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "linux", "label": "Linux + macOS" },
+      "title": "One trailing slash",
+      "sub": "denyRead \"~/.aws/\" was silently bypassable on Linux and macOS. Drop the slash. Fixed in 2.1.224."
+    },
+    {
+      "type": "list",
+      "title": "Do this today",
+      "items": [
+        "Update. Be on 2.1.224 or newer.",
+        "Grep settings for denyRead and denyWrite trailing slashes",
+        "Audit every PreToolUse hook that auto-allows a tool",
+        "Sandbox denials now surface in Bash results. Read them."
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Check your version",
+      "keyword": "SANDBOX",
+      "sub": "and I'll send the four changelog entries"
+    }
+  ]
+}
