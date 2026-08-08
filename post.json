@@ -1,54 +1,44 @@
 {
-  "slug": "mcp-python-sdk-v2-fastmcp-renamed",
-  "title": "MCP Python SDK v2: FastMCP Is Now MCPServer",
-  "caption": "I pinned mcp<2 and went back to bed.\n\nMCP Python SDK v2 landed July 28. FastMCP is now MCPServer, and the old import path wasn't deprecated, it was deleted. Anything without an upper bound in pyproject.toml crashes with ModuleNotFoundError. The protocol went stateless in the same release: no initialize handshake, no Mcp-Session-Id.\n\nHonestly the rename is the right call. I just wish it hadn't shipped the same week as the spec.\n\nPinned or ported?",
+  "slug": "sonnet-5-intro-pricing-ends-aug-31",
+  "title": "Sonnet 5's Intro API Pricing Ends Aug 31 (+50% on Sept 1)",
+  "caption": "I built my cost model on a promo rate. Rookie mistake.\n\nSonnet 5's introductory API pricing ends Aug 31. From September 1 it's $3/$15 per million tokens instead of $2/$10, a flat 50% on every call my app makes. This is API billing, not the subscription plans.\n\nSo I turned on prompt caching this morning instead of complaining about it. Cache reads bill at 10% of input, which more than covers the difference.\n\nCaching or eating it?",
   "hashtags": [
-    "#mcp",
-    "#modelcontextprotocol",
-    "#python",
-    "#aiagents",
-    "#devtools",
+    "#claude",
+    "#anthropic",
     "#claudecode",
+    "#aiengineering",
+    "#llmops",
+    "#apicosts",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#softwareengineering",
-    "#opensource",
-    "#coding"
+    "#saas",
+    "#devtools",
+    "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "FastMCP is gone",
-      "sub": "MCP Python SDK v2 shipped July 28. The class every Python MCP server imports is now MCPServer, and the old path was removed, not deprecated.",
+      "headline": "Sonnet 5\n+50% on Sept 1",
+      "sub": "The introductory API rate ends Aug 31. From September 1 it's $3 per million input and $15 per million output.",
       "icons": [
-        { "slug": "modelcontextprotocol", "label": "MCP" },
-        { "slug": "python", "label": "Python SDK", "color": "#2b5b84" }
+        { "slug": "claude", "label": "Sonnet 5", "color": "#D97757" }
       ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "python", "label": "Python", "color": "#2b5b84" },
-      "title": "One import, renamed",
-      "sub": "from mcp.server.fastmcp import FastMCP is now from mcp.server import MCPServer. Unpinned installs crash with ModuleNotFoundError."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "modelcontextprotocol", "label": "MCP" },
-      "title": "Sessions are gone",
-      "sub": "The protocol is stateless. No initialize handshake, no Mcp-Session-Id header. Any request can land on any instance."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "pypi", "label": "PyPI", "color": "#006dad" },
-      "title": "Pin it or port it",
-      "sub": "Not ready? mcp>=1.28,<2 holds you on v1.x. But that branch is critical bug fixes and security patches only."
+      "type": "list",
+      "title": "Three levers",
+      "items": [
+        "Prompt caching. Cache reads bill at 10% of input: $0.30 per million instead of $3.",
+        "Batch API. 50% off both directions, so Sonnet 5 runs $1.50 in, $7.50 out.",
+        "Haiku 4.5 stays $1 in, $5 out. Route the routine steps there."
+      ]
     },
     {
       "type": "cta",
-      "headline": "Check your pyproject",
-      "keyword": "MCP2",
-      "sub": "and I'll send the migration notes"
+      "headline": "Before September 1",
+      "keyword": "CACHE",
+      "sub": "and I'll send my caching setup"
     }
   ]
 }
