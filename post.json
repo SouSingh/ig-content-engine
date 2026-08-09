@@ -1,44 +1,59 @@
 {
-  "slug": "sonnet-5-intro-pricing-ends-aug-31",
-  "title": "Sonnet 5's Intro API Pricing Ends Aug 31 (+50% on Sept 1)",
-  "caption": "I built my cost model on a promo rate. Rookie mistake.\n\nSonnet 5's introductory API pricing ends Aug 31. From September 1 it's $3/$15 per million tokens instead of $2/$10, a flat 50% on every call my app makes. This is API billing, not the subscription plans.\n\nSo I turned on prompt caching this morning instead of complaining about it. Cache reads bill at 10% of input, which more than covers the difference.\n\nCaching or eating it?",
+  "slug": "claude-code-cross-session-messaging",
+  "title": "Claude Code Sessions Can Now Message Each Other",
+  "caption": "I had four terminals open and I was the message bus.\n\nClaude Code 2.1.224 added cross-session messaging. ListAgents finds your other sessions, SendMessage delivers to one by name. On the same machine it travels over a per-session inbox socket, never through Anthropic's servers.\n\nI assumed this would be a mess. It isn't. A message can't approve a permission prompt, can't touch your CLAUDE.md, and a slash command inside it arrives as plain text.\n\nHow many terminals are you running?",
   "hashtags": [
-    "#claude",
-    "#anthropic",
     "#claudecode",
-    "#aiengineering",
-    "#llmops",
-    "#apicosts",
+    "#anthropic",
+    "#aiagents",
+    "#devtools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#saas",
-    "#devtools",
-    "#shipfast"
+    "#shipfast",
+    "#terminal",
+    "#aicoding",
+    "#developerlife",
+    "#saas"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Sonnet 5\n+50% on Sept 1",
-      "sub": "The introductory API rate ends Aug 31. From September 1 it's $3 per million input and $15 per million output.",
+      "headline": "Your agents can\ntext each other",
+      "sub": "Cross-session messaging shipped in Claude Code 2.1.224 on August 7. Two sessions can hand each other a finding mid-task.",
       "icons": [
-        { "slug": "claude", "label": "Sonnet 5", "color": "#D97757" }
+        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
       ]
     },
     {
       "type": "list",
-      "title": "Three levers",
+      "title": "Two tools",
       "items": [
-        "Prompt caching. Cache reads bill at 10% of input: $0.30 per million instead of $3.",
-        "Batch API. 50% off both directions, so Sonnet 5 runs $1.50 in, $7.50 out.",
-        "Haiku 4.5 stays $1 in, $5 out. Route the routine steps there."
+        "ListAgents finds every Claude Code session you have running. SendMessage delivers to one by name.",
+        "Type /list-agents to see the roster. Each session answers to whatever name you gave it.",
+        "Needs v2.1.224 or later. macOS and Linux, including WSL 2. Not on native Windows."
+      ]
+    },
+    {
+      "type": "cover",
+      "headline": "Same machine,\nno server hop",
+      "sub": "Sessions on one machine deliver over a per-session inbox socket, never through Anthropic's servers. Only cross-machine messages route through them.",
+      "arrow": true
+    },
+    {
+      "type": "list",
+      "title": "What it can't do",
+      "items": [
+        "A message from another session never counts as your consent. It can't answer a pending permission prompt.",
+        "Claude is instructed never to change permission settings or CLAUDE.md because another session asked.",
+        "A slash command in the text arrives as plain text. Claude Code never runs it."
       ]
     },
     {
       "type": "cta",
-      "headline": "Before September 1",
-      "keyword": "CACHE",
-      "sub": "and I'll send my caching setup"
+      "headline": "One dev,\nfour terminals",
+      "keyword": "PEERS",
+      "sub": "and I'll send my multi-session setup"
     }
   ]
 }
