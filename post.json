@@ -1,59 +1,76 @@
 {
-  "slug": "claude-code-cross-session-messaging",
-  "title": "Claude Code Sessions Can Now Message Each Other",
-  "caption": "I had four terminals open and I was the message bus.\n\nClaude Code 2.1.224 added cross-session messaging. ListAgents finds your other sessions, SendMessage delivers to one by name. On the same machine it travels over a per-session inbox socket, never through Anthropic's servers.\n\nI assumed this would be a mess. It isn't. A message can't approve a permission prompt, can't touch your CLAUDE.md, and a slash command inside it arrives as plain text.\n\nHow many terminals are you running?",
+  "slug": "claude-code-sandbox-credential-masking",
+  "title": "Claude Code Masks Your Credentials From Its Own Sandbox",
+  "caption": "My GitHub token was sitting in the environment of every sandboxed command Claude ran, and I never once thought about it.\n\nClaude Code's sandbox can mask it instead. The command reads a fake per-session sentinel, and the proxy swaps in the real token on the way out to api.github.com. gh still works. Nothing the command logs holds the secret.\n\nThe part that sold me: a repo's .claude/settings.json can't turn masking on. Only your user settings or your admin's can. So cloning someone else's project can't talk your proxy into injecting your keys somewhere.\n\nWhere do your keys live right now?",
   "hashtags": [
     "#claudecode",
     "#anthropic",
     "#aiagents",
     "#devtools",
+    "#devsecops",
+    "#apisecurity",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#shipfast",
-    "#terminal",
     "#aicoding",
-    "#developerlife",
-    "#saas"
+    "#developerlife"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Your agents can\ntext each other",
-      "sub": "Cross-session messaging shipped in Claude Code 2.1.224 on August 7. Two sessions can hand each other a finding mid-task.",
+      "headline": "Your agent authenticates.\nNever sees the key.",
+      "sub": "Claude Code's sandbox hands commands a fake per-session sentinel. The proxy swaps in the real credential on the way out.",
       "icons": [
         { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
       ]
     },
     {
       "type": "list",
-      "title": "Two tools",
+      "title": "Sentinel in,\nreal key out",
       "items": [
-        "ListAgents finds every Claude Code session you have running. SendMessage delivers to one by name.",
-        "Type /list-agents to see the roster. Each session answers to whatever name you gave it.",
-        "Needs v2.1.224 or later. macOS and Linux, including WSL 2. Not on native Windows."
+        "Set mode: mask on an env var. The sandboxed command reads a per-session sentinel, never the real value.",
+        "On egress the sandbox proxy substitutes the real credential, only for the hosts you list in injectHosts.",
+        "The command, and anything it logs, never holds the secret. Its requests still authenticate."
       ]
     },
     {
       "type": "cover",
-      "headline": "Same machine,\nno server hop",
-      "sub": "Sessions on one machine deliver over a per-session inbox socket, never through Anthropic's servers. Only cross-machine messages route through them.",
-      "arrow": true
+      "headline": "deny breaks gh\nand npm",
+      "sub": "deny unsets the variable entirely, so tools that need it stop working. mask keeps them working with the real token outside the sandbox.",
+      "icons": [
+        { "slug": "github", "label": "gh", "color": "#101411" },
+        { "slug": "npm", "label": "npm", "color": "#CB3837" }
+      ]
+    },
+    {
+      "type": "cover",
+      "headline": "Repos can't\nenable it",
+      "sub": "mask entries, network.tlsTerminate and awsPairs are honored only from user settings, managed settings, or --settings. A repo's .claude/settings.json is ignored."
     },
     {
       "type": "list",
-      "title": "What it can't do",
+      "title": "Files, not just\nenv vars",
       "items": [
-        "A message from another session never counts as your consent. It can't answer a pending permission prompt.",
-        "Claude is instructed never to change permission settings or CLAUDE.md because another session asked.",
-        "A slash command in the text arrives as plain text. Claude Code never runs it."
+        "mode: mask works on files. An extract regex masks only capture group 1, so gh still parses hosts.yml.",
+        "decode: jwt swaps in a structurally valid fake token, so code that decodes it keeps working.",
+        "Linux and WSL2 read a sentinel copy. On macOS the file is blocked instead."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Three sharp edges",
+      "items": [
+        "Masking needs network.tlsTerminate. Without it the sentinel reaches the server and auth fails, but nothing leaks.",
+        "For AWS, mask the access key and the secret together. The proxy spots SigV4 by the sentinel and re-signs.",
+        "Directories, globs, files over 8 MiB and non-UTF-8 files fall back to deny."
       ]
     },
     {
       "type": "cta",
-      "headline": "One dev,\nfour terminals",
-      "keyword": "PEERS",
-      "sub": "and I'll send my multi-session setup"
+      "headline": "Keys out of\nthe sandbox",
+      "keyword": "SENTINEL",
+      "sub": "and I'll send my sandbox settings"
     }
   ]
 }
