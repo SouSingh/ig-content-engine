@@ -1,76 +1,51 @@
 {
-  "slug": "claude-code-sandbox-credential-masking",
-  "title": "Claude Code Masks Your Credentials From Its Own Sandbox",
-  "caption": "My GitHub token was sitting in the environment of every sandboxed command Claude ran, and I never once thought about it.\n\nClaude Code's sandbox can mask it instead. The command reads a fake per-session sentinel, and the proxy swaps in the real token on the way out to api.github.com. gh still works. Nothing the command logs holds the secret.\n\nThe part that sold me: a repo's .claude/settings.json can't turn masking on. Only your user settings or your admin's can. So cloning someone else's project can't talk your proxy into injecting your keys somewhere.\n\nWhere do your keys live right now?",
+  "slug": "claude-code-auto-mode-default-aug-14",
+  "title": "Claude Code Makes Auto Mode the Default on August 14",
+  "caption": "On August 14, Claude Code stops asking before it runs things.\n\nAuto mode becomes the default permission mode for new sessions on Pro, Max and Team. It isn't bypass. A classifier screens every action, and it still refuses curl | bash, force pushes, prod deploys, and any push that would carry a secret out of the repo.\n\nI flipped mine to auto weeks ago and haven't looked back. What actually reassured me: a repo's .claude/settings.json can't turn auto on. Only your user settings can.\n\nManual or auto?",
   "hashtags": [
     "#claudecode",
     "#anthropic",
+    "#aicoding",
     "#aiagents",
     "#devtools",
-    "#devsecops",
-    "#apisecurity",
+    "#terminal",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#shipfast",
-    "#aicoding",
-    "#developerlife"
+    "#developerlife",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Your agent authenticates.\nNever sees the key.",
-      "sub": "Claude Code's sandbox hands commands a fake per-session sentinel. The proxy swaps in the real credential on the way out.",
+      "headline": "August 14:\nClaude stops asking",
+      "sub": "Auto mode becomes the default permission mode for new sessions on Pro, Max, and Team plans. A classifier screens each action instead of prompting you.",
       "icons": [
         { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
       ]
     },
     {
       "type": "list",
-      "title": "Sentinel in,\nreal key out",
+      "title": "Auto mode still refuses",
       "items": [
-        "Set mode: mask on an env var. The sandboxed command reads a per-session sentinel, never the real value.",
-        "On egress the sandbox proxy substitutes the real credential, only for the hosts you list in injectHosts.",
-        "The command, and anything it logs, never holds the secret. Its requests still authenticate."
+        "curl | bash, and anything that downloads then executes",
+        "Force push, production deploys, database migrations",
+        "Mass deletion on cloud storage, IAM or repo permission grants",
+        "Any commit or push that would carry a secret out of the repo"
       ]
     },
     {
-      "type": "cover",
-      "headline": "deny breaks gh\nand npm",
-      "sub": "deny unsets the variable entirely, so tools that need it stop working. mask keeps them working with the real token outside the sandbox.",
-      "icons": [
-        { "slug": "github", "label": "gh", "color": "#101411" },
-        { "slug": "npm", "label": "npm", "color": "#CB3837" }
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "Repos can't\nenable it",
-      "sub": "mask entries, network.tlsTerminate and awsPairs are honored only from user settings, managed settings, or --settings. A repo's .claude/settings.json is ignored."
-    },
-    {
-      "type": "list",
-      "title": "Files, not just\nenv vars",
-      "items": [
-        "mode: mask works on files. An extract regex masks only capture group 1, so gh still parses hosts.yml.",
-        "decode: jwt swaps in a structurally valid fake token, so code that decodes it keeps working.",
-        "Linux and WSL2 read a sentinel copy. On macOS the file is blocked instead."
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Three sharp edges",
-      "items": [
-        "Masking needs network.tlsTerminate. Without it the sentinel reaches the server and auth fails, but nothing leaks.",
-        "For AWS, mask the access key and the secret together. The proxy spots SigV4 by the sentinel and re-signs.",
-        "Directories, globs, files over 8 MiB and non-UTF-8 files fall back to deny."
-      ]
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "Claude Code", "color": "#D97757" },
+      "title": "Your default stays",
+      "sub": "Set defaultMode yourself and the switch skips you. Only ~/.claude/settings.json counts, so a repo can't grant itself auto mode."
     },
     {
       "type": "cta",
-      "headline": "Keys out of\nthe sandbox",
-      "keyword": "SENTINEL",
-      "sub": "and I'll send my sandbox settings"
+      "headline": "Check your settings.json",
+      "keyword": "AUTO",
+      "sub": "and I'll send the mode breakdown"
     }
   ]
 }
