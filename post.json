@@ -1,51 +1,30 @@
 {
-  "slug": "claude-code-auto-mode-default-aug-14",
-  "title": "Claude Code Makes Auto Mode the Default on August 14",
-  "caption": "On August 14, Claude Code stops asking before it runs things.\n\nAuto mode becomes the default permission mode for new sessions on Pro, Max and Team. It isn't bypass. A classifier screens every action, and it still refuses curl | bash, force pushes, prod deploys, and any push that would carry a secret out of the repo.\n\nI flipped mine to auto weeks ago and haven't looked back. What actually reassured me: a repo's .claude/settings.json can't turn auto on. Only your user settings can.\n\nManual or auto?",
+  "slug": "claude-code-200-agent-cap-removed",
+  "title": "Claude Code Removed Its 200-Agent Per-Session Cap",
+  "caption": "I didn't know Claude Code had a 200-agent ceiling until the release notes said it was gone.\n\n2.1.224 removed the per-session subagent spawn cap. Concurrency and depth limits still apply, so it isn't a licence to fan out forever.\n\nHonestly I've never come close to 200 in one session. But I like knowing the roof isn't there.\n\nEver hit that cap?",
   "hashtags": [
     "#claudecode",
     "#anthropic",
-    "#aicoding",
     "#aiagents",
+    "#aicoding",
     "#devtools",
-    "#terminal",
+    "#subagents",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#shipfast",
-    "#developerlife",
+    "#developertools",
     "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "August 14:\nClaude stops asking",
-      "sub": "Auto mode becomes the default permission mode for new sessions on Pro, Max, and Team plans. A classifier screens each action instead of prompting you.",
+      "headline": "The 200-agent\ncap is gone",
+      "sub": "Claude Code 2.1.224 removed the 200-subagent-per-session spawn cap. Concurrency and depth limits still apply.",
       "icons": [
-        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Auto mode still refuses",
-      "items": [
-        "curl | bash, and anything that downloads then executes",
-        "Force push, production deploys, database migrations",
-        "Mass deletion on cloud storage, IAM or repo permission grants",
-        "Any commit or push that would carry a secret out of the repo"
-      ]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code", "color": "#D97757" },
-      "title": "Your default stays",
-      "sub": "Set defaultMode yourself and the switch skips you. Only ~/.claude/settings.json counts, so a repo can't grant itself auto mode."
-    },
-    {
-      "type": "cta",
-      "headline": "Check your settings.json",
-      "keyword": "AUTO",
-      "sub": "and I'll send the mode breakdown"
+        { "slug": "claude", "label": "Claude Code", "color": "#CC785C" }
+      ],
+      "arrow": false
     }
   ]
 }
