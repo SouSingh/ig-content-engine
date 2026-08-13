@@ -1,30 +1,67 @@
 {
-  "slug": "claude-code-200-agent-cap-removed",
-  "title": "Claude Code Removed Its 200-Agent Per-Session Cap",
-  "caption": "I didn't know Claude Code had a 200-agent ceiling until the release notes said it was gone.\n\n2.1.224 removed the per-session subagent spawn cap. Concurrency and depth limits still apply, so it isn't a licence to fan out forever.\n\nHonestly I've never come close to 200 in one session. But I like knowing the roof isn't there.\n\nEver hit that cap?",
+  "slug": "openai-python-3-drops-certifi",
+  "title": "openai-python 3.0.0 Drops certifi for the OS Trust Store",
+  "caption": "A major version bump that changes your TLS trust store is a rough way to start the week.\n\nopenai 3.0.0 landed Aug 12. It swaps httpx for httpx2, and certifi is no longer installed — verification now goes through your operating system's trust store instead.\n\nSlim containers and TLS-inspecting proxies are the ones that break. Your code doesn't change at all, which is exactly what makes it easy to miss.\n\nDo you pin your SDK versions?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
-    "#aiagents",
-    "#aicoding",
+    "#openai",
+    "#python",
     "#devtools",
-    "#subagents",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#shipfast",
-    "#developertools",
-    "#softwareengineering"
+    "#softwareengineering",
+    "#aiengineering",
+    "#docker",
+    "#backend",
+    "#pythondeveloper",
+    "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "The 200-agent\ncap is gone",
-      "sub": "Claude Code 2.1.224 removed the 200-subagent-per-session spawn cap. Concurrency and depth limits still apply.",
+      "headline": "openai 3.0\ndropped certifi",
+      "sub": "Shipped Aug 12. TLS now verifies against your OS trust store, not the certifi bundle.",
       "icons": [
-        { "slug": "claude", "label": "Claude Code", "color": "#CC785C" }
-      ],
-      "arrow": false
+        { "slug": "python", "label": "openai-python", "color": "#2B5B84" },
+        { "slug": "pydantic", "label": "httpx2", "color": "#E520E9" }
+      ]
+    },
+    {
+      "type": "compare",
+      "leftHead": "openai 2.54.0",
+      "rightHead": "openai 3.0.0",
+      "rows": [
+        {
+          "left": { "slug": "python", "label": "httpx <1", "color": "#2B5B84" },
+          "right": { "slug": "pydantic", "label": "httpx2 >=2.7", "color": "#E520E9" }
+        },
+        {
+          "left": { "slug": "pypi", "label": "certifi", "color": "#006DAD" },
+          "right": { "slug": "linux", "label": "OS trust store" }
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Where it bites",
+      "items": [
+        "Slim containers with no system CA certificates",
+        "Corporate TLS-inspecting proxies",
+        "Deployments that patched the certifi bundle",
+        "Code that imported httpx via openai"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "docker", "color": "#1D63ED" },
+      "title": "One env var",
+      "sub": "Set SSL_CERT_FILE to a CA bundle path. Or install system CA certs in the image."
+    },
+    {
+      "type": "cta",
+      "headline": "Pin your\nSDK versions",
+      "keyword": "CERTIFI",
+      "sub": "and I'll send the migration notes"
     }
   ]
 }
