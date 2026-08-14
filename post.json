@@ -1,67 +1,82 @@
 {
-  "slug": "openai-python-3-drops-certifi",
-  "title": "openai-python 3.0.0 Drops certifi for the OS Trust Store",
-  "caption": "A major version bump that changes your TLS trust store is a rough way to start the week.\n\nopenai 3.0.0 landed Aug 12. It swaps httpx for httpx2, and certifi is no longer installed — verification now goes through your operating system's trust store instead.\n\nSlim containers and TLS-inspecting proxies are the ones that break. Your code doesn't change at all, which is exactly what makes it easy to miss.\n\nDo you pin your SDK versions?",
+  "slug": "keyv-npm-worm-ide-hooks",
+  "title": "The keyv npm Worm Hooks .vscode and .claude",
+  "caption": "I've been telling people a lockfile keeps them safe. This one didn't care.\n\nThe keyv worm hit npm on Aug 4. The part that got me: it drops a hook into .vscode/tasks.json and .claude/settings.json, so it fires when you open the repo. No install step involved.\n\nSpent last night grepping every project folder I own.\n\nWhen did you last rotate your npm token?",
   "hashtags": [
-    "#openai",
-    "#python",
-    "#devtools",
+    "#npm",
+    "#javascript",
+    "#nodejs",
+    "#supplychainsecurity",
+    "#devsecops",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#softwareengineering",
-    "#aiengineering",
-    "#docker",
-    "#backend",
-    "#pythondeveloper",
-    "#shipfast"
+    "#claudecode",
+    "#vscode",
+    "#devtools"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "openai 3.0\ndropped certifi",
-      "sub": "Shipped Aug 12. TLS now verifies against your OS trust store, not the certifi bundle.",
+      "headline": "Opening the folder\nwas enough",
+      "sub": "Aug 4: a worm hit keyv and the cacheable family, then left a hook behind in .vscode and .claude.",
       "icons": [
-        { "slug": "python", "label": "openai-python", "color": "#2B5B84" },
-        { "slug": "pydantic", "label": "httpx2", "color": "#E520E9" }
-      ]
-    },
-    {
-      "type": "compare",
-      "leftHead": "openai 2.54.0",
-      "rightHead": "openai 3.0.0",
-      "rows": [
-        {
-          "left": { "slug": "python", "label": "httpx <1", "color": "#2B5B84" },
-          "right": { "slug": "pydantic", "label": "httpx2 >=2.7", "color": "#E520E9" }
-        },
-        {
-          "left": { "slug": "pypi", "label": "certifi", "color": "#006DAD" },
-          "right": { "slug": "linux", "label": "OS trust store" }
-        }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Where it bites",
-      "items": [
-        "Slim containers with no system CA certificates",
-        "Corporate TLS-inspecting proxies",
-        "Deployments that patched the certifi bundle",
-        "Code that imported httpx via openai"
+        { "slug": "npm", "label": "keyv + cacheable", "color": "#CB3837" },
+        { "slug": "claudecode", "label": "SessionStart hook", "color": "#D97757" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "docker", "color": "#1D63ED" },
-      "title": "One env var",
-      "sub": "Set SSL_CERT_FILE to a CA bundle path. Or install system CA certs in the image."
+      "icon": { "slug": "npm", "color": "#CB3837" },
+      "title": "keyv 6.0.0",
+      "sub": "Published Aug 4 at 09:35 UTC. Pulled from npm since — the registry's latest is back to 5.6.0."
+    },
+    {
+      "type": "list",
+      "title": "Stage one",
+      "items": [
+        "package.json gains a preinstall hook: node setup.mjs",
+        "setup.mjs downloads Bun 1.3.13 and runs stage two under it",
+        "Bun, not Node — so Node-based monitoring never sees it"
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Then it waits",
+      "items": [
+        ".vscode/tasks.json runs node .claude/setup.mjs when the folder opens",
+        ".claude/settings.json adds a SessionStart hook running node .vscode/setup.mjs",
+        "No npm install needed. Cloning the poisoned branch is enough."
+      ]
+    },
+    {
+      "type": "grid",
+      "title": "What it emptied",
+      "icons": [
+        { "slug": "npm", "label": "npm tokens", "color": "#CB3837" },
+        { "slug": "github", "label": "GitHub PATs", "color": "#101411" },
+        { "slug": "githubactions", "label": "Actions secrets" },
+        { "slug": "pypi", "label": "PyPI creds", "color": "#006DAD" },
+        { "slug": "kubernetes", "label": "kube secrets", "color": "#3371E3" },
+        { "slug": "vault", "label": "Vault KV", "color": "#17191A" }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Do this today",
+      "items": [
+        "grep your repos for setup.mjs and math_init.js",
+        "Diff .vscode/tasks.json and .claude/settings.json against main",
+        "Rotate npm tokens, GitHub PATs and cloud keys",
+        "Audit AWS, Kubernetes and Vault access logs since Aug 4"
+      ]
     },
     {
       "type": "cta",
-      "headline": "Pin your\nSDK versions",
-      "keyword": "CERTIFI",
-      "sub": "and I'll send the migration notes"
+      "headline": "Check .vscode\nand .claude",
+      "keyword": "WORM",
+      "sub": "and I'll send the grep commands"
     }
   ]
 }
