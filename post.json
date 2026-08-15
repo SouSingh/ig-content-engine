@@ -1,82 +1,59 @@
 {
-  "slug": "keyv-npm-worm-ide-hooks",
-  "title": "The keyv npm Worm Hooks .vscode and .claude",
-  "caption": "I've been telling people a lockfile keeps them safe. This one didn't care.\n\nThe keyv worm hit npm on Aug 4. The part that got me: it drops a hook into .vscode/tasks.json and .claude/settings.json, so it fires when you open the repo. No install step involved.\n\nSpent last night grepping every project folder I own.\n\nWhen did you last rotate your npm token?",
+  "slug": "claude-code-drops-todo-tools",
+  "title": "Claude Code Drops Its To-Do Tools on the Newest Models",
+  "caption": "I used to judge how well a session was going by watching the to-do list fill in.\n\n2.1.233 took that away on Opus 4.8, Sonnet 5 and newer. Same feature they shipped in April 2025 to keep Claude \"on track\". No reason given in the changelog.\n\nHonestly, I think I was reading that list for my own comfort, not because it made the code any better.\n\nDo you miss it?",
   "hashtags": [
-    "#npm",
-    "#javascript",
-    "#nodejs",
-    "#supplychainsecurity",
-    "#devsecops",
+    "#claudecode",
+    "#anthropic",
+    "#aicoding",
+    "#aiagents",
+    "#devtools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#softwareengineering",
-    "#claudecode",
-    "#vscode",
-    "#devtools"
+    "#programming",
+    "#codingassistant",
+    "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Opening the folder\nwas enough",
-      "sub": "Aug 4: a worm hit keyv and the cacheable family, then left a hook behind in .vscode and .claude.",
+      "headline": "Claude Code removed\nthe to-do list",
+      "sub": "Version 2.1.233, shipped Aug 14: the task-tracking tools are gone on the newest models.",
       "icons": [
-        { "slug": "npm", "label": "keyv + cacheable", "color": "#CB3837" },
-        { "slug": "claudecode", "label": "SessionStart hook", "color": "#D97757" }
+        { "slug": "claudecode", "label": "v2.1.233", "color": "#D97757" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "npm", "color": "#CB3837" },
-      "title": "keyv 6.0.0",
-      "sub": "Published Aug 4 at 09:35 UTC. Pulled from npm since — the registry's latest is back to 5.6.0."
+      "icon": { "slug": "claudecode", "color": "#D97757" },
+      "title": "Five tools, gone",
+      "sub": "TaskCreate, TaskGet, TaskUpdate, TaskList and TodoWrite — all dropped in one changelog line."
     },
     {
       "type": "list",
-      "title": "Stage one",
+      "title": "Only the new models",
       "items": [
-        "package.json gains a preinstall hook: node setup.mjs",
-        "setup.mjs downloads Bun 1.3.13 and runs stage two under it",
-        "Bun, not Node — so Node-based monitoring never sees it"
+        "Opus 4.8, Sonnet 5, Fable 5, Mythos 5 and newer lose them",
+        "Older models keep their to-do list, unchanged",
+        "Set CLAUDE_CODE_ENABLE_TODO_TOOLS=1 to bring them back"
       ]
     },
     {
       "type": "list",
-      "title": "Then it waits",
+      "title": "The whole arc",
       "items": [
-        ".vscode/tasks.json runs node .claude/setup.mjs when the folder opens",
-        ".claude/settings.json adds a SessionStart hook running node .vscode/setup.mjs",
-        "No npm install needed. Cloning the poisoned branch is enough."
-      ]
-    },
-    {
-      "type": "grid",
-      "title": "What it emptied",
-      "icons": [
-        { "slug": "npm", "label": "npm tokens", "color": "#CB3837" },
-        { "slug": "github", "label": "GitHub PATs", "color": "#101411" },
-        { "slug": "githubactions", "label": "Actions secrets" },
-        { "slug": "pypi", "label": "PyPI creds", "color": "#006DAD" },
-        { "slug": "kubernetes", "label": "kube secrets", "color": "#3371E3" },
-        { "slug": "vault", "label": "Vault KV", "color": "#17191A" }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Do this today",
-      "items": [
-        "grep your repos for setup.mjs and math_init.js",
-        "Diff .vscode/tasks.json and .claude/settings.json against main",
-        "Rotate npm tokens, GitHub PATs and cloud keys",
-        "Audit AWS, Kubernetes and Vault access logs since Aug 4"
+        "Apr 30, 2025 — Claude gets a to-do list to “stay on track”",
+        "Aug 14, 2026 — the newest models don't get one",
+        "The changelog gives no reason for the change"
       ]
     },
     {
       "type": "cta",
-      "headline": "Check .vscode\nand .claude",
-      "keyword": "WORM",
-      "sub": "and I'll send the grep commands"
+      "headline": "Bring it back?",
+      "keyword": "TODO",
+      "sub": "and I'll send the env var + the changelog"
     }
   ]
 }
