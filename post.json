@@ -1,59 +1,59 @@
 {
-  "slug": "claude-code-drops-todo-tools",
-  "title": "Claude Code Drops Its To-Do Tools on the Newest Models",
-  "caption": "I used to judge how well a session was going by watching the to-do list fill in.\n\n2.1.233 took that away on Opus 4.8, Sonnet 5 and newer. Same feature they shipped in April 2025 to keep Claude \"on track\". No reason given in the changelog.\n\nHonestly, I think I was reading that list for my own comfort, not because it made the code any better.\n\nDo you miss it?",
+  "slug": "claude-code-stopped-assuming-github",
+  "title": "Claude Code Stopped Assuming GitHub",
+  "caption": "I've been on GitHub so long I forgot Claude Code was built assuming it.\n\nTwo releases, Aug 13 and 14: GitLab merge requests in --worktree, nine token prefixes redacted, plugin marketplaces cloning straight from gitlab.com. The GitHub-app setup tip even goes quiet when your remote is GitLab or Bitbucket.\n\nHonestly? I assumed first-class GitLab support was never coming.\n\nWhere does your code live?",
   "hashtags": [
     "#claudecode",
+    "#gitlab",
     "#anthropic",
     "#aicoding",
-    "#aiagents",
     "#devtools",
+    "#git",
+    "#devops",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#softwareengineering",
     "#programming",
-    "#codingassistant",
-    "#shipfast"
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Claude Code removed\nthe to-do list",
-      "sub": "Version 2.1.233, shipped Aug 14: the task-tracking tools are gone on the newest models.",
+      "headline": "Claude Code stopped\nassuming GitHub",
+      "sub": "Versions 2.1.232 and 2.1.233, shipped Aug 13-14: GitLab gets the treatment GitHub already had.",
       "icons": [
-        { "slug": "claudecode", "label": "v2.1.233", "color": "#D97757" }
+        { "slug": "gitlab", "label": "v2.1.233", "color": "#FC6D25" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claudecode", "color": "#D97757" },
-      "title": "Five tools, gone",
-      "sub": "TaskCreate, TaskGet, TaskUpdate, TaskList and TodoWrite — all dropped in one changelog line."
+      "icon": { "slug": "gitlab", "color": "#FC6D25" },
+      "title": "Merge requests, natively",
+      "sub": "The --worktree flag and the claude agents view now take GitLab MR URLs. MRs display as !N."
     },
     {
       "type": "list",
-      "title": "Only the new models",
+      "title": "Then the plumbing",
       "items": [
-        "Opus 4.8, Sonnet 5, Fable 5, Mythos 5 and newer lose them",
-        "Older models keep their to-do list, unchanged",
-        "Set CLAUDE_CODE_ENABLE_TODO_TOOLS=1 to bring them back"
+        "Nine GitLab token families now redacted, with glpat- and gldt- fully masked",
+        "The glab CLI config store gets the same sandbox protection gh already had",
+        "Plugin marketplaces clone bare gitlab.com URLs, nested subgroups included"
       ]
     },
     {
-      "type": "list",
-      "title": "The whole arc",
-      "items": [
-        "Apr 30, 2025 — Claude gets a to-do list to “stay on track”",
-        "Aug 14, 2026 — the newest models don't get one",
-        "The changelog gives no reason for the change"
+      "type": "grid",
+      "title": "It reads your git remote",
+      "icons": [
+        { "slug": "github", "label": "GitHub" },
+        { "slug": "gitlab", "label": "GitLab", "color": "#FC6D25" },
+        { "slug": "bitbucket", "label": "Bitbucket", "color": "#0052CC" }
       ]
     },
     {
       "type": "cta",
-      "headline": "Bring it back?",
-      "keyword": "TODO",
-      "sub": "and I'll send the env var + the changelog"
+      "headline": "Moving off GitHub?",
+      "keyword": "GITLAB",
+      "sub": "and I'll send the changelog + the token list"
     }
   ]
 }
