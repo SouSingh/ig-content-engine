@@ -1,59 +1,47 @@
 {
-  "slug": "claude-code-stopped-assuming-github",
-  "title": "Claude Code Stopped Assuming GitHub",
-  "caption": "I've been on GitHub so long I forgot Claude Code was built assuming it.\n\nTwo releases, Aug 13 and 14: GitLab merge requests in --worktree, nine token prefixes redacted, plugin marketplaces cloning straight from gitlab.com. The GitHub-app setup tip even goes quiet when your remote is GitLab or Bitbucket.\n\nHonestly? I assumed first-class GitLab support was never coming.\n\nWhere does your code live?",
+  "slug": "sonnet-5-price-hike-cancelled",
+  "title": "Sonnet 5's Price Hike Is Cancelled",
+  "caption": "Last week I told you to budget +50% for Sonnet 5. That's cancelled.\n\nAug 10: Anthropic made the $2/$10 intro price permanent. The Sept 1 jump to $3/$15 will not happen.\n\nThe part nobody mentions — 4.7 and later count tokens with a newer tokenizer, roughly 30% more for the same text. So the sticker cut is bigger than the bill cut.\n\nWhat's your monthly API spend?",
   "hashtags": [
-    "#claudecode",
-    "#gitlab",
+    "#claude",
     "#anthropic",
-    "#aicoding",
+    "#claudecode",
+    "#llm",
+    "#aiapi",
     "#devtools",
-    "#git",
-    "#devops",
+    "#aicoding",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#programming",
-    "#softwareengineering"
+    "#saas",
+    "#programming"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Claude Code stopped\nassuming GitHub",
-      "sub": "Versions 2.1.232 and 2.1.233, shipped Aug 13-14: GitLab gets the treatment GitHub already had.",
-      "icons": [
-        { "slug": "gitlab", "label": "v2.1.233", "color": "#FC6D25" }
-      ]
+      "headline": "Sonnet 5's\nprice hike\nis cancelled",
+      "sub": "The +50% that was scheduled for September 1 will not happen. Announced August 10."
     },
     {
       "type": "feature",
-      "icon": { "slug": "gitlab", "color": "#FC6D25" },
-      "title": "Merge requests, natively",
-      "sub": "The --worktree flag and the claude agents view now take GitLab MR URLs. MRs display as !N."
+      "icon": { "slug": "anthropic", "color": "#CC785C" },
+      "title": "$2 in, $10 out",
+      "sub": "Launched as introductory pricing through Aug 31. It is now the standard price per million tokens."
     },
     {
       "type": "list",
-      "title": "Then the plumbing",
+      "title": "Read the fine print",
       "items": [
-        "Nine GitLab token families now redacted, with glpat- and gldt- fully masked",
-        "The glab CLI config store gets the same sandbox protection gh already had",
-        "Plugin marketplaces clone bare gitlab.com URLs, nested subgroups included"
-      ]
-    },
-    {
-      "type": "grid",
-      "title": "It reads your git remote",
-      "icons": [
-        { "slug": "github", "label": "GitHub" },
-        { "slug": "gitlab", "label": "GitLab", "color": "#FC6D25" },
-        { "slug": "bitbucket", "label": "Bitbucket", "color": "#0052CC" }
+        "Sonnet 4.6 bills $3/$15 per MTok. Sonnet 5 is a third cheaper on both, permanently.",
+        "Batch API halves it again: $1 in, $5 out. Cache hits land at $0.20 per MTok.",
+        "But Sonnet 5 uses the 4.7-and-later tokenizer, roughly 30% more tokens for the same text. Sonnet 4.6 did not."
       ]
     },
     {
       "type": "cta",
-      "headline": "Moving off GitHub?",
-      "keyword": "GITLAB",
-      "sub": "and I'll send the changelog + the token list"
+      "headline": "Watching your\nAPI bill?",
+      "keyword": "SONNET",
+      "sub": "and I'll send the pricing page + the tokenizer note"
     }
   ]
 }
