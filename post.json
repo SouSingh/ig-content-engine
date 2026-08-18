@@ -1,47 +1,48 @@
 {
-  "slug": "sonnet-5-price-hike-cancelled",
-  "title": "Sonnet 5's Price Hike Is Cancelled",
-  "caption": "Last week I told you to budget +50% for Sonnet 5. That's cancelled.\n\nAug 10: Anthropic made the $2/$10 intro price permanent. The Sept 1 jump to $3/$15 will not happen.\n\nThe part nobody mentions — 4.7 and later count tokens with a newer tokenizer, roughly 30% more for the same text. So the sticker cut is bigger than the bill cut.\n\nWhat's your monthly API spend?",
+  "slug": "deepseek-harness-150k-stars-5-days",
+  "title": "DeepSeek's Agent Harness Passed Claude Code in 5 Days",
+  "caption": "DeepSeek's agent harness has more GitHub stars than Claude Code. It is five days old.\n\ndsh went public Aug 13: 150,696 stars, 15,472 forks, MIT, TypeScript. The README still calls it a developer preview.\n\nI'll admit stars aren't installs, and I haven't moved a single real project onto it. But 150k clicks in five days says something about how thin the loyalty is in this category.\n\nWould you switch harnesses?",
   "hashtags": [
-    "#claude",
-    "#anthropic",
+    "#deepseek",
     "#claudecode",
-    "#llm",
-    "#aiapi",
+    "#aiagents",
+    "#opensource",
     "#devtools",
+    "#typescript",
+    "#github",
     "#aicoding",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#saas",
     "#programming"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Sonnet 5's\nprice hike\nis cancelled",
-      "sub": "The +50% that was scheduled for September 1 will not happen. Announced August 10."
+      "headline": "150k stars.\nFive days old.",
+      "sub": "DeepSeek's open-source agent harness went public on August 13. It already outstars the Claude Code repo.",
+      "icons": [{ "slug": "deepseek", "label": "dsh", "color": "#4D6BFE" }]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "anthropic", "color": "#CC785C" },
-      "title": "$2 in, $10 out",
-      "sub": "Launched as introductory pricing through Aug 31. It is now the standard price per million tokens."
-    },
-    {
-      "type": "list",
-      "title": "Read the fine print",
-      "items": [
-        "Sonnet 4.6 bills $3/$15 per MTok. Sonnet 5 is a third cheaper on both, permanently.",
-        "Batch API halves it again: $1 in, $5 out. Cache hits land at $0.20 per MTok.",
-        "But Sonnet 5 uses the 4.7-and-later tokenizer, roughly 30% more tokens for the same text. Sonnet 4.6 did not."
+      "type": "grid",
+      "title": "Stars on GitHub today",
+      "icons": [
+        { "slug": "deepseek", "label": "dsh 150,696", "color": "#4D6BFE" },
+        { "slug": "claude", "label": "claude code 141,779", "color": "#CC785C" },
+        { "slug": "googlegemini", "label": "gemini cli 106,544", "color": "#4285F4" }
       ]
     },
     {
+      "type": "feature",
+      "icon": { "slug": "npm", "color": "#CB3837" },
+      "title": "Everything is a plugin",
+      "sub": "MIT, TypeScript, built on Cordis. Developer preview, so expect breaks. Start with\nnpx @deepseek-ai/dsh web"
+    },
+    {
       "type": "cta",
-      "headline": "Watching your\nAPI bill?",
-      "keyword": "SONNET",
-      "sub": "and I'll send the pricing page + the tokenizer note"
+      "headline": "Switching\nharnesses?",
+      "keyword": "HARNESS",
+      "sub": "and I'll send the repo + the install one-liner"
     }
   ]
 }
