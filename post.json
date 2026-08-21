@@ -1,45 +1,52 @@
 {
-  "slug": "claude-code-waits-out-your-limit",
-  "title": "Claude Code Waits Out Your Usage Limit",
-  "caption": "My usage limit used to be where the run died.\n\n2.1.234 continues the session on its own when the claude.ai limit resets. Three more changes shipped the same week — /goal checks in when background work parks it, and an idle session now reports back by itself.\n\nHonest admission: I still sit there and watch it go. Not sure I trust an unattended run yet.\n\nDo you walk away?",
+  "slug": "cursor-now-belongs-to-spacex",
+  "title": "Cursor Now Belongs to SpaceX",
+  "caption": "I never once thought about who owned my editor.\n\nNow it's SpaceX. $60B, all stock, closed August 14. Same price, same models, same everything on day one. What changed is upstream: Cursor's team works on Grok now, and Grok 4.5 was already trained on trillions of tokens of Cursor session data.\n\nI'm not switching. I did finally read the terms.\n\nWhose editor do you trust?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
+    "#cursor",
+    "#cursorai",
+    "#spacex",
+    "#grok",
     "#aicoding",
     "#codingagents",
     "#devtools",
-    "#developertools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#softwareengineering",
-    "#shipfast",
     "#ai"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Limit resets.\nRun continues.",
-      "sub": "Claude Code 2.1.234 now continues your session automatically when a claude.ai usage limit resets. Published to npm August 17.",
+      "headline": "Cursor now\nbelongs to\nSpaceX.",
+      "sub": "$60B all-stock, closed August 14. The largest acquisition of a venture-backed startup on record.",
       "icons": [
-        { "slug": "claude", "label": "2.1.234", "color": "#D97757" }
+        { "slug": "cursor", "label": "Cursor" },
+        { "slug": "spacex", "label": "SpaceX" }
       ]
     },
     {
+      "type": "feature",
+      "icon": { "slug": "cursor" },
+      "title": "Trained on your edits",
+      "sub": "Grok 4.5 was trained jointly with SpaceXAI on trillions of tokens of Cursor session data: real code edits, debugging traces, agent interactions."
+    },
+    {
       "type": "list",
-      "title": "Four changes, one week",
+      "title": "What actually changed",
       "items": [
-        "Aug 12 — remote-control --continue resumes your last session",
-        "Aug 17 — the session continues itself when the claude.ai limit resets",
-        "Aug 17 — /goal checks in when background work parks it 30+ minutes",
-        "Aug 19 — an idle session parked behind background work checks in"
+        "The team: Cursor's engineers now work on Grok, not just the editor",
+        "The price: unchanged. Free, $20, $60 and $200 tiers all still stand",
+        "The models: unchanged. Claude Sonnet 5, GPT-5.6 and Gemini still route",
+        "The roadmap: nothing announced since the deal closed on August 14"
       ]
     },
     {
       "type": "cta",
-      "headline": "Running Claude\nunattended?",
-      "keyword": "UNATTENDED",
-      "sub": "and I'll send the four changelog entries"
+      "headline": "Still on Cursor\nafter this?",
+      "keyword": "OWNER",
+      "sub": "and I'll send every source behind these slides"
     }
   ]
 }
