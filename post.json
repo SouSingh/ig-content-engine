@@ -1,52 +1,74 @@
 {
-  "slug": "cursor-now-belongs-to-spacex",
-  "title": "Cursor Now Belongs to SpaceX",
-  "caption": "I never once thought about who owned my editor.\n\nNow it's SpaceX. $60B, all stock, closed August 14. Same price, same models, same everything on day one. What changed is upstream: Cursor's team works on Grok now, and Grok 4.5 was already trained on trillions of tokens of Cursor session data.\n\nI'm not switching. I did finally read the terms.\n\nWhose editor do you trust?",
+  "slug": "six-releases-one-theme-silent-failure",
+  "title": "Six Claude Code Releases, One Theme: Silent Failure",
+  "caption": "I don't mind when my agent fails. I mind when it doesn't tell me.\n\nSix Claude Code releases landed between August 17 and 21. Read them together and the pattern is hard to miss: messages reported as sent that were dropped, denies that didn't stick, a session sitting idle while it was still working, and a proxy bug that quietly doubled billed API calls on Bedrock.\n\nI spent a week blaming myself for at least two of these.\n\nWhich one got you?",
   "hashtags": [
-    "#cursor",
-    "#cursorai",
-    "#spacex",
-    "#grok",
+    "#claudecode",
+    "#anthropic",
+    "#aiagents",
     "#aicoding",
     "#codingagents",
     "#devtools",
+    "#changelog",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#softwareengineering",
-    "#ai"
+    "#debugging"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Cursor now\nbelongs to\nSpaceX.",
-      "sub": "$60B all-stock, closed August 14. The largest acquisition of a venture-backed startup on record.",
+      "headline": "Six releases.\nOne theme:\nsilent failure.",
+      "sub": "Claude Code 2.1.234 through 2.1.239 shipped between August 17 and 21. Read together, most of what got fixed had been failing without telling you.",
       "icons": [
-        { "slug": "cursor", "label": "Cursor" },
-        { "slug": "spacex", "label": "SpaceX" }
+        { "slug": "claude", "label": "Claude Code", "color": "#D97757" },
+        { "slug": "anthropic", "label": "Anthropic", "color": "#CC785C" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "cursor" },
-      "title": "Trained on your edits",
-      "sub": "Grok 4.5 was trained jointly with SpaceXAI on trillions of tokens of Cursor session data: real code edits, debugging traces, agent interactions."
+      "icon": { "slug": "claude", "color": "#D97757" },
+      "title": "Billed twice, silently",
+      "sub": "A proxy stripping Content-Type made Bedrock re-run every turn non-streaming, doubling billed API calls. Fixed in 2.1.239, August 21."
     },
     {
       "type": "list",
-      "title": "What actually changed",
+      "title": "Sent. Never delivered.",
       "items": [
-        "The team: Cursor's engineers now work on Grok, not just the editor",
-        "The price: unchanged. Free, $20, $60 and $200 tiers all still stand",
-        "The models: unchanged. Claude Sonnet 5, GPT-5.6 and Gemini still route",
-        "The roadmap: nothing announced since the deal closed on August 14"
+        "A session set to refuse inbound messages returned silent success (2.1.238)",
+        "An inbox dropping messages on rate limit told the sender nothing (2.1.238)",
+        "SendMessage reported a burst as sent while the inbox dropped it (2.1.236)"
+      ]
+    },
+    {
+      "type": "list",
+      "title": "State it never reported",
+      "items": [
+        "Session-scoped denies dropped when answering background subagent prompts (2.1.234)",
+        "Esc on a queued prompt left the session looking idle mid-turn (2.1.239)",
+        "ListAgents treated a too-long session list as no sessions at all (2.1.234)"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "anthropic", "color": "#CC785C" },
+      "title": "Your voice drifted back",
+      "sub": "Custom, project and plugin output styles reverted to the default voice mid-session. Fixed in 2.1.238, August 20."
+    },
+    {
+      "type": "list",
+      "title": "Memory it never freed",
+      "items": [
+        "Subagent tool results held for the whole session, not just the display window (2.1.238)",
+        "WebFetch kept expired pages in memory past the intended 15 minutes (2.1.239)"
       ]
     },
     {
       "type": "cta",
-      "headline": "Still on Cursor\nafter this?",
-      "keyword": "OWNER",
-      "sub": "and I'll send every source behind these slides"
+      "headline": "Which one\nbit you?",
+      "keyword": "SILENT",
+      "sub": "and I'll send the six release notes"
     }
   ]
 }
