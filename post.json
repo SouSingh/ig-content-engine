@@ -1,74 +1,54 @@
 {
-  "slug": "six-releases-one-theme-silent-failure",
-  "title": "Six Claude Code Releases, One Theme: Silent Failure",
-  "caption": "I don't mind when my agent fails. I mind when it doesn't tell me.\n\nSix Claude Code releases landed between August 17 and 21. Read them together and the pattern is hard to miss: messages reported as sent that were dropped, denies that didn't stick, a session sitting idle while it was still working, and a proxy bug that quietly doubled billed API calls on Bedrock.\n\nI spent a week blaming myself for at least two of these.\n\nWhich one got you?",
+  "slug": "mcp-roadmap-list-of-whats-broken",
+  "title": "MCP's New Roadmap Is a List of What's Broken",
+  "caption": "I've been blaming my own MCP server for something the protocol admits is its fault.\n\nThe new MCP roadmap landed August 22, and read straight through, it's mostly an inventory of what MCP gets wrong today: you pay tokens for every tool on a server before anyone asks a question, auth still assumes a human clicking approve in a browser, and clients are left polling for results.\n\nI'd rather the maintainers write that down than pretend it's fine.\n\nHow many tools does your server expose?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
+    "#mcp",
+    "#modelcontextprotocol",
     "#aiagents",
-    "#aicoding",
-    "#codingagents",
+    "#aitools",
     "#devtools",
-    "#changelog",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#softwareengineering",
-    "#debugging"
+    "#apidesign",
+    "#opensource",
+    "#aicoding"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Six releases.\nOne theme:\nsilent failure.",
-      "sub": "Claude Code 2.1.234 through 2.1.239 shipped between August 17 and 21. Read together, most of what got fixed had been failing without telling you.",
-      "icons": [
-        { "slug": "claude", "label": "Claude Code", "color": "#D97757" },
-        { "slug": "anthropic", "label": "Anthropic", "color": "#CC785C" }
-      ]
+      "headline": "You pay for tools\nnobody called.",
+      "sub": "MCP's new roadmap, published August 22, is largely a list of what MCP gets wrong today.",
+      "icons": [{ "slug": "modelcontextprotocol", "label": "MCP" }]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "color": "#D97757" },
-      "title": "Billed twice, silently",
-      "sub": "A proxy stripping Content-Type made Bedrock re-run every turn non-streaming, doubling billed API calls. Fixed in 2.1.239, August 21."
-    },
-    {
-      "type": "list",
-      "title": "Sent. Never delivered.",
-      "items": [
-        "A session set to refuse inbound messages returned silent success (2.1.238)",
-        "An inbox dropping messages on rate limit told the sender nothing (2.1.238)",
-        "SendMessage reported a burst as sent while the inbox dropped it (2.1.236)"
-      ]
-    },
-    {
-      "type": "list",
-      "title": "State it never reported",
-      "items": [
-        "Session-scoped denies dropped when answering background subagent prompts (2.1.234)",
-        "Esc on a queued prompt left the session looking idle mid-turn (2.1.239)",
-        "ListAgents treated a too-long session list as no sessions at all (2.1.234)"
-      ]
+      "icon": { "slug": "modelcontextprotocol" },
+      "title": "Loaded before you ask",
+      "sub": "Connect a server with a hundred tools and the model pays for that whole surface before your first question."
     },
     {
       "type": "feature",
-      "icon": { "slug": "anthropic", "color": "#CC785C" },
-      "title": "Your voice drifted back",
-      "sub": "Custom, project and plugin output styles reverted to the default voice mid-session. Fixed in 2.1.238, August 20."
+      "icon": { "slug": "modelcontextprotocol" },
+      "title": "Auth assumes a human",
+      "sub": "Authorization is built around a person clicking approve in a browser. Agents running as cloud workloads have no standard identity."
     },
     {
       "type": "list",
-      "title": "Memory it never freed",
+      "title": "Also being rebuilt",
       "items": [
-        "Subagent tool results held for the whole session, not just the display window (2.1.238)",
-        "WebFetch kept expired pages in memory past the intended 15 minutes (2.1.239)"
+        "Server-initiated webhooks and channels, so clients stop polling for results",
+        "Tasks (SEP-2663) matures out of extension and into the spec",
+        "One result contract, so servers know which output the client shows"
       ]
     },
     {
       "type": "cta",
-      "headline": "Which one\nbit you?",
-      "keyword": "SILENT",
-      "sub": "and I'll send the six release notes"
+      "headline": "Shipping an\nMCP server?",
+      "keyword": "ROADMAP",
+      "sub": "and I'll send the roadmap post"
     }
   ]
 }
