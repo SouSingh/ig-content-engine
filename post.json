@@ -1,54 +1,60 @@
 {
-  "slug": "mcp-roadmap-list-of-whats-broken",
-  "title": "MCP's New Roadmap Is a List of What's Broken",
-  "caption": "I've been blaming my own MCP server for something the protocol admits is its fault.\n\nThe new MCP roadmap landed August 22, and read straight through, it's mostly an inventory of what MCP gets wrong today: you pay tokens for every tool on a server before anyone asks a question, auth still assumes a human clicking approve in a browser, and clients are left polling for results.\n\nI'd rather the maintainers write that down than pretend it's fine.\n\nHow many tools does your server expose?",
+  "slug": "bun-1-4-zig-to-rust",
+  "title": "Bun 1.4 Rewrote the Core From Zig to Rust",
+  "caption": "Bun shipped its biggest release yet and almost none of it is something you can actually use.\n\nAt the v1.3.0 tag the repo built with build.zig and src/bun.zig. At v1.4.0, published August 20, both are gone — src is a Cargo workspace with 100 crates.\n\nWhat landed for me as a user: bun prune, bun dedupe, bun test --parallel, XML imports. Four new pages in the docs.\n\nHonestly I respect it. Nobody gets applause for a rewrite that changes nothing on the surface.\n\nWould you rewrite it?",
   "hashtags": [
-    "#mcp",
-    "#modelcontextprotocol",
-    "#aiagents",
-    "#aitools",
+    "#bun",
+    "#bunjs",
+    "#rustlang",
+    "#zig",
+    "#javascript",
+    "#typescript",
+    "#nodejs",
+    "#webdev",
     "#devtools",
     "#buildinpublic",
     "#indiehackers",
-    "#solofounder",
-    "#softwareengineering",
-    "#apidesign",
-    "#opensource",
-    "#aicoding"
+    "#solofounder"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "You pay for tools\nnobody called.",
-      "sub": "MCP's new roadmap, published August 22, is largely a list of what MCP gets wrong today.",
-      "icons": [{ "slug": "modelcontextprotocol", "label": "MCP" }]
+      "headline": "Bun rewrote itself\nin Rust.",
+      "sub": "Bun 1.4 shipped August 20. build.zig is gone from the repo and src is now a Cargo workspace.",
+      "icons": [{ "slug": "bun", "label": "Bun" }]
+    },
+    {
+      "type": "compare",
+      "leftHead": "v1.3.0 built with build.zig",
+      "rightHead": "v1.4.0 built with Cargo.toml",
+      "rows": [
+        {
+          "left": { "slug": "zig", "label": "Zig", "color": "#F7A41D" },
+          "right": { "slug": "rust", "label": "Rust" }
+        }
+      ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "modelcontextprotocol" },
-      "title": "Loaded before you ask",
-      "sub": "Connect a server with a hundred tools and the model pays for that whole surface before your first question."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "modelcontextprotocol" },
-      "title": "Auth assumes a human",
-      "sub": "Authorization is built around a person clicking approve in a browser. Agents running as cloud workloads have no standard identity."
+      "icon": { "slug": "rust" },
+      "title": "100 crates, one binary",
+      "sub": "Cargo.toml at the v1.4.0 tag lists 100 workspace members: parser, bundler, installer, HTTP, SQL, each its own crate."
     },
     {
       "type": "list",
-      "title": "Also being rebuilt",
+      "title": "What you actually get",
       "items": [
-        "Server-initiated webhooks and channels, so clients stop polling for results",
-        "Tasks (SEP-2663) matures out of extension and into the spec",
-        "One result contract, so servers know which output the client shows"
+        "bun prune deletes what bun.lock would not install, without touching the registry",
+        "bun dedupe collapses duplicate versions in bun.lock onto one",
+        "bun test --parallel spreads test files across CPU cores",
+        "Bun.XML.parse, plus importing .xml files, marked New in Bun v1.4"
       ]
     },
     {
       "type": "cta",
-      "headline": "Shipping an\nMCP server?",
-      "keyword": "ROADMAP",
-      "sub": "and I'll send the roadmap post"
+      "headline": "Moved a project\nto Bun yet?",
+      "keyword": "BUN",
+      "sub": "and I'll send the 1.4 diff"
     }
   ]
 }
