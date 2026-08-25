@@ -1,60 +1,61 @@
 {
-  "slug": "bun-1-4-zig-to-rust",
-  "title": "Bun 1.4 Rewrote the Core From Zig to Rust",
-  "caption": "Bun shipped its biggest release yet and almost none of it is something you can actually use.\n\nAt the v1.3.0 tag the repo built with build.zig and src/bun.zig. At v1.4.0, published August 20, both are gone — src is a Cargo workspace with 100 crates.\n\nWhat landed for me as a user: bun prune, bun dedupe, bun test --parallel, XML imports. Four new pages in the docs.\n\nHonestly I respect it. Nobody gets applause for a rewrite that changes nothing on the surface.\n\nWould you rewrite it?",
+  "slug": "better-auth-1-7-enterprise-tier-mit",
+  "title": "Better Auth 1.7 Ships the Enterprise Tier as MIT",
+  "caption": "The enterprise checklist that used to block my first real contract is now an npm install.\n\nBetter Auth 1.7 landed August 18. SCIM 2.0 provisioning, SAML assertion verification, OIDC back-channel logout, DPoP sender-constrained tokens. MIT, all of it.\n\nNot a drop-in upgrade though. oidcProvider is deleted, accounts get rekeyed to (issuer, accountId), and you have to backfill before you deploy. Still cheaper than building SCIM.\n\nWhat's blocking your enterprise deal?",
   "hashtags": [
-    "#bun",
-    "#bunjs",
-    "#rustlang",
-    "#zig",
-    "#javascript",
+    "#betterauth",
+    "#authentication",
+    "#oauth",
+    "#scim",
+    "#samlsso",
     "#typescript",
-    "#nodejs",
-    "#webdev",
-    "#devtools",
-    "#buildinpublic",
+    "#nextjs",
+    "#saas",
     "#indiehackers",
-    "#solofounder"
+    "#solofounder",
+    "#devtools",
+    "#buildinpublic"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Bun rewrote itself\nin Rust.",
-      "sub": "Bun 1.4 shipped August 20. build.zig is gone from the repo and src is now a Cargo workspace.",
-      "icons": [{ "slug": "bun", "label": "Bun" }]
-    },
-    {
-      "type": "compare",
-      "leftHead": "v1.3.0 built with build.zig",
-      "rightHead": "v1.4.0 built with Cargo.toml",
-      "rows": [
-        {
-          "left": { "slug": "zig", "label": "Zig", "color": "#F7A41D" },
-          "right": { "slug": "rust", "label": "Rust" }
-        }
-      ]
+      "headline": "The enterprise tier\nis now MIT.",
+      "sub": "Better Auth 1.7 shipped August 18 with SCIM 2.0, SAML hardening, OIDC back-channel logout and DPoP.",
+      "icons": [{ "slug": "betterauth", "label": "Better Auth" }]
     },
     {
       "type": "feature",
-      "icon": { "slug": "rust" },
-      "title": "100 crates, one binary",
-      "sub": "Cargo.toml at the v1.4.0 tag lists 100 workspace members: parser, bundler, installer, HTTP, SQL, each its own crate."
+      "icon": { "slug": "okta", "label": "Okta", "color": "#0131FF" },
+      "title": "Offboarding, handled",
+      "sub": "SCIM 2.0 inbound, RFC 7643 and 7644. Your customer's directory pushes users, groups and memberships — and revokes them."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "openid", "label": "OpenID Connect", "color": "#FE7A15" },
+      "title": "Logout propagates",
+      "sub": "OIDC back-channel logout. The IdP ends the session and your app's session dies with it."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "jsonwebtokens", "label": "DPoP" },
+      "title": "Stolen tokens die",
+      "sub": "RFC 9449. Tokens bind to the client key via cnf.jkt, and the bearer path refuses them."
     },
     {
       "type": "list",
-      "title": "What you actually get",
+      "title": "The upgrade costs you",
       "items": [
-        "bun prune deletes what bun.lock would not install, without touching the registry",
-        "bun dedupe collapses duplicate versions in bun.lock onto one",
-        "bun test --parallel spreads test files across CPU cores",
-        "Bun.XML.parse, plus importing .xml files, marked New in Bun v1.4"
+        "oidcProvider is deleted. Your migration target is oauth-provider.",
+        "Accounts rekeyed to (issuer, accountId). Backfill before deploy.",
+        "MCP support moved out into a separate package.",
+        "Device and user codes now require unique indexes."
       ]
     },
     {
       "type": "cta",
-      "headline": "Moved a project\nto Bun yet?",
-      "keyword": "BUN",
-      "sub": "and I'll send the 1.4 diff"
+      "headline": "Enterprise ready.\nMIT licensed.",
+      "keyword": "AUTH",
+      "sub": "and I'll send the 1.7 migration notes"
     }
   ]
 }
