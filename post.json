@@ -1,61 +1,60 @@
 {
-  "slug": "better-auth-1-7-enterprise-tier-mit",
-  "title": "Better Auth 1.7 Ships the Enterprise Tier as MIT",
-  "caption": "The enterprise checklist that used to block my first real contract is now an npm install.\n\nBetter Auth 1.7 landed August 18. SCIM 2.0 provisioning, SAML assertion verification, OIDC back-channel logout, DPoP sender-constrained tokens. MIT, all of it.\n\nNot a drop-in upgrade though. oidcProvider is deleted, accounts get rekeyed to (issuer, accountId), and you have to backfill before you deploy. Still cheaper than building SCIM.\n\nWhat's blocking your enterprise deal?",
+  "slug": "thinkingbox-bench-grades-the-database",
+  "title": "Microsoft's Agent Benchmark Grades the Database, Not the Transcript",
+  "caption": "I've been shipping agents off the strength of a transcript that reads well.\n\nMicrosoft's ThinkingBox-Bench doesn't care what the agent says it did. 507 tasks across retail, travel, auto insurance, neobank and IT support — and a task passes only if the final backend state matches a golden state on a hash check. Side effects count. No partial credit.\n\nMy demo agent would fail most of these and still sound confident about it.\n\nHow do you test yours?",
   "hashtags": [
-    "#betterauth",
-    "#authentication",
-    "#oauth",
-    "#scim",
-    "#samlsso",
-    "#typescript",
-    "#nextjs",
-    "#saas",
+    "#aiagents",
+    "#mcp",
+    "#modelcontextprotocol",
+    "#agentreliability",
+    "#llm",
+    "#benchmarks",
+    "#devtools",
+    "#opensource",
     "#indiehackers",
     "#solofounder",
-    "#devtools",
-    "#buildinpublic"
+    "#buildinpublic",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "The enterprise tier\nis now MIT.",
-      "sub": "Better Auth 1.7 shipped August 18 with SCIM 2.0, SAML hardening, OIDC back-channel logout and DPoP.",
-      "icons": [{ "slug": "betterauth", "label": "Better Auth" }]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "okta", "label": "Okta", "color": "#0131FF" },
-      "title": "Offboarding, handled",
-      "sub": "SCIM 2.0 inbound, RFC 7643 and 7644. Your customer's directory pushes users, groups and memberships — and revokes them."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "openid", "label": "OpenID Connect", "color": "#FE7A15" },
-      "title": "Logout propagates",
-      "sub": "OIDC back-channel logout. The IdP ends the session and your app's session dies with it."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "jsonwebtokens", "label": "DPoP" },
-      "title": "Stolen tokens die",
-      "sub": "RFC 9449. Tokens bind to the client key via cnf.jkt, and the bearer path refuses them."
+      "headline": "Nice summary.\nWrong database.",
+      "sub": "Microsoft's ThinkingBox-Bench scores agents on the final backend state — not on what the agent says it did.",
+      "icons": [{ "slug": "modelcontextprotocol", "label": "MCP", "color": "#3c3c3d" }]
     },
     {
       "type": "list",
-      "title": "The upgrade costs you",
+      "title": "507 tasks, five domains",
       "items": [
-        "oidcProvider is deleted. Your migration target is oauth-provider.",
-        "Accounts rekeyed to (issuer, accountId). Backfill before deploy.",
-        "MCP support moved out into a separate package.",
-        "Device and user codes now require unique indexes."
+        "Retail and e-commerce — 98",
+        "Travel and hospitality — 104",
+        "Auto insurance — 100",
+        "Neobank support — 104",
+        "Consulting IT/HR support — 101"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "modelcontextprotocol", "label": "MCP", "color": "#3c3c3d" },
+      "title": "Tools are MCP servers",
+      "sub": "Every task runs in its own isolated, stateful tool session behind a session proxy, driven by a simulated user."
+    },
+    {
+      "type": "list",
+      "title": "How a task passes",
+      "items": [
+        "Final backend state must match a golden state.",
+        "Deterministic hash checks. No partial credit.",
+        "Side effects count, not just the reply.",
+        "30 tasks add yes/no rubrics, judged by an LLM."
       ]
     },
     {
       "type": "cta",
-      "headline": "Enterprise ready.\nMIT licensed.",
-      "keyword": "AUTH",
-      "sub": "and I'll send the 1.7 migration notes"
+      "headline": "Grade the state.\nNot the transcript.",
+      "keyword": "AGENT",
+      "sub": "and I'll send the ThinkingBox-Bench run notes"
     }
   ]
 }
