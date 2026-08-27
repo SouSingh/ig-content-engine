@@ -1,60 +1,48 @@
 {
-  "slug": "thinkingbox-bench-grades-the-database",
-  "title": "Microsoft's Agent Benchmark Grades the Database, Not the Transcript",
-  "caption": "I've been shipping agents off the strength of a transcript that reads well.\n\nMicrosoft's ThinkingBox-Bench doesn't care what the agent says it did. 507 tasks across retail, travel, auto insurance, neobank and IT support — and a task passes only if the final backend state matches a golden state on a hash check. Side effects count. No partial credit.\n\nMy demo agent would fail most of these and still sound confident about it.\n\nHow do you test yours?",
+  "slug": "ollama-disabled-the-token-countdown",
+  "title": "Ollama Disabled Claude Code's Token Countdown",
+  "caption": "I'd have blamed the model for this one.\n\nClaude Code was putting a live \"tokens left\" countdown into the system message. Ollama's v0.33.0 notes say Ollama moved it to the front of the prompt and it broke the KV cache on every request. So they disabled it.\n\nPrompt caching only reuses a byte-identical prefix. Anything that ticks up there costs you everything behind it.\n\nWhat's at the top of yours?",
   "hashtags": [
+    "#ollama",
+    "#localllm",
+    "#promptcaching",
+    "#kvcache",
+    "#claudecode",
     "#aiagents",
-    "#mcp",
-    "#modelcontextprotocol",
-    "#agentreliability",
     "#llm",
-    "#benchmarks",
+    "#inference",
     "#devtools",
     "#opensource",
     "#indiehackers",
-    "#solofounder",
-    "#buildinpublic",
-    "#softwareengineering"
+    "#buildinpublic"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Nice summary.\nWrong database.",
-      "sub": "Microsoft's ThinkingBox-Bench scores agents on the final backend state — not on what the agent says it did.",
-      "icons": [{ "slug": "modelcontextprotocol", "label": "MCP", "color": "#3c3c3d" }]
-    },
-    {
-      "type": "list",
-      "title": "507 tasks, five domains",
-      "items": [
-        "Retail and e-commerce — 98",
-        "Travel and hospitality — 104",
-        "Auto insurance — 100",
-        "Neobank support — 104",
-        "Consulting IT/HR support — 101"
+      "headline": "Ollama disabled\nthe token counter",
+      "sub": "Claude Code's \"tokens left\" countdown landed at the front of the prompt and broke the KV cache on every request. Ollama v0.33.0, Aug 21.",
+      "icons": [
+        { "slug": "ollama", "label": "Ollama", "color": "#000000" },
+        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "modelcontextprotocol", "label": "MCP", "color": "#3c3c3d" },
-      "title": "Tools are MCP servers",
-      "sub": "Every task runs in its own isolated, stateful tool session behind a session proxy, driven by a simulated user."
+      "icon": { "slug": "claude", "label": "Claude", "color": "#D97757" },
+      "title": "Prefix or nothing",
+      "sub": "Cache hits need 100% identical prompt segments. A change to system invalidates system and every message behind it."
     },
     {
-      "type": "list",
-      "title": "How a task passes",
-      "items": [
-        "Final backend state must match a golden state.",
-        "Deterministic hash checks. No partial credit.",
-        "Side effects count, not just the reply.",
-        "30 tasks add yes/no rubrics, judged by an LLM."
-      ]
+      "type": "cover",
+      "headline": "46,000 of 47,000\ntokens.\nReprocessed.",
+      "sub": "Same release: a resumed prefill logged restore points it couldn't cover. On recurrent-layer models, a near-perfect match started from zero.",
+      "icons": [{ "slug": "ollama", "label": "Ollama v0.33.0", "color": "#000000" }]
     },
     {
       "type": "cta",
-      "headline": "Grade the state.\nNot the transcript.",
-      "keyword": "AGENT",
-      "sub": "and I'll send the ThinkingBox-Bench run notes"
+      "headline": "Check what moves\nat the top",
+      "keyword": "CACHE",
+      "sub": "and I'll send the Ollama v0.33.0 cache notes"
     }
   ]
 }
