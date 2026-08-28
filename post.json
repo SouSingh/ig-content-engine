@@ -1,48 +1,60 @@
 {
-  "slug": "ollama-disabled-the-token-countdown",
-  "title": "Ollama Disabled Claude Code's Token Countdown",
-  "caption": "I'd have blamed the model for this one.\n\nClaude Code was putting a live \"tokens left\" countdown into the system message. Ollama's v0.33.0 notes say Ollama moved it to the front of the prompt and it broke the KV cache on every request. So they disabled it.\n\nPrompt caching only reuses a byte-identical prefix. Anything that ticks up there costs you everything behind it.\n\nWhat's at the top of yours?",
+  "slug": "a-dot-broke-claude-on-cloudflare",
+  "title": "A Dot Broke Claude on Cloudflare's AI Gateway",
+  "caption": "I used to think swapping models was a one-line change.\n\nFive opencode releases between Aug 20 and Aug 25 are almost all provider plumbing. Cloudflare's AI Gateway forwarding claude-haiku-4.5 when Anthropic wants claude-haiku-4-5. Retries for network_error and, separately, network-error. textVerbosity going to providers that never accepted it.\n\n\"OpenAI-compatible\" is a shape, not a contract. The base_url swap is the easy 10%.\n\nWhich provider broke yours?",
   "hashtags": [
-    "#ollama",
-    "#localllm",
-    "#promptcaching",
-    "#kvcache",
-    "#claudecode",
+    "#opencode",
     "#aiagents",
     "#llm",
-    "#inference",
+    "#anthropic",
+    "#cloudflare",
+    "#openai",
     "#devtools",
-    "#opensource",
+    "#apidesign",
     "#indiehackers",
-    "#buildinpublic"
+    "#buildinpublic",
+    "#softwareengineering",
+    "#vibecoding"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Ollama disabled\nthe token counter",
-      "sub": "Claude Code's \"tokens left\" countdown landed at the front of the prompt and broke the KV cache on every request. Ollama v0.33.0, Aug 21.",
+      "headline": "A dot broke Claude\non Cloudflare",
+      "sub": "opencode v1.18.23, Aug 25: the AI Gateway forwarded model IDs like claude-haiku-4.5. Anthropic only accepts the dashed slug, claude-haiku-4-5.",
       "icons": [
-        { "slug": "ollama", "label": "Ollama", "color": "#000000" },
-        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
+        { "slug": "cloudflare", "label": "Cloudflare", "color": "#F6821F" },
+        { "slug": "anthropic", "label": "Anthropic", "color": "#CC785C" }
       ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude", "color": "#D97757" },
-      "title": "Prefix or nothing",
-      "sub": "Cache hits need 100% identical prompt segments. A change to system invalidates system and every message behind it."
+      "type": "grid",
+      "title": "Five releases, six days",
+      "icons": [
+        { "slug": "anthropic", "label": "Anthropic", "color": "#CC785C" },
+        { "slug": "googlegemini", "label": "Gemini", "color": "#4285F4" },
+        { "slug": "qwen", "label": "Qwen", "color": "#615CED" }
+      ]
     },
     {
       "type": "cover",
-      "headline": "46,000 of 47,000\ntokens.\nReprocessed.",
-      "sub": "Same release: a resumed prefill logged restore points it couldn't cover. On recurrent-layer models, a near-perfect match started from zero.",
-      "icons": [{ "slug": "ollama", "label": "Ollama v0.33.0", "color": "#000000" }]
+      "headline": "Two spellings,\none error",
+      "sub": "v1.18.20 added retries for finish_reason: network_error. The same release added network-error. Same failure, different punctuation."
+    },
+    {
+      "type": "list",
+      "title": "What compatible means",
+      "items": [
+        "textVerbosity was reaching OpenAI-compatible providers that do not support it. Stopped in v1.18.22.",
+        "An unknown finish_reason ended the response early. v1.18.21 keeps going instead.",
+        "Built-in Qwen sampling defaults sent settings the model rejects. Removed in v1.18.19.",
+        "Vertex AI eu and us Gemini traffic rerouted through REP endpoints. v1.18.21."
+      ]
     },
     {
       "type": "cta",
-      "headline": "Check what moves\nat the top",
-      "keyword": "CACHE",
-      "sub": "and I'll send the Ollama v0.33.0 cache notes"
+      "headline": "Compatible isn't\ncompatible",
+      "keyword": "COMPAT",
+      "sub": "and I'll send the five release notes"
     }
   ]
 }
