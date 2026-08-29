@@ -1,60 +1,65 @@
 {
-  "slug": "a-dot-broke-claude-on-cloudflare",
-  "title": "A Dot Broke Claude on Cloudflare's AI Gateway",
-  "caption": "I used to think swapping models was a one-line change.\n\nFive opencode releases between Aug 20 and Aug 25 are almost all provider plumbing. Cloudflare's AI Gateway forwarding claude-haiku-4.5 when Anthropic wants claude-haiku-4-5. Retries for network_error and, separately, network-error. textVerbosity going to providers that never accepted it.\n\n\"OpenAI-compatible\" is a shape, not a contract. The base_url swap is the easy 10%.\n\nWhich provider broke yours?",
+  "slug": "next-image-rce-came-from-libheif",
+  "title": "The Next.js 9.5 RCE Came From libheif",
+  "caption": "I have never once looked at what next/image pulls in.\n\nIt pulls in sharp. sharp pulls in libheif. On Aug 25 a crafted AVIF through libheif became an unauthenticated 9.5 RCE in Next.js, and every release back to 10.0.0 was in range.\n\nThe fix is 15.5.24 or 16.3.3. The uncomfortable part is that no amount of reading my own code would have found it.\n\nRead your lockfile lately?",
   "hashtags": [
-    "#opencode",
-    "#aiagents",
-    "#llm",
-    "#anthropic",
-    "#cloudflare",
-    "#openai",
-    "#devtools",
-    "#apidesign",
+    "#nextjs",
+    "#vercel",
+    "#webdev",
+    "#javascript",
+    "#typescript",
+    "#cybersecurity",
+    "#appsec",
+    "#supplychainsecurity",
+    "#cve",
     "#indiehackers",
     "#buildinpublic",
-    "#softwareengineering",
-    "#vibecoding"
+    "#devtools"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "A dot broke Claude\non Cloudflare",
-      "sub": "opencode v1.18.23, Aug 25: the AI Gateway forwarded model IDs like claude-haiku-4.5. Anthropic only accepts the dashed slug, claude-haiku-4-5.",
+      "headline": "Your image tag\nscored 9.5",
+      "sub": "GHSA-2xp9-vwfh-vxw4, Aug 25: a crafted AVIF through the Next.js image optimization API is unauthenticated remote code execution.",
       "icons": [
-        { "slug": "cloudflare", "label": "Cloudflare", "color": "#F6821F" },
-        { "slug": "anthropic", "label": "Anthropic", "color": "#CC785C" }
+        { "slug": "nextdotjs", "label": "Next.js", "color": "#171717" }
       ]
     },
     {
-      "type": "grid",
-      "title": "Five releases, six days",
-      "icons": [
-        { "slug": "anthropic", "label": "Anthropic", "color": "#CC785C" },
-        { "slug": "googlegemini", "label": "Gemini", "color": "#4285F4" },
-        { "slug": "qwen", "label": "Qwen", "color": "#615CED" }
+      "type": "feature",
+      "icon": { "slug": "sharp", "label": "sharp" },
+      "title": "It isn't Next.js",
+      "sub": "next/image hands AVIF decoding to sharp. sharp hands it to libheif. The bug is libheif's, rated 9.8 on its own advisory."
+    },
+    {
+      "type": "cover",
+      "headline": "Two bytes into\na one-byte slot",
+      "sub": "libheif accepts a duplicate alpha plane, allocates 8-bit storage, then casts to uint16_t* and writes 2 bytes per sample. Heap overflow, attacker-controlled. Fixed in 1.23.2.",
+      "arrow": true
+    },
+    {
+      "type": "list",
+      "title": "Check your lockfile",
+      "items": [
+        "Affected: next >= 10.0.0 < 15.5.24, and every 16.x below 16.3.3.",
+        "Patched: 15.5.24 and 16.3.3, both shipped Aug 25.",
+        "Second critical the same day: CVE-2026-75604, path traversal to RCE on Windows-hosted Next.js 13.4 through 16.3.2.",
+        "That one lists no known workaround. Upgrading is the fix."
       ]
     },
     {
       "type": "cover",
-      "headline": "Two spellings,\none error",
-      "sub": "v1.18.20 added retries for finish_reason: network_error. The same release added network-error. Same failure, different punctuation."
-    },
-    {
-      "type": "list",
-      "title": "What compatible means",
-      "items": [
-        "textVerbosity was reaching OpenAI-compatible providers that do not support it. Stopped in v1.18.22.",
-        "An unknown finish_reason ended the response early. v1.18.21 keeps going instead.",
-        "Built-in Qwen sampling defaults sent settings the model rejects. Removed in v1.18.19.",
-        "Vertex AI eu and us Gemini traffic rerouted through REP endpoints. v1.18.21."
+      "headline": "So they turned\nAVIF off",
+      "sub": "From the advisory: \"Until a fix has propagated, optimization of AVIF files is disabled.\" A whole image format switched off to close one dependency's hole.",
+      "icons": [
+        { "slug": "vercel", "label": "Vercel", "color": "#171717" }
       ]
     },
     {
       "type": "cta",
-      "headline": "Compatible isn't\ncompatible",
-      "keyword": "COMPAT",
-      "sub": "and I'll send the five release notes"
+      "headline": "Three layers down\nfrom your code",
+      "keyword": "AVIF",
+      "sub": "and I'll send both advisories"
     }
   ]
 }
