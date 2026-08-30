@@ -1,65 +1,47 @@
 {
-  "slug": "next-image-rce-came-from-libheif",
-  "title": "The Next.js 9.5 RCE Came From libheif",
-  "caption": "I have never once looked at what next/image pulls in.\n\nIt pulls in sharp. sharp pulls in libheif. On Aug 25 a crafted AVIF through libheif became an unauthenticated 9.5 RCE in Next.js, and every release back to 10.0.0 was in range.\n\nThe fix is 15.5.24 or 16.3.3. The uncomfortable part is that no amount of reading my own code would have found it.\n\nRead your lockfile lately?",
+  "slug": "pnpm-12-shipped-npm-installs-11",
+  "title": "pnpm 12 Shipped. npm Still Installs 11.",
+  "caption": "I ran pnpm --version expecting 12 and got 11.24.0.\n\npnpm 12 has been out since Aug 26, and 12.1.0 landed Aug 29. But on the registry the latest tag still resolves to 11.24.0, so a plain global install quietly leaves you on the old major.\n\nNot a bug. They keep a latest-N tag for every major going back to v1, and latest moves on their schedule, not the release's. Still caught me out.\n\nWhat does your pnpm --version say?",
   "hashtags": [
-    "#nextjs",
-    "#vercel",
-    "#webdev",
+    "#pnpm",
+    "#npm",
+    "#nodejs",
     "#javascript",
-    "#typescript",
-    "#cybersecurity",
-    "#appsec",
-    "#supplychainsecurity",
-    "#cve",
-    "#indiehackers",
+    "#webdev",
+    "#devtools",
     "#buildinpublic",
-    "#devtools"
+    "#indiehackers",
+    "#solofounder",
+    "#typescript",
+    "#softwareengineering",
+    "#coding"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Your image tag\nscored 9.5",
-      "sub": "GHSA-2xp9-vwfh-vxw4, Aug 25: a crafted AVIF through the Next.js image optimization API is unauthenticated remote code execution.",
+      "headline": "pnpm 12 shipped.\nnpm installs 11.",
+      "sub": "12.0.0 landed Aug 26. The latest tag still points at 11.24.0.",
       "icons": [
-        { "slug": "nextdotjs", "label": "Next.js", "color": "#171717" }
+        { "slug": "pnpm", "label": "pnpm 12.1.0", "color": "#F9AD00" },
+        { "slug": "npm", "label": "gives you 11.24.0", "color": "#CB3837" }
       ]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "sharp", "label": "sharp" },
-      "title": "It isn't Next.js",
-      "sub": "next/image hands AVIF decoding to sharp. sharp hands it to libheif. The bug is libheif's, rated 9.8 on its own advisory."
-    },
-    {
-      "type": "cover",
-      "headline": "Two bytes into\na one-byte slot",
-      "sub": "libheif accepts a duplicate alpha plane, allocates 8-bit storage, then casts to uint16_t* and writes 2 bytes per sample. Heap overflow, attacker-controlled. Fixed in 1.23.2.",
-      "arrow": true
     },
     {
       "type": "list",
-      "title": "Check your lockfile",
+      "title": "latest is the oldest",
       "items": [
-        "Affected: next >= 10.0.0 < 15.5.24, and every 16.x below 16.3.3.",
-        "Patched: 15.5.24 and 16.3.3, both shipped Aug 25.",
-        "Second critical the same day: CVE-2026-75604, path traversal to RCE on Windows-hosted Next.js 13.4 through 16.3.2.",
-        "That one lists no known workaround. Upgrading is the fix."
+        "latest = 11.24.0, published Aug 24",
+        "next-12 = 12.1.0, published Aug 29",
+        "next-11 = 11.25.0, published Aug 29",
+        "Deliberate: pnpm tags every major"
       ]
     },
     {
       "type": "cover",
-      "headline": "So they turned\nAVIF off",
-      "sub": "From the advisory: \"Until a fix has propagated, optimization of AVIF files is disabled.\" A whole image format switched off to close one dependency's hole.",
-      "icons": [
-        { "slug": "vercel", "label": "Vercel", "color": "#171717" }
-      ]
-    },
-    {
-      "type": "cta",
-      "headline": "Three layers down\nfrom your code",
-      "keyword": "AVIF",
-      "sub": "and I'll send both advisories"
+      "headline": "Ask for 12\nby name.",
+      "sub": "npm i -g pnpm@12 installs 12.1.0. Drop the tag and you stay on 11.24.0.",
+      "icons": [{ "slug": "pnpm", "label": "pnpm@12", "color": "#F9AD00" }],
+      "arrow": false
     }
   ]
 }
