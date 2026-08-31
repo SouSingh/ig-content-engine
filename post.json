@@ -1,47 +1,57 @@
 {
-  "slug": "pnpm-12-shipped-npm-installs-11",
-  "title": "pnpm 12 Shipped. npm Still Installs 11.",
-  "caption": "I ran pnpm --version expecting 12 and got 11.24.0.\n\npnpm 12 has been out since Aug 26, and 12.1.0 landed Aug 29. But on the registry the latest tag still resolves to 11.24.0, so a plain global install quietly leaves you on the old major.\n\nNot a bug. They keep a latest-N tag for every major going back to v1, and latest moves on their schedule, not the release's. Still caught me out.\n\nWhat does your pnpm --version say?",
+  "slug": "claude-restricted-removes-bash",
+  "title": "claude --restricted Removes Bash",
+  "caption": "My allow rules were quietly doing more than I thought.\n\n--restricted shipped in Claude Code v2.1.248 on Aug 28. No Bash, no code execution, no WebFetch, file tools pinned to the working directories. And it loads only managed settings plus --settings — your user, project and local files are ignored.\n\nThat last part is the whole point, and it's the part I'd have skipped if I'd built it. An allowlist you can edit from inside the repo isn't an allowlist.\n\nWould you run it on a client repo?",
   "hashtags": [
-    "#pnpm",
-    "#npm",
-    "#nodejs",
-    "#javascript",
-    "#webdev",
+    "#claudecode",
+    "#anthropic",
+    "#aiagents",
     "#devtools",
+    "#cli",
+    "#appsec",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#typescript",
+    "#coding",
     "#softwareengineering",
-    "#coding"
+    "#developertools"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "pnpm 12 shipped.\nnpm installs 11.",
-      "sub": "12.0.0 landed Aug 26. The latest tag still points at 11.24.0.",
+      "headline": "--restricted\nremoves Bash.",
+      "sub": "v2.1.248, Aug 28. The built-in tools that run commands or code leave the session. So does WebFetch.",
       "icons": [
-        { "slug": "pnpm", "label": "pnpm 12.1.0", "color": "#F9AD00" },
-        { "slug": "npm", "label": "gives you 11.24.0", "color": "#CB3837" }
+        { "slug": "claude", "label": "v2.1.248", "color": "#D97757" },
+        { "slug": "gnubash", "label": "removed" }
       ]
     },
     {
       "type": "list",
-      "title": "latest is the oldest",
+      "title": "what the flag strips",
       "items": [
-        "latest = 11.24.0, published Aug 24",
-        "next-12 = 12.1.0, published Aug 29",
-        "next-11 = 11.25.0, published Aug 29",
-        "Deliberate: pnpm tags every major"
+        "Tools that run commands or code, unless you name them in --tools",
+        "WebFetch, by the same rule. The default preset doesn't count",
+        "Read, Write and Edit confined to the session's working directories",
+        "It refuses bypassPermissions, and refuses to create cloud sessions"
       ]
     },
     {
       "type": "cover",
-      "headline": "Ask for 12\nby name.",
-      "sub": "npm i -g pnpm@12 installs 12.1.0. Drop the tag and you stay on 11.24.0.",
-      "icons": [{ "slug": "pnpm", "label": "pnpm@12", "color": "#F9AD00" }],
-      "arrow": false
+      "headline": "Your settings\nstop loading.",
+      "sub": "Only managed settings and --settings apply. Your user, project and local files are ignored."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "claude", "color": "#D97757" },
+      "title": "Built for shared machines",
+      "sub": "The case in the docs: an eval harness that must not run commands or read local settings."
+    },
+    {
+      "type": "cta",
+      "headline": "Running code\nyou didn't write?",
+      "keyword": "RESTRICT",
+      "sub": "and I'll send the flag reference"
     }
   ]
 }
