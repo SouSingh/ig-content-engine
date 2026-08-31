@@ -1,7 +1,7 @@
 {
   "slug": "claude-restricted-removes-bash",
   "title": "claude --restricted Removes Bash",
-  "caption": "My allow rules were quietly doing more than I thought.\n\n--restricted shipped in Claude Code v2.1.248 on Aug 28. No Bash, no code execution, no WebFetch, file tools pinned to the working directories. And it loads only managed settings plus --settings — your user, project and local files are ignored.\n\nThat last part is the whole point, and it's the part I'd have skipped if I'd built it. An allowlist you can edit from inside the repo isn't an allowlist.\n\nWould you run it on a client repo?",
+  "caption": "My allow rules were quietly doing more than I thought.\n\n--restricted shipped in Claude Code v2.1.248 on Aug 27. No Bash, no code execution, no WebFetch, file tools pinned to the working directories. And it loads only managed settings plus --settings — your user, project and local files are ignored.\n\nThat last part is the whole point, and it's the part I'd have skipped if I'd built it. An allowlist you can edit from inside the repo isn't an allowlist.\n\nWould you run it on a client repo?",
   "hashtags": [
     "#claudecode",
     "#anthropic",
@@ -20,7 +20,7 @@
     {
       "type": "cover",
       "headline": "--restricted\nremoves Bash.",
-      "sub": "v2.1.248, Aug 28. The built-in tools that run commands or code leave the session. So does WebFetch.",
+      "sub": "v2.1.248, Aug 27. The built-in tools that run commands or code leave the session. So does WebFetch.",
       "icons": [
         { "slug": "claude", "label": "v2.1.248", "color": "#D97757" },
         { "slug": "gnubash", "label": "removed" }
