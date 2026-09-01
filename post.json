@@ -1,56 +1,79 @@
 {
-  "slug": "claude-restricted-removes-bash",
-  "title": "claude --restricted Removes Bash",
-  "caption": "My allow rules were quietly doing more than I thought.\n\n--restricted shipped in Claude Code v2.1.248 on Aug 27. No Bash, no code execution, no WebFetch, file tools pinned to the working directories. And it loads only managed settings plus --settings — your user, project and local files are ignored.\n\nThat last part is the whole point, and it's the part I'd have skipped if I'd built it. An allowlist you can edit from inside the repo isn't an allowlist.\n\nWould you run it on a client repo?",
+  "slug": "node-24-lts-drops-its-own-permissions",
+  "title": "Node 24 LTS Drops Its Own Permissions",
+  "caption": "Every npm package you install can read /etc/passwd. That's just the default.\n\nNode 24.20.0 LTS landed Aug 26 with --permission-audit. It runs every permission check and denies nothing, so you can watch what your deps actually touch before you lock anything down.\n\nThe bit I like is drop(). Read your config at boot, then revoke fs.read before the rest of your app loads. It's irreversible on purpose.\n\nWhen did you last audit a dependency?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
-    "#aiagents",
+    "#nodejs",
+    "#npm",
+    "#javascript",
     "#devtools",
-    "#cli",
     "#appsec",
-    "#buildinpublic",
+    "#supplychain",
+    "#backend",
     "#indiehackers",
     "#solofounder",
-    "#coding",
+    "#buildinpublic",
     "#softwareengineering",
-    "#developertools"
+    "#webdev"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "--restricted\nremoves Bash.",
-      "sub": "v2.1.248, Aug 27. The built-in tools that run commands or code leave the session. So does WebFetch.",
+      "headline": "Your deps can\nread /etc/passwd.",
+      "sub": "Node runs every dependency with your full user permissions. 24.20.0 LTS, Aug 26, ships the way out.",
       "icons": [
-        { "slug": "claude", "label": "v2.1.248", "color": "#D97757" },
-        { "slug": "gnubash", "label": "removed" }
+        { "slug": "nodedotjs", "label": "24.20.0 LTS", "color": "#417E38" },
+        { "slug": "npm", "label": "your deps", "color": "#CB3837" }
       ]
     },
     {
+      "type": "feature",
+      "icon": { "slug": "nodedotjs", "label": "--permission-audit", "color": "#417E38" },
+      "title": "Audit denies nothing",
+      "sub": "Every permission check still runs. Nothing throws. Violations publish to diagnostics_channel instead."
+    },
+    {
       "type": "list",
-      "title": "what the flag strips",
+      "title": "node:permission-model:*",
       "items": [
-        "Tools that run commands or code, unless you name them in --tools",
-        "WebFetch, by the same rule. The default preset doesn't count",
-        "Read, Write and Edit confined to the session's working directories",
-        "It refuses bypassPermissions, and refuses to create cloud sessions"
+        "fs — every file system read and write",
+        "net — outbound network access",
+        "child — spawned processes",
+        "worker — worker threads",
+        "inspector — the debug port",
+        "wasi, addon, ffi — the native code paths"
       ]
     },
     {
       "type": "cover",
-      "headline": "Your settings\nstop loading.",
-      "sub": "Only managed settings and --settings apply. Your user, project and local files are ignored."
+      "headline": "Then flip it\nto enforce.",
+      "sub": "node --permission --allow-fs-read=./data app.js\n\nEverything you didn't name throws ERR_ACCESS_DENIED.",
+      "icons": [
+        { "slug": "nodedotjs", "label": "--permission", "color": "#417E38" }
+      ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "claude", "color": "#D97757" },
-      "title": "Built for shared machines",
-      "sub": "The case in the docs: an eval harness that must not run commands or read local settings."
+      "type": "cover",
+      "headline": "Boot, then\nrevoke.",
+      "sub": "Read your config while you still can, then drop it before the rest of your app loads.",
+      "icons": [
+        { "slug": "nodedotjs", "label": "permission.drop", "color": "#417E38" }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "read this part twice",
+      "items": [
+        "drop() is irreversible. There is no way back",
+        "Open fds, sockets, children and workers stay open",
+        "Only future access checks are affected",
+        "Granted with a wildcard? You can only drop the whole scope"
+      ]
     },
     {
       "type": "cta",
-      "headline": "Running code\nyou didn't write?",
-      "keyword": "RESTRICT",
+      "headline": "Know what your\ndeps touch?",
+      "keyword": "AUDIT",
       "sub": "and I'll send the flag reference"
     }
   ]
