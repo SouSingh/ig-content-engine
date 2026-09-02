@@ -1,80 +1,50 @@
 {
-  "slug": "node-24-lts-drops-its-own-permissions",
-  "title": "Node 24 LTS Drops Its Own Permissions",
-  "caption": "Every npm package you install can read /etc/passwd. That's just the default.\n\nNode 24.20.0 LTS landed Aug 26 with --permission-audit. It runs every permission check and denies nothing, so you can watch what your deps actually touch before you lock anything down.\n\nThe bit I like is drop(). Read your config at boot, then revoke fs.read before the rest of your app loads. It's irreversible on purpose.\n\nWhen did you last audit a dependency?",
+  "slug": "fable-5-1-cheap-reads-costly-rewrites",
+  "title": "Fable 5.1: $0.25 Reads, $50 Rewrites",
+  "caption": "Fable 5.1 made my cache reads 4x cheaper and my diffs a lot longer.\n\nSaw the $0.25 and switched everything over before reading the behavior notes. Then it started rewriting whole files for one-line changes.\n\nThe discount is real. It's just sitting in a different column than the regression.\n\nYou on 5.1 yet?",
   "hashtags": [
-    "#nodejs",
-    "#npm",
-    "#javascript",
-    "#devtools",
-    "#appsec",
-    "#supplychain",
-    "#backend",
+    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
-    "#softwareengineering",
-    "#webdev"
+    "#aitools",
+    "#claudeai",
+    "#anthropic",
+    "#devtools",
+    "#aiagents",
+    "#promptengineering",
+    "#saas",
+    "#coding",
+    "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Your deps can\nread /etc/passwd.",
-      "sub": "Node runs every dependency with your full user permissions. 24.20.0 LTS, Aug 26, ships the way out.",
+      "headline": "$0.25 Reads,\n$50 Rewrites",
+      "sub": "Claude Fable 5.1 cut cache reads 4×. Then it started rewriting whole files at output price.",
       "icons": [
-        { "slug": "nodedotjs", "label": "24.20.0 LTS", "color": "#417E38" },
-        { "slug": "npm", "label": "your deps", "color": "#CB3837" }
+        { "slug": "claude", "label": "Claude Fable 5.1", "color": "#CC785C" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "nodedotjs", "label": "--permission-audit", "color": "#417E38" },
-      "title": "Audit denies nothing",
-      "sub": "Every permission check still runs. Nothing throws. Violations publish to diagnostics_channel instead."
+      "icon": { "slug": "claude", "color": "#CC785C" },
+      "title": "Cache Reads: $0.25",
+      "sub": "Down from $1 on Fable 5. Input, output and cache writes all unchanged."
     },
     {
       "type": "list",
-      "title": "node:permission-model:*",
+      "title": "Then It Costs You Back",
       "items": [
-        "fs — every file system read and write",
-        "net — outbound network access",
-        "child — spawned processes",
-        "worker — worker threads",
-        "inspector — the debug port",
-        "wasi, addon, ffi — the native code paths"
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "Then flip it\nto enforce.",
-      "sub": "node --permission --allow-fs-read=./data app.js\n\nEverything you didn't name throws ERR_ACCESS_DENIED.",
-      "icons": [
-        { "slug": "nodedotjs", "label": "--permission", "color": "#417E38" }
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "Boot, then\nrevoke.",
-      "sub": "Read your config while you still can, then drop it before the rest of your app loads.",
-      "icons": [
-        { "slug": "nodedotjs", "label": "permission.drop", "color": "#417E38" }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "read this part twice",
-      "items": [
-        "drop() is irreversible. There is no way back",
-        "Open fds, sockets, children and workers stay open",
-        "Only future access checks are affected",
-        "Granted with a wildcard? You can only drop the whole scope"
+        "One tool call per turn where Fable 5 batched several. More round trips.",
+        "Whole-file rewrites for small edits, billed at $50 per million output tokens.",
+        "At low effort it answers from memory instead of searching."
       ]
     },
     {
       "type": "cta",
-      "headline": "Know what your\ndeps touch?",
-      "keyword": "AUDIT",
-      "sub": "and I'll send the flag reference"
+      "headline": "Each Has A\nPrompt Fix",
+      "keyword": "FABLE",
+      "sub": "and I'll send the exact lines"
     }
   ]
 }
