@@ -1,7 +1,7 @@
 {
-  "slug": "fable-5-1-cheap-reads-costly-rewrites",
-  "title": "Fable 5.1: $0.25 Reads, $50 Rewrites",
-  "caption": "Fable 5.1 made my cache reads 4x cheaper and my diffs a lot longer.\n\nSaw the $0.25 and switched everything over before reading the behavior notes. Then it started rewriting whole files for one-line changes.\n\nThe discount is real. It's just sitting in a different column than the regression.\n\nYou on 5.1 yet?",
+  "slug": "concurrent-sessions-overwrote-claude-json",
+  "title": "Concurrent Claude Code Sessions Overwrote ~/.claude.json",
+  "caption": "I've been running four Claude Code sessions at once and blaming myself for the settings that kept resetting.\n\nTurns out concurrent sessions were silently reverting each other's ~/.claude.json. Workspace trust, MCP state, project state. Patched Sept 2 in 2.1.259.\n\nI assumed parallel was free because nothing ever errored. It just quietly undid things.\n\nHow many sessions do you run?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
@@ -11,40 +11,49 @@
     "#anthropic",
     "#devtools",
     "#aiagents",
-    "#promptengineering",
-    "#saas",
+    "#mcp",
     "#coding",
+    "#saas",
     "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "$0.25 Reads,\n$50 Rewrites",
-      "sub": "Claude Fable 5.1 cut cache reads 4×. Then it started rewriting whole files at output price.",
+      "headline": "Two Sessions,\nOne Config File",
+      "sub": "Claude Code sessions running side by side were silently reverting each other's settings. Patched Sept 2.",
       "icons": [
-        { "slug": "claude", "label": "Claude Fable 5.1", "color": "#CC785C" }
+        { "slug": "claude", "label": "Claude Code 2.1.259", "color": "#D97757" }
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "color": "#CC785C" },
-      "title": "Cache Reads: $0.25",
-      "sub": "Down from $1 on Fable 5. Input, output and cache writes all unchanged."
+      "icon": { "slug": "claude", "color": "#D97757" },
+      "title": "Trust Reset, State Lost",
+      "sub": "Concurrent sessions overwrote ~/.claude.json. Workspace trust reset and MCP + project state went missing."
     },
     {
       "type": "list",
-      "title": "Then It Costs You Back",
+      "title": "Four More Races",
       "items": [
-        "One tool call per turn where Fable 5 batched several. More round trips.",
-        "Whole-file rewrites for small edits, billed at $50 per million output tokens.",
-        "At low effort it answers from memory instead of searching."
+        "Background sessions started with no plugin skills, and stayed that way, when the marketplace refreshed.",
+        "Background sessions kept running an older binary, piling up across auto-updates instead of retiring.",
+        "Stopping a background subagent left its monitors running.",
+        "Resuming a workflow while its stopped run exited ran duplicate copies of its agents."
+      ]
+    },
+    {
+      "type": "cover",
+      "headline": "Parallel Is\nNot Free",
+      "sub": "Fan out six sessions and they still share one config file, one binary, one plugin cache.",
+      "icons": [
+        { "slug": "claude", "label": "2.1.257 to 2.1.259", "color": "#D97757" }
       ]
     },
     {
       "type": "cta",
-      "headline": "Each Has A\nPrompt Fix",
-      "keyword": "FABLE",
-      "sub": "and I'll send the exact lines"
+      "headline": "Check Your\nVersion",
+      "keyword": "PARALLEL",
+      "sub": "and I'll send the release notes"
     }
   ]
 }
