@@ -1,59 +1,29 @@
 {
-  "slug": "concurrent-sessions-overwrote-claude-json",
-  "title": "Concurrent Claude Code Sessions Overwrote ~/.claude.json",
-  "caption": "I've been running four Claude Code sessions at once and blaming myself for the settings that kept resetting.\n\nTurns out concurrent sessions were silently reverting each other's ~/.claude.json. Workspace trust, MCP state, project state. Patched Sept 2 in 2.1.259.\n\nI assumed parallel was free because nothing ever errored. It just quietly undid things.\n\nHow many sessions do you run?",
+  "slug": "rewind-said-done-restored-nothing",
+  "title": "Claude Code's /rewind Reported Success and Restored Nothing",
+  "caption": "I hit /rewind, saw it say done, and kept building on a rollback that never happened.\n\nClaude Code 2.1.260 fixed /rewind and --rewind-files reporting success when the checkpoint backup files were missing — nothing was actually restored. Shipped Sept 3.\n\nHonest admission: I trusted the confirmation line instead of checking the diff. Not doing that again.\n\nDo you check diffs?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#aitools",
-    "#claudeai",
-    "#anthropic",
     "#devtools",
+    "#aitools",
+    "#claudecode",
+    "#anthropic",
     "#aiagents",
-    "#mcp",
     "#coding",
-    "#saas",
-    "#shipfast"
+    "#shipfast",
+    "#softwaredevelopment"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Two Sessions,\nOne Config File",
-      "sub": "Claude Code sessions running side by side were silently reverting each other's settings. Patched Sept 2.",
+      "headline": "Rewind Said Done.\nNothing Restored.",
+      "sub": "Claude Code's /rewind reported success when its checkpoint backup files were missing. Nothing was actually restored. Fixed Sept 3 in 2.1.260.",
+      "arrow": false,
       "icons": [
-        { "slug": "claude", "label": "Claude Code 2.1.259", "color": "#D97757" }
+        { "slug": "claude", "label": "Claude Code 2.1.260", "color": "#CC785C" }
       ]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "claude", "color": "#D97757" },
-      "title": "Trust Reset, State Lost",
-      "sub": "Concurrent sessions overwrote ~/.claude.json. Workspace trust reset and MCP + project state went missing."
-    },
-    {
-      "type": "list",
-      "title": "Four More Races",
-      "items": [
-        "Background sessions started with no plugin skills, and stayed that way, when the marketplace refreshed.",
-        "Background sessions kept running an older binary, piling up across auto-updates instead of retiring.",
-        "Stopping a background subagent left its monitors running.",
-        "Resuming a workflow while its stopped run exited ran duplicate copies of its agents."
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "Parallel Is\nNot Free",
-      "sub": "Fan out six sessions and they still share one config file, one binary, one plugin cache.",
-      "icons": [
-        { "slug": "claude", "label": "2.1.257 to 2.1.259", "color": "#D97757" }
-      ]
-    },
-    {
-      "type": "cta",
-      "headline": "Check Your\nVersion",
-      "keyword": "PARALLEL",
-      "sub": "and I'll send the release notes"
     }
   ]
 }
