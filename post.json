@@ -1,29 +1,73 @@
 {
-  "slug": "rewind-said-done-restored-nothing",
-  "title": "Claude Code's /rewind Reported Success and Restored Nothing",
-  "caption": "I hit /rewind, saw it say done, and kept building on a rollback that never happened.\n\nClaude Code 2.1.260 fixed /rewind and --rewind-files reporting success when the checkpoint backup files were missing — nothing was actually restored. Shipped Sept 3.\n\nHonest admission: I trusted the confirmation line instead of checking the diff. Not doing that again.\n\nDo you check diffs?",
+  "slug": "skills-listing-gets-one-percent",
+  "title": "Your Skills Get 1% of the Context Window",
+  "caption": "Half my skills never fired and I assumed I'd written them badly.\n\nClaude Code keeps a listing of every skill name and description in context, budgeted at 1% of the model's window. Overflow it and descriptions get dropped, least-invoked first — the skill still exists, it just can't be matched anymore.\n\n/skill-doctor shipped Sept 4 in 2.1.261 and names the ones going unused and what they cost you.\n\nHow many skills are you running?",
   "hashtags": [
-    "#buildinpublic",
-    "#indiehackers",
-    "#solofounder",
-    "#devtools",
-    "#aitools",
     "#claudecode",
     "#anthropic",
     "#aiagents",
+    "#devtools",
+    "#aitools",
+    "#contextengineering",
+    "#buildinpublic",
+    "#indiehackers",
+    "#solofounder",
     "#coding",
-    "#shipfast",
-    "#softwaredevelopment"
+    "#promptengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Rewind Said Done.\nNothing Restored.",
-      "sub": "Claude Code's /rewind reported success when its checkpoint backup files were missing. Nothing was actually restored. Fixed Sept 3 in 2.1.260.",
-      "arrow": false,
+      "headline": "Skills Take 1%\nOf Your Context",
+      "sub": "Claude Code keeps a listing of every skill name and description in context. Its budget scales at 1% of the model's context window.",
       "icons": [
-        { "slug": "claude", "label": "Claude Code 2.1.260", "color": "#CC785C" }
+        { "slug": "claude", "label": "skill listing", "color": "#D97757" }
       ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "least-invoked first", "color": "#D97757" },
+      "title": "Overflow Drops Descriptions",
+      "sub": "When the listing overflows, Claude Code drops descriptions starting with the skills you invoke least — stripping the keywords it needs to match your request."
+    },
+    {
+      "type": "cover",
+      "headline": "1,536 Characters\nPer Skill",
+      "sub": "description plus when_to_use is truncated at 1,536 characters in the listing, no matter how much budget you have. Put the key use case first.",
+      "icons": [
+        { "slug": "claude", "label": "hard cap", "color": "#D97757" }
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "/skill-doctor", "color": "#D97757" },
+      "title": "New: /skill-doctor",
+      "sub": "Shipped Sept 4 in Claude Code 2.1.261. Shows which loaded skills go unused and what they cost you in context, so you can prune them."
+    },
+    {
+      "type": "list",
+      "title": "Five Ways To Get It Back",
+      "items": [
+        "skillListingBudgetFraction: 0.02 doubles the budget to 2%",
+        "SLASH_COMMAND_TOOL_CHAR_BUDGET sets a fixed character count",
+        "skillOverrides \"name-only\" lists a skill without its description",
+        "/doctor estimates the listing's cost and its biggest contributors",
+        "--debug surfaces the overflow warning from the debug log"
+      ]
+    },
+    {
+      "type": "cover",
+      "headline": "Compaction Drops\nOlder Skills",
+      "sub": "After a summary, Claude Code re-attaches each invoked skill: first 5,000 tokens each, 25,000 combined. It fills from the newest, so older skills fall off entirely.",
+      "icons": [
+        { "slug": "claude", "label": "25,000 tokens", "color": "#D97757" }
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "What's In Your\nListing?",
+      "keyword": "SKILLS",
+      "sub": "and I'll send the settings reference"
     }
   ]
 }
