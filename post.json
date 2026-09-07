@@ -1,43 +1,68 @@
 {
-  "slug": "cline-hub-process-tens-of-gigabytes",
-  "title": "Cline's Hub Process Reached Tens of Gigabytes",
-  "caption": "Turns out \"just restart it\" was load-bearing advice.\n\nCline's background Hub process broadcast a full copy of the conversation transcript to every connected client on every session status update. On a long task that's megabytes per change, and the process could grow to tens of gigabytes.\n\n4.1.17 makes snapshots carry state only. Honest fix, and the kind of bug I'd never have found on my own.\n\nHow long is your longest session?",
+  "slug": "codex-built-voice-and-left-it-off",
+  "title": "Codex Built a Voice Host and Left It Off",
+  "caption": "I read release notes. I should read repos.\n\nopenai/codex went from zero to a real-time voice host in seven days: WebRTC, Opus over RTP, a bundled GStreamer runtime, 19 named voices already sitting in the protocol schema.\n\nNone of it is switched on. The README says so in its second sentence. Honestly I'd still rather type. But the plumbing always lands before the announcement.\n\nWould you talk to your terminal?",
   "hashtags": [
-    "#cline",
+    "#openai",
+    "#codex",
     "#aicodingagents",
-    "#vscode",
     "#devtools",
-    "#aitools",
+    "#webrtc",
+    "#rustlang",
+    "#opensource",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#coding",
-    "#softwareengineering",
     "#programming"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "One Chat.\nTens Of Gigabytes.",
-      "sub": "Cline's background Hub process ballooned in memory during long sessions.",
-      "icons": [
-        { "slug": "cline", "label": "Cline", "color": "#9663f1" }
+      "headline": "Codex Built Voice.\nIt’s Off.",
+      "sub": "A real-time voice host landed in openai/codex last week. Its README says it does not enable voice in the TUI."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "rust", "label": "codex-rs" },
+      "title": "Thirty Commits. Seven Days.",
+      "sub": "codex-rs/voice-host and third_party/voice went from nothing on Aug 30 to a working voice helper by Sept 6."
+    },
+    {
+      "type": "list",
+      "title": "What It Already Does",
+      "items": [
+        "WebRTC negotiation, ready only once the ordered oai-events channel opens",
+        "Microphone capture: Rubato resampling, Sonora echo, noise and gain processing",
+        "20 ms Opus frames, sent out over RTP",
+        "Incoming Opus RTP decoded through to speaker playback"
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "cline", "label": "Hub process", "color": "#9663f1" },
-      "title": "The Whole Transcript",
-      "sub": "Session status updates broadcast a full copy of the conversation to every connected client. Each change shipped megabytes."
+      "icon": { "slug": "gstreamer", "label": "GStreamer" },
+      "title": "Eleven Pinned Archives",
+      "sub": "third_party/voice pins GStreamer, glib, libffi, pcre2, zlib and opus by SHA-256. Codex bundles its own media runtime."
     },
     {
       "type": "cover",
-      "headline": "Fixed In\nCline 4.1.17",
-      "sub": "Snapshots now carry state only. If you run long sessions on the SDK bundle, upgrade — a restart only buys you the next long task.",
-      "icons": [
-        { "slug": "cline", "label": "4.1.17", "color": "#9663f1" }
-      ],
-      "arrow": false
+      "headline": "Nineteen Voices.\nAlready Named.",
+      "sub": "The app-server protocol schema lists alloy, cedar, marin, sage, verse and fourteen more, split into v1 and v2 sets."
+    },
+    {
+      "type": "list",
+      "title": "Still Not Wired",
+      "items": [
+        "Media and privacy controls: an integration stage",
+        "A full media binding layer: not built",
+        "Actual audio proof: not established",
+        "Voice in the TUI: the README says no"
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Want The Commit List?",
+      "keyword": "VOICE",
+      "sub": "and I’ll send all 30"
     }
   ]
 }
