@@ -1,16 +1,16 @@
 {
-  "slug": "deny-rules-silently-never-ran",
-  "title": "Claude Code's Deny Rules Silently Never Ran",
-  "caption": "Turns out a parenthesis in a path was enough to switch a deny rule off.\n\nClaude Code 2.1.260 fixed three ways a permission rule silently never applied: a paren in the path dropped it as invalid, stray text after the closing paren matched nothing, one unclosed bracket broke every edit. Folders marked read-only stayed writable.\n\nConfig that fails open and says nothing is the part of agent tooling I trust least.\n\nWhen did you last check yours?",
+  "slug": "agents-silently-missed-prompt-cache",
+  "title": "Agent Sessions Silently Missed Prompt Cache",
+  "caption": "I fanned out subagents all week and never once checked whether they were hitting cache.\n\nClaude Code 2.1.261 and 2.1.265 fixed three ways agent sessions silently broke prompt-cache reuse: a resumed subagent changing its own tool list and system prompt prefix, hook context and preloaded skills sliding out of the prefix on later turns, teammates re-announcing their tools on turn two. A cache miss doesn't throw. It just bills.\n\nI trust my token numbers a lot less than I did on Monday.\n\nDo you check yours?",
   "hashtags": [
     "#claudecode",
     "#anthropic",
     "#aicoding",
-    "#devtools",
     "#aiagents",
-    "#zsh",
-    "#appsec",
-    "#permissions",
+    "#devtools",
+    "#promptcaching",
+    "#llmops",
+    "#tokencost",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
@@ -19,36 +19,30 @@
   "slides": [
     {
       "type": "cover",
-      "headline": "Your Deny Rules\nWeren’t Running",
-      "sub": "Claude Code 2.1.260, out Sept 3, fixed three ways a permission rule you wrote never applied.",
-      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#D97757" }]
+      "headline": "Your Subagents\nQuietly Missed Cache",
+      "sub": "Claude Code 2.1.261 and 2.1.265 fixed three ways agent sessions silently broke prompt-cache reuse.",
+      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#CC785C" }]
     },
     {
       "type": "list",
-      "title": "Written, Then Ignored",
+      "title": "Where The Prefix Broke",
       "items": [
-        "A parenthesis in the path dropped the rule as invalid — the read-only folder stayed writable",
-        "Text after the closing paren, like Bash(ls) x, never matched anything and was silently ignored",
-        "One unclosed bracket made every file edit fail with Invalid regular expression"
+        "Resuming a foreground-spawned subagent changed its tool list and system prompt prefix. Cache reuse gone.",
+        "Teammates and resumed subagents moved SubagentStart hook context and preloaded skills out of the prefix.",
+        "In-process teammates re-announced their tools and skills on turn two. Prefix changed."
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "zsh", "label": "zsh" },
-      "title": "Hidden In A Timer",
-      "sub": "Permission checks auto-approved zsh commands that hid a command substitution inside a REPORTTIME assignment. Now they prompt."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "npm", "label": "npm", "color": "#CB3837" },
-      "title": "Then It Broke Builds",
-      "sub": "2.1.259 applied Read() deny rules to Bash arguments. Under Read(./**/build/**), npm run build was denied in every mode. Reverted."
+      "icon": { "slug": "claude", "label": "Claude Code", "color": "#CC785C" },
+      "title": "Now /cost Says Why",
+      "sub": "2.1.260 started naming the cause — changed tools, changed system prompt, idle past the TTL."
     },
     {
       "type": "cta",
-      "headline": "Want The Exact Rules?",
-      "keyword": "RULES",
-      "sub": "and I’ll send the changelog lines"
+      "headline": "Auditing Agent Costs?",
+      "keyword": "CACHE",
+      "sub": "and I’ll send the exact changelog lines"
     }
   ]
 }
