@@ -1,16 +1,16 @@
 {
-  "slug": "agents-silently-missed-prompt-cache",
-  "title": "Agent Sessions Silently Missed Prompt Cache",
-  "caption": "I fanned out subagents all week and never once checked whether they were hitting cache.\n\nClaude Code 2.1.261 and 2.1.265 fixed three ways agent sessions silently broke prompt-cache reuse: a resumed subagent changing its own tool list and system prompt prefix, hook context and preloaded skills sliding out of the prefix on later turns, teammates re-announcing their tools on turn two. A cache miss doesn't throw. It just bills.\n\nI trust my token numbers a lot less than I did on Monday.\n\nDo you check yours?",
+  "slug": "cline-swapped-57-provider-defaults",
+  "title": "Cline Swapped the Default Model for 57 Providers",
+  "caption": "I never pinned a model. I just trusted whatever the dropdown said.\n\nCline 4.1.17's catalog refresh changed the resolved default model for 57 providers. Anthropic now lands on Claude Fable 5.1 instead of Claude Opus 5, and Bedrock, Vertex, OpenRouter and Vercel AI Gateway went with it.\n\nNothing broke. My cost line just stopped meaning what it meant last week.\n\nDo you pin yours?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
+    "#cline",
     "#aicoding",
-    "#aiagents",
+    "#aicodingagents",
     "#devtools",
-    "#promptcaching",
-    "#llmops",
+    "#vscode",
+    "#llm",
     "#tokencost",
+    "#aitools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
@@ -19,30 +19,36 @@
   "slides": [
     {
       "type": "cover",
-      "headline": "Your Subagents\nQuietly Missed Cache",
-      "sub": "Claude Code 2.1.261 and 2.1.265 fixed three ways agent sessions silently broke prompt-cache reuse.",
-      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#CC785C" }]
+      "headline": "Cline Swapped 57\nProvider Defaults",
+      "sub": "One model-catalog refresh in 4.1.17 changed the resolved default model for 57 providers.",
+      "icons": [{ "slug": "cline", "label": "Cline", "color": "#9663F1" }]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "Claude", "color": "#D97757" },
+      "title": "Opus 5 Became Fable 5.1",
+      "sub": "Anthropic’s resolved default flipped in Cline’s refreshed model catalog."
     },
     {
       "type": "list",
-      "title": "Where The Prefix Broke",
+      "title": "Eleven Gateways Followed",
       "items": [
-        "Resuming a foreground-spawned subagent changed its tool list and system prompt prefix. Cache reuse gone.",
-        "Teammates and resumed subagents moved SubagentStart hook context and preloaded skills out of the prefix.",
-        "In-process teammates re-announced their tools and skills on turn two. Prefix changed."
+        "Amazon Bedrock, Vertex, OpenRouter",
+        "Vercel AI Gateway, Kilo Gateway, LLM Gateway",
+        "DevPass, DigitalOcean, CrossModel, Eden AI, NanoGPT"
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code", "color": "#CC785C" },
-      "title": "Now /cost Says Why",
-      "sub": "2.1.260 started naming the cause — changed tools, changed system prompt, idle past the TTL."
+      "icon": { "slug": "cline", "label": "Cline", "color": "#9663F1" },
+      "title": "Pin Your Model",
+      "sub": "Cline’s changelog: use a provider without pinning a model and expect a different default."
     },
     {
       "type": "cta",
-      "headline": "Auditing Agent Costs?",
-      "keyword": "CACHE",
-      "sub": "and I’ll send the exact changelog lines"
+      "headline": "Pinning Yours Tonight?",
+      "keyword": "PIN",
+      "sub": "and I’ll send the changelog line"
     }
   ]
 }
