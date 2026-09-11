@@ -1,16 +1,16 @@
 {
-  "slug": "cline-swapped-57-provider-defaults",
-  "title": "Cline Swapped the Default Model for 57 Providers",
-  "caption": "I never pinned a model. I just trusted whatever the dropdown said.\n\nCline 4.1.17's catalog refresh changed the resolved default model for 57 providers. Anthropic now lands on Claude Fable 5.1 instead of Claude Opus 5, and Bedrock, Vertex, OpenRouter and Vercel AI Gateway went with it.\n\nNothing broke. My cost line just stopped meaning what it meant last week.\n\nDo you pin yours?",
+  "slug": "claude-mcp-list-printed-your-secrets",
+  "title": "Claude Code Printed Your MCP Secrets",
+  "caption": "I put ${API_KEY} in .mcp.json so I would never have to look at the key again.\n\nClaude Code 2.1.268, shipped September 10, fixed something I did not know was happening: claude mcp list, claude mcp get, /mcp and /plugin server details and MCP login errors were all showing the resolved value instead of the placeholder. Plugin and marketplace errors were printing tokens straight out of git source URLs too.\n\nI have screen-shared that exact command on a call. Upgrading does not un-print it.\n\nRotating yours tonight?",
   "hashtags": [
-    "#cline",
-    "#aicoding",
-    "#aicodingagents",
+    "#claudecode",
+    "#mcp",
+    "#modelcontextprotocol",
     "#devtools",
-    "#vscode",
-    "#llm",
-    "#tokencost",
-    "#aitools",
+    "#aicoding",
+    "#apisecurity",
+    "#secretsmanagement",
+    "#devsecops",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
@@ -19,35 +19,42 @@
   "slides": [
     {
       "type": "cover",
-      "headline": "Cline Swapped 57\nProvider Defaults",
-      "sub": "One model-catalog refresh in 4.1.17 changed the resolved default model for 57 providers.",
-      "icons": [{ "slug": "cline", "label": "Cline", "color": "#9663F1" }]
+      "headline": "claude mcp list\nPrinted Your Secrets",
+      "sub": "Resolved ${VAR} values, shown in plain output. Fixed September 10 in 2.1.268.",
+      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#D97757" }]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude", "color": "#D97757" },
-      "title": "Opus 5 Became Fable 5.1",
-      "sub": "Anthropic’s resolved default flipped in Cline’s refreshed model catalog."
+      "icon": { "slug": "modelcontextprotocol", "label": "MCP" },
+      "title": "Placeholders, Not Secrets",
+      "sub": "Put ${API_KEY} in .mcp.json and the file holds no key. That is the documented pattern."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "Claude Code", "color": "#D97757" },
+      "title": "Then It Resolved Them",
+      "sub": "The commands printed the expanded value, not the placeholder you wrote."
     },
     {
       "type": "list",
-      "title": "Eleven Gateways Followed",
+      "title": "Where It Showed Up",
       "items": [
-        "Amazon Bedrock, Vertex, OpenRouter",
-        "Vercel AI Gateway, Kilo Gateway, LLM Gateway",
-        "DevPass, DigitalOcean, CrossModel, Eden AI, NanoGPT"
+        "claude mcp list and claude mcp get",
+        "/mcp and /plugin server details",
+        "MCP login errors",
+        "Plugin errors, from tokens in git source URLs"
       ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "cline", "label": "Cline", "color": "#9663F1" },
-      "title": "Pin Your Model",
-      "sub": "Cline’s changelog: use a provider without pinning a model and expect a different default."
+      "type": "cover",
+      "headline": "Upgrading Is Not\nRotating",
+      "sub": "2.1.268 stops the printing. It does not clear your scrollback, your logs, or your screenshots.",
+      "arrow": true
     },
     {
       "type": "cta",
-      "headline": "Pinning Yours Tonight?",
-      "keyword": "PIN",
+      "headline": "Rotating Tonight?",
+      "keyword": "ROTATE",
       "sub": "and I’ll send the changelog line"
     }
   ]
