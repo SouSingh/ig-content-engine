@@ -1,61 +1,55 @@
 {
-  "slug": "claude-mcp-list-printed-your-secrets",
-  "title": "Claude Code Printed Your MCP Secrets",
-  "caption": "I put ${API_KEY} in .mcp.json so I would never have to look at the key again.\n\nClaude Code 2.1.268, shipped September 10, fixed something I did not know was happening: claude mcp list, claude mcp get, /mcp and /plugin server details and MCP login errors were all showing the resolved value instead of the placeholder. Plugin and marketplace errors were printing tokens straight out of git source URLs too.\n\nI have screen-shared that exact command on a call. Upgrading does not un-print it.\n\nRotating yours tonight?",
+  "slug": "stripe-node-verified-with-empty-key",
+  "title": "stripe-node Verified Webhooks With an Empty Key",
+  "caption": "My webhook secret has been an empty string in staging for who knows how long.\n\nstripe-node 22.6.2 landed September 9 with one new check: throw if the secret is empty. Before that, an empty string went straight into crypto.createHmac and the signature check ran against a key anyone can compute. An undefined secret would have crashed the handler. A blank line in .env just kept going.\n\nThe part I keep thinking about: real Stripe events fail loudly in that state, so you notice within a day. A forged one wouldn't.\n\nChecked yours lately?",
   "hashtags": [
-    "#claudecode",
-    "#mcp",
-    "#modelcontextprotocol",
-    "#devtools",
-    "#aicoding",
-    "#apisecurity",
-    "#secretsmanagement",
+    "#stripe",
+    "#webhooks",
+    "#nodejs",
+    "#payments",
+    "#appsec",
     "#devsecops",
-    "#buildinpublic",
+    "#backend",
+    "#javascript",
     "#indiehackers",
     "#solofounder",
-    "#programming"
+    "#buildinpublic",
+    "#saas"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "claude mcp list\nPrinted Your Secrets",
-      "sub": "Resolved ${VAR} values, shown in plain output. Fixed September 10 in 2.1.268.",
-      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#D97757" }]
+      "headline": "Empty Secret,\nValid Signature",
+      "sub": "stripe-node checked webhook signatures against an empty HMAC key until 22.6.2, published September 9.",
+      "icons": [{ "slug": "stripe", "label": "Stripe", "color": "#635BFF" }]
     },
     {
       "type": "feature",
-      "icon": { "slug": "modelcontextprotocol", "label": "MCP" },
-      "title": "Placeholders, Not Secrets",
-      "sub": "Put ${API_KEY} in .mcp.json and the file holds no key. That is the documented pattern."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code", "color": "#D97757" },
-      "title": "Then It Resolved Them",
-      "sub": "The commands printed the expanded value, not the placeholder you wrote."
+      "icon": { "slug": "dotenv", "label": "dotenv" },
+      "title": "Blank Is Not Missing",
+      "sub": "STRIPE_WEBHOOK_SECRET= in .env parses to \"\". An undefined secret throws ERR_INVALID_ARG_TYPE. An empty string hashes fine."
     },
     {
       "type": "list",
-      "title": "Where It Showed Up",
+      "title": "Then The Check Inverts",
       "items": [
-        "claude mcp list and claude mcp get",
-        "/mcp and /plugin server details",
-        "MCP login errors",
-        "Plugin errors, from tokens in git source URLs"
+        "HMAC-SHA256 with an empty key is public. Anyone can compute it.",
+        "Real Stripe events fail. The signature never matches.",
+        "A forged event passes. Same empty key, same digest.",
+        "Default tolerance is 300s. A fresh timestamp clears it."
       ]
     },
     {
-      "type": "cover",
-      "headline": "Upgrading Is Not\nRotating",
-      "sub": "2.1.268 stops the printing. It does not clear your scrollback, your logs, or your screenshots.",
-      "arrow": true
+      "type": "feature",
+      "icon": { "slug": "stripe", "label": "stripe-node 22.6.2", "color": "#635BFF" },
+      "title": "22.6.2 Throws Instead",
+      "sub": "Published September 9: “No webhook secret value was provided. It should start with whsec_.”"
     },
     {
       "type": "cta",
-      "headline": "Rotating Tonight?",
-      "keyword": "ROTATE",
-      "sub": "and I’ll send the changelog line"
+      "headline": "Is Yours Actually Set?",
+      "keyword": "WHSEC",
+      "sub": "and I’ll send the one-line guard"
     }
   ]
 }
