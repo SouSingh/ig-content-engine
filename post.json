@@ -1,16 +1,16 @@
 {
-  "slug": "stripe-node-verified-with-empty-key",
-  "title": "stripe-node Verified Webhooks With an Empty Key",
-  "caption": "My webhook secret has been an empty string in staging for who knows how long.\n\nstripe-node 22.6.2 landed September 9 with one new check: throw if the secret is empty. Before that, an empty string went straight into crypto.createHmac and the signature check ran against a key anyone can compute. An undefined secret would have crashed the handler. A blank line in .env just kept going.\n\nThe part I keep thinking about: real Stripe events fail loudly in that state, so you notice within a day. A forged one wouldn't.\n\nChecked yours lately?",
+  "slug": "claude-code-25-percent-is-a-17-percent-cut",
+  "title": "Claude Code's +25% Is a 17% Cut",
+  "caption": "I sized a client sprint against a number that expires this weekend.\n\nAnthropic is permanently raising Claude Code's standard weekly limit by 25% on September 14. True. That 25% is measured against the pre-May baseline, not against the +50% boost I've actually been running on since May 13. Index it: 100 before, 150 today, 125 after. Same change, two honest percentages, and the flattering one went on top.\n\nCredit where it's due, they published the 17% themselves in the follow-up. It just wasn't the headline.\n\nHitting your cap lately?",
   "hashtags": [
-    "#stripe",
-    "#webhooks",
-    "#nodejs",
-    "#payments",
-    "#appsec",
-    "#devsecops",
-    "#backend",
-    "#javascript",
+    "#claudecode",
+    "#anthropic",
+    "#aicoding",
+    "#devtools",
+    "#aiagents",
+    "#pricing",
+    "#developertools",
+    "#softwareengineering",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
@@ -19,37 +19,32 @@
   "slides": [
     {
       "type": "cover",
-      "headline": "Empty Secret,\nValid Signature",
-      "sub": "stripe-node checked webhook signatures against an empty HMAC key until 22.6.2, published September 9.",
-      "icons": [{ "slug": "stripe", "label": "Stripe", "color": "#635BFF" }]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "dotenv", "label": "dotenv" },
-      "title": "Blank Is Not Missing",
-      "sub": "STRIPE_WEBHOOK_SECRET= in .env parses to \"\". An undefined secret throws ERR_INVALID_ARG_TYPE. An empty string hashes fine."
+      "headline": "+25% Means\n17% Less",
+      "sub": "The temporary +50% weekly boost expires September 13. The permanent level starts the 14th.",
+      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#D97757" }]
     },
     {
       "type": "list",
-      "title": "Then The Check Inverts",
+      "title": "Both Numbers Are True",
       "items": [
-        "HMAC-SHA256 with an empty key is public. Anyone can compute it.",
-        "Real Stripe events fail. The signature never matches.",
-        "A forged event passes. Same empty key, same digest.",
-        "Default tolerance is 300s. A fresh timestamp clears it."
+        "Before May 13, call the standard weekly limit 100.",
+        "The temporary +50% boost put you at 150. It ends September 13.",
+        "September 14 sets the new permanent level at 125.",
+        "125 against 150 is 0.833. That is 17% below today.",
+        "Weekly limits only. The 5-hour window and the API are untouched."
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "stripe", "label": "stripe-node 22.6.2", "color": "#635BFF" },
-      "title": "22.6.2 Throws Instead",
-      "sub": "Published September 9: “No webhook secret value was provided. It should start with whsec_.”"
+      "icon": { "slug": "claude", "label": "ClaudeDevs", "color": "#D97757" },
+      "title": "Anthropic Said 17%",
+      "sub": "“Compared to today, this works out to a 17% reduction in weekly limits on Claude Code.” Anthropic, August 29."
     },
     {
       "type": "cta",
-      "headline": "Is Yours Actually Set?",
-      "keyword": "WHSEC",
-      "sub": "and I’ll send the one-line guard"
+      "headline": "Which Number\nDid You Plan On?",
+      "keyword": "CEILING",
+      "sub": "and I'll send the usage math"
     }
   ]
 }
