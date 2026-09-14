@@ -1,50 +1,56 @@
 {
-  "slug": "claude-code-25-percent-is-a-17-percent-cut",
-  "title": "Claude Code's +25% Is a 17% Cut",
-  "caption": "I sized a client sprint against a number that expires this weekend.\n\nAnthropic is permanently raising Claude Code's standard weekly limit by 25% on September 14. True. That 25% is measured against the pre-May baseline, not against the +50% boost I've actually been running on since May 13. Index it: 100 before, 150 today, 125 after. Same change, two honest percentages, and the flattering one went on top.\n\nCredit where it's due, they published the 17% themselves in the follow-up. It just wasn't the headline.\n\nHitting your cap lately?",
+  "slug": "45-deploys-not-3-days",
+  "title": "45 Deploys, Not 3 Days",
+  "caption": "I shipped an app in a weekend and then didn't open it again for four months.\n\nBubble just put a number on why that died. They measured 250,000 apps across their first six months. The ones making money deployed about 45 times. The ones that weren't deployed twice. Not a better idea — 43 more deploys.\n\nWorth saying it's Bubble's own data about Bubble apps, and Bubble would love you to keep editing on Bubble. The 20x gap is still the most honest thing I've read about shipping this year.\n\nHow many deploys since launch?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
-    "#aicoding",
-    "#devtools",
-    "#aiagents",
-    "#pricing",
-    "#developertools",
-    "#softwareengineering",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#saas"
+    "#microsaas",
+    "#saas",
+    "#nocode",
+    "#bubbleio",
+    "#shipfast",
+    "#startups",
+    "#founders",
+    "#productlaunch",
+    "#sidehustle"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "+25% Means\n17% Less",
-      "sub": "The temporary +50% weekly boost expires September 13. The permanent level starts the 14th.",
-      "icons": [{ "slug": "claude", "label": "Claude Code", "color": "#D97757" }]
+      "headline": "45 Deploys,\nNot 3 Days",
+      "sub": "Bubble measured 250,000 apps across their first six months. Launch speed predicted nothing."
     },
     {
       "type": "list",
-      "title": "Both Numbers Are True",
+      "title": "Twenty Times The Deploys",
       "items": [
-        "Before May 13, call the standard weekly limit 100.",
-        "The temporary +50% boost put you at 150. It ends September 13.",
-        "September 14 sets the new permanent level at 125.",
-        "125 against 150 is 0.833. That is 17% below today.",
-        "Weekly limits only. The 5-hour window and the API are untouched."
+        "Apps that make money: about 45 deploys in six months.",
+        "Apps that don't: two.",
+        "614 edits across 46 separate days, against 25 across 4.",
+        "Longest unbroken build streak: 9 days, against 2."
       ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "ClaudeDevs", "color": "#D97757" },
-      "title": "Anthropic Said 17%",
-      "sub": "“Compared to today, this works out to a 17% reduction in weekly limits on Claude Code.” Anthropic, August 29."
+      "type": "cover",
+      "headline": "First Sale\nIn 8 Days",
+      "sub": "Almost a third charged on day one. The typical monetized app took payment within 8 days."
+    },
+    {
+      "type": "list",
+      "title": "28% Versus 10%",
+      "items": [
+        "Apps with AI features: 28% make money.",
+        "Apps without them: 10%.",
+        "Observed from 11.9M deploys and 233M edits, not a survey."
+      ]
     },
     {
       "type": "cta",
-      "headline": "Which Number\nDid You Plan On?",
-      "keyword": "CEILING",
-      "sub": "and I'll send the usage math"
+      "headline": "How Many Deploys\nSince Launch?",
+      "keyword": "DEPLOY",
+      "sub": "and I'll send the four habits"
     }
   ]
 }
