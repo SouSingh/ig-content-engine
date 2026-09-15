@@ -1,56 +1,57 @@
 {
-  "slug": "45-deploys-not-3-days",
-  "title": "45 Deploys, Not 3 Days",
-  "caption": "I shipped an app in a weekend and then didn't open it again for four months.\n\nBubble just put a number on why that died. They measured 250,000 apps across their first six months. The ones making money deployed about 45 times. The ones that weren't deployed twice. Not a better idea — 43 more deploys.\n\nWorth saying it's Bubble's own data about Bubble apps, and Bubble would love you to keep editing on Bubble. The 20x gap is still the most honest thing I've read about shipping this year.\n\nHow many deploys since launch?",
+  "slug": "400-mcp-servers-195-answered",
+  "title": "400 MCP Servers. 195 Answered.",
+  "caption": "I've installed MCP servers off a README list and never once checked whether they actually start.\n\nSomeone finally drew 400 at random from the official registry instead of picking the popular ones, and probed every single one. 195 answered. 150 never started at all — nearly three times the number blocked by a missing API key. Run the same probe against a hand-picked list of 24 servers and you get 66.7%. The curated lists aren't lying to you. They're just pre-filtered to the ones that work.\n\nWorth saying: one author, not peer reviewed, and it only covers the npm/stdio slice of the registry. But the seed, the pipeline and every per-server result are published, which is more than most vendor benchmarks manage.\n\nHow many MCP servers are you running?",
   "hashtags": [
+    "#mcp",
+    "#modelcontextprotocol",
+    "#aiagents",
+    "#claudecode",
+    "#devtools",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#microsaas",
-    "#saas",
-    "#nocode",
-    "#bubbleio",
-    "#shipfast",
-    "#startups",
-    "#founders",
-    "#productlaunch",
-    "#sidehustle"
+    "#aitools",
+    "#opensource",
+    "#softwareengineering",
+    "#ai"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "45 Deploys,\nNot 3 Days",
-      "sub": "Bubble measured 250,000 apps across their first six months. Launch speed predicted nothing."
+      "headline": "400 MCP Servers.\n195 Answered.",
+      "sub": "A random draw from the official registry, each server probed once over the wire. No repairs, no credentials.",
+      "icons": [
+        { "slug": "modelcontextprotocol", "label": "MCP", "color": "#3C3C3D" },
+        { "slug": "npm", "label": "npm", "color": "#CB3837" }
+      ]
     },
     {
       "type": "list",
-      "title": "Twenty Times The Deploys",
+      "title": "Why 205 Didn't Run",
       "items": [
-        "Apps that make money: about 45 deploys in six months.",
-        "Apps that don't: two.",
-        "614 edits across 46 separate days, against 25 across 4.",
-        "Longest unbroken build streak: 9 days, against 2."
+        "150 never started at all — the dominant failure.",
+        "53 were blocked by missing credentials. Barely a third as many.",
+        "2 packages were no longer available on npm.",
+        "One probe each, no retries — so 205 is a ceiling, not a floor."
       ]
     },
     {
       "type": "cover",
-      "headline": "First Sale\nIn 8 Days",
-      "sub": "Almost a third charged on day one. The typical monetized app took payment within 8 days."
+      "headline": "Curated Lists\nScore 66.7%",
+      "sub": "Same probe, a hand-picked frame of 24 popular servers: 66.7% answered. Every list you've read was pre-filtered."
     },
     {
-      "type": "list",
-      "title": "28% Versus 10%",
-      "items": [
-        "Apps with AI features: 28% make money.",
-        "Apps without them: 10%.",
-        "Observed from 11.9M deploys and 233M edits, not a survey."
-      ]
+      "type": "feature",
+      "icon": { "slug": "modelcontextprotocol", "label": "Model Context Protocol", "color": "#3C3C3D" },
+      "title": "58.8% Skip Safety Hints",
+      "sub": "2,766 tools on the live servers. 58.8% carry no readOnlyHint or destructiveHint, so your agent can't tell what deletes."
     },
     {
       "type": "cta",
-      "headline": "How Many Deploys\nSince Launch?",
-      "keyword": "DEPLOY",
-      "sub": "and I'll send the four habits"
+      "headline": "Probe Your Own\nServers",
+      "keyword": "PROBE",
+      "sub": "and I'll send the repo"
     }
   ]
 }
