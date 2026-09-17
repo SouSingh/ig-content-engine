@@ -1,51 +1,48 @@
 {
-  "slug": "ai-code-half-the-size-different-bugs",
-  "title": "Half the Size, Different Bugs",
-  "caption": "I've been reviewing AI code like it's junior code. That's the wrong instinct.\n\n787,562 function pairs across Python, Java and C — each human function mined from open source, paired with an AI implementation written from the same docstring. The AI versions came out roughly half the size and half the branching, and the defects aren't worse versions of human defects. They're a different kind: human code concentrates the issues of mature codebases, AI code concentrates repetitive boilerplate.\n\nThe part I didn't expect: security doesn't move one way. More findings, and more severe ones, in Python and Java — but fewer high-severity memory-safety findings than the humans wrote in C. Worth saying it's a preprint under review, and the generators were GPT, DeepSeek-Coder and Qwen2.5-Coder, not the agent you ran this morning.\n\nWhich language do you trust it with?",
+  "slug": "cockroachdb-stopped-publishing-its-source",
+  "title": "CockroachDB Stopped Publishing Its Source",
+  "caption": "I used to read CockroachDB's source when I wanted to understand how a real database works. That stops now.\n\nOn September 15 Cockroach Labs said new CockroachDB and Pebble releases will be developed in private repos. The public one stays up as a frozen snapshot and stops taking outside code. The license didn't change — the visibility did.\n\nThe reason is the part I keep chewing on. Not a competitor, not a fork. AI. They say models surface internals fast enough that publishing is now a security cost, and that they are already seeing AI used to produce functional reproductions of protected software. I don't have a good counterargument, and I don't like where it leads.\n\nWould you close yours?",
   "hashtags": [
-    "#aicoding",
-    "#codequality",
-    "#claudecode",
+    "#opensource",
+    "#cockroachdb",
+    "#databases",
     "#devtools",
     "#softwareengineering",
+    "#ai",
+    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
-    "#python",
-    "#java",
-    "#appsec",
-    "#ai"
+    "#programming",
+    "#golang",
+    "#sourceavailable"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Half The Size.\nDifferent Bugs.",
-      "sub": "787,562 function pairs. Same docstring, one human implementation and one AI implementation each, across Python, Java and C."
+      "headline": "CockroachDB\nSource Goes\nPrivate",
+      "sub": "September 15. New CockroachDB and Pebble releases are developed in private repos. The public repository stays up, frozen."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "cockroachlabs", "label": "Cockroach Labs", "color": "#6933FF" },
+      "title": "AI Reproduces It Now",
+      "sub": "Cockroach Labs says it is already seeing AI used to produce functional reproductions of protected software."
     },
     {
       "type": "cover",
-      "headline": "Half The\nBranching",
-      "sub": "The AI functions run about half the size and half the branching of the human originals, and cluster apart at the style level. Compressed and templated, not sprawling."
+      "headline": "The License\nDidn’t Change",
+      "sub": "Same CockroachDB Software License, same pricing, same deployment. What changed is whether anyone outside can read the code."
     },
     {
       "type": "cover",
-      "headline": "Defects Differ\nIn Kind",
-      "sub": "Human code concentrates the issues of mature codebases. AI code concentrates repetitive boilerplate. Different profiles, not one worse version of the other."
-    },
-    {
-      "type": "grid",
-      "title": "Worse In Python.\nSafer In C.",
-      "icons": [
-        { "slug": "python", "label": "Worse", "color": "#2b5b84" },
-        { "slug": "openjdk", "label": "Worse", "color": "#e76f00" },
-        { "slug": "c", "label": "Safer" }
-      ]
+      "headline": "No More Outside\nContributions",
+      "sub": "Cockroach Labs will no longer accept code contributions to the core codebase. Bug and vulnerability reports still have a path."
     },
     {
       "type": "cta",
-      "headline": "Read The Numbers\nYourself",
-      "keyword": "CQBENCH",
-      "sub": "and I'll send the paper"
+      "headline": "Read It In\nTheir Own Words",
+      "keyword": "COCKROACH",
+      "sub": "and I’ll send the post"
     }
   ]
 }
