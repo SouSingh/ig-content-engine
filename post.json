@@ -1,48 +1,62 @@
 {
-  "slug": "cockroachdb-stopped-publishing-its-source",
-  "title": "CockroachDB Stopped Publishing Its Source",
-  "caption": "I used to read CockroachDB's source when I wanted to understand how a real database works. That stops now.\n\nOn September 15 Cockroach Labs said new CockroachDB and Pebble releases will be developed in private repos. The public one stays up as a frozen snapshot and stops taking outside code. The license didn't change — the visibility did.\n\nThe reason is the part I keep chewing on. Not a competitor, not a fork. AI. They say models surface internals fast enough that publishing is now a security cost, and that they are already seeing AI used to produce functional reproductions of protected software. I don't have a good counterargument, and I don't like where it leads.\n\nWould you close yours?",
+  "slug": "vercel-moved-who-pays-for-your-agent",
+  "title": "Vercel Moved Who Pays for Your Agent",
+  "caption": "I almost wired a side project to my own Claude plan this week.\n\nOn September 14 Vercel shipped native subscription auth for the AI SDK harness layer. Nine adapters, no code change, no new settings — your app can authenticate through the coding-agent subscription already signed in on the host instead of an API key. Tempting when you're solo and watching every dollar.\n\nThen I read Anthropic's own docs. Pro and Max limits are shared across Claude and Claude Code, so a background job spends the capacity you wanted that afternoon. And third-party developers aren't allowed to offer claude.ai login or rate limits in their products without prior approval. So this is for your machine, not your customers.\n\nAlso worth knowing: if ANTHROPIC_API_KEY is sitting in your environment, none of it fires and you're on metered API rates anyway.\n\nWould you bill your own plan?",
   "hashtags": [
-    "#opensource",
-    "#cockroachdb",
-    "#databases",
+    "#vercel",
+    "#aisdk",
+    "#claudecode",
     "#devtools",
-    "#softwareengineering",
-    "#ai",
-    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#programming",
-    "#golang",
-    "#sourceavailable"
+    "#buildinpublic",
+    "#typescript",
+    "#aiagents",
+    "#saas",
+    "#softwareengineering",
+    "#sideproject"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "CockroachDB\nSource Goes\nPrivate",
-      "sub": "September 15. New CockroachDB and Pebble releases are developed in private repos. The public repository stays up, frozen."
+      "headline": "Vercel Just\nMoved Who Pays",
+      "sub": "September 14. The AI SDK harness layer can authenticate a coding agent through the subscription already signed in on your host. No API key, no code change."
     },
     {
       "type": "feature",
-      "icon": { "slug": "cockroachlabs", "label": "Cockroach Labs", "color": "#6933FF" },
-      "title": "AI Reproduces It Now",
-      "sub": "Cockroach Labs says it is already seeing AI used to produce functional reproductions of protected software."
+      "icon": { "slug": "vercel", "label": "Vercel", "color": "#171717" },
+      "title": "Nine Adapters",
+      "sub": "Claude Code, Cline, Codex, Cursor, fx, GitHub Copilot, Grok Build, OpenCode and Pi — wherever the harness itself supports subscription login."
+    },
+    {
+      "type": "list",
+      "title": "Three Modes.\nThree Payers.",
+      "items": [
+        "ai-gateway — Gateway credits or the Vercel invoice. Never reads a subscription.",
+        "direct — an explicit provider key wins. Otherwise the plan allowance pays.",
+        "auto (default) — same as direct, when no AI Gateway credentials are set."
+      ]
     },
     {
       "type": "cover",
-      "headline": "The License\nDidn’t Change",
-      "sub": "Same CockroachDB Software License, same pricing, same deployment. What changed is whether anyone outside can read the code."
+      "headline": "One Env Var\nMoves The Bill",
+      "sub": "Anthropic’s own docs: with ANTHROPIC_API_KEY set, Claude Code authenticates with the key instead of your subscription — API charges, not included usage."
     },
     {
       "type": "cover",
-      "headline": "No More Outside\nContributions",
-      "sub": "Cockroach Labs will no longer accept code contributions to the core codebase. Bug and vulnerability reports still have a path."
+      "headline": "Same Limit As\nYour Terminal",
+      "sub": "Pro and Max usage limits are shared across Claude and Claude Code. A background job spends the capacity you wanted at 4pm."
+    },
+    {
+      "type": "cover",
+      "headline": "Not For Your\nCustomers",
+      "sub": "Anthropic does not allow third-party developers to offer claude.ai login or rate limits in their products without prior approval. This is host-bound."
     },
     {
       "type": "cta",
-      "headline": "Read It In\nTheir Own Words",
-      "keyword": "COCKROACH",
-      "sub": "and I’ll send the post"
+      "headline": "Know Which\nBill Moved",
+      "keyword": "HARNESS",
+      "sub": "and I’ll send the changelog"
     }
   ]
 }
