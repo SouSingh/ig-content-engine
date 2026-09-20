@@ -1,62 +1,49 @@
 {
-  "slug": "vercel-moved-who-pays-for-your-agent",
-  "title": "Vercel Moved Who Pays for Your Agent",
-  "caption": "I almost wired a side project to my own Claude plan this week.\n\nOn September 14 Vercel shipped native subscription auth for the AI SDK harness layer. Nine adapters, no code change, no new settings — your app can authenticate through the coding-agent subscription already signed in on the host instead of an API key. Tempting when you're solo and watching every dollar.\n\nThen I read Anthropic's own docs. Pro and Max limits are shared across Claude and Claude Code, so a background job spends the capacity you wanted that afternoon. And third-party developers aren't allowed to offer claude.ai login or rate limits in their products without prior approval. So this is for your machine, not your customers.\n\nAlso worth knowing: if ANTHROPIC_API_KEY is sitting in your environment, none of it fires and you're on metered API rates anyway.\n\nWould you bill your own plan?",
+  "slug": "free-now-bills-somewhere-else",
+  "title": "Free Now Bills Somewhere Else",
+  "caption": "Three \"free\" announcements in four days and I can't tell if I came out ahead.\n\nSept 13: Amp made the agent free with your own keys and started charging for the computer it runs on. Sept 14: Bolt gave Pro users up to 50× Forge usage until Oct 14, paid for with opted-in build sessions that help train an Arcee AI open model. Sept 16: Vercel's Hobby plan went from keeping 10 production deployments to 3, and over 10GB the rest delete immediately instead of after 30 days.\n\nMy honest take: none of these is a bad deal. But \"free\" stopped meaning \"costs nothing\" and started meaning \"costs something that isn't on the invoice\".\n\nWhich meter are you on?",
   "hashtags": [
-    "#vercel",
-    "#aisdk",
-    "#claudecode",
-    "#devtools",
+    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
-    "#typescript",
+    "#devtools",
+    "#vercel",
+    "#bolt",
     "#aiagents",
     "#saas",
-    "#softwareengineering",
-    "#sideproject"
+    "#webdev",
+    "#pricing",
+    "#sideproject",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Vercel Just\nMoved Who Pays",
-      "sub": "September 14. The AI SDK harness layer can authenticate a coding agent through the subscription already signed in on your host. No API key, no code change."
+      "headline": "Free Now Bills\nSomewhere Else",
+      "sub": "September 13–16. Amp, Bolt and Vercel each changed what free costs. None of them raised the price of an existing plan."
+    },
+    {
+      "type": "cover",
+      "headline": "Amp Charges For\nThe Computer",
+      "sub": "Sept 13. Free with your own keys, no token fees. You pay for orbs — its remote machines — or run your own for nothing."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "stackblitz", "label": "Bolt", "color": "#2DA6FF" },
+      "title": "Paid In Sessions",
+      "sub": "Sept 14. Bolt’s new Forge agent: up to 50× usage at no extra cost on Pro until Oct 14, if you opt in to share anonymized builds with Arcee AI."
     },
     {
       "type": "feature",
       "icon": { "slug": "vercel", "label": "Vercel", "color": "#171717" },
-      "title": "Nine Adapters",
-      "sub": "Claude Code, Cline, Codex, Cursor, fx, GitHub Copilot, Grok Build, OpenCode and Pi — wherever the harness itself supports subscription login."
-    },
-    {
-      "type": "list",
-      "title": "Three Modes.\nThree Payers.",
-      "items": [
-        "ai-gateway — Gateway credits or the Vercel invoice. Never reads a subscription.",
-        "direct — an explicit provider key wins. Otherwise the plan allowance pays.",
-        "auto (default) — same as direct, when no AI Gateway credentials are set."
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "One Env Var\nMoves The Bill",
-      "sub": "Anthropic’s own docs: with ANTHROPIC_API_KEY set, Claude Code authenticates with the key instead of your subscription — API charges, not included usage."
-    },
-    {
-      "type": "cover",
-      "headline": "Same Limit As\nYour Terminal",
-      "sub": "Pro and Max usage limits are shared across Claude and Claude Code. A background job spends the capacity you wanted at 4pm."
-    },
-    {
-      "type": "cover",
-      "headline": "Not For Your\nCustomers",
-      "sub": "Anthropic does not allow third-party developers to offer claude.ai login or rate limits in their products without prior approval. This is host-bound."
+      "title": "Paid In History",
+      "sub": "Sept 16. Vercel’s free Hobby plan keeps 3 production deployments, down from 10. Over 10GB, the rest delete immediately instead of after 30 days."
     },
     {
       "type": "cta",
-      "headline": "Know Which\nBill Moved",
-      "keyword": "HARNESS",
-      "sub": "and I’ll send the changelog"
+      "headline": "Know Which Meter\nYou’re On",
+      "keyword": "METER",
+      "sub": "and I’ll send the three changelogs"
     }
   ]
 }
