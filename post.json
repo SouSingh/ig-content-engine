@@ -1,49 +1,71 @@
 {
-  "slug": "free-now-bills-somewhere-else",
-  "title": "Free Now Bills Somewhere Else",
-  "caption": "Three \"free\" announcements in four days and I can't tell if I came out ahead.\n\nSept 13: Amp made the agent free with your own keys and started charging for the computer it runs on. Sept 14: Bolt gave Pro users up to 50× Forge usage until Oct 14, paid for with opted-in build sessions that help train an Arcee AI open model. Sept 16: Vercel's Hobby plan went from keeping 10 production deployments to 3, and over 10GB the rest delete immediately instead of after 30 days.\n\nMy honest take: none of these is a bad deal. But \"free\" stopped meaning \"costs nothing\" and started meaning \"costs something that isn't on the invoice\".\n\nWhich meter are you on?",
+  "slug": "claude-code-reads-openais-file",
+  "title": "Claude Code Reads OpenAI's File",
+  "caption": "Claude Code finally reads the file every other agent already reads.\n\n2.1.277, shipped Sept 18. If there's no CLAUDE.md anywhere above your working directory, it loads AGENTS.md instead. The catch: a gitignored CLAUDE.local.md counts as a CLAUDE.md, so your teammate's agent can read the shared file while yours quietly doesn't.\n\nMy honest take — still a win, just a slow one. Anthropic donated MCP and OpenAI donated AGENTS.md to the same Linux Foundation body back in December. Nine months for Claude Code to read the other half.\n\nWhich file is in your repo?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
-    "#vercel",
-    "#bolt",
+    "#claudecode",
+    "#cursor",
     "#aiagents",
-    "#saas",
+    "#codingagents",
+    "#opensource",
+    "#softwareengineering",
     "#webdev",
-    "#pricing",
-    "#sideproject",
-    "#softwareengineering"
+    "#sideproject"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Free Now Bills\nSomewhere Else",
-      "sub": "September 13–16. Amp, Bolt and Vercel each changed what free costs. None of them raised the price of an existing plan."
+      "headline": "Claude Code Reads\nOpenAI’s File",
+      "sub": "September 18, v2.1.277. With no CLAUDE.md in the repo, Claude Code loads AGENTS.md — the format OpenAI released and then gave away."
+    },
+    {
+      "type": "grid",
+      "title": "Every One Of\nThese Reads It",
+      "icons": [
+        { "slug": "cursor", "label": "Cursor" },
+        { "slug": "windsurf", "label": "Windsurf", "color": "#0B100F" },
+        { "slug": "zedindustries", "label": "Zed", "color": "#084CCF" },
+        { "slug": "warp", "label": "Warp", "color": "#01A4FF" },
+        { "slug": "googlejules", "label": "Jules", "color": "#715CD7" },
+        { "slug": "googlegemini", "label": "Gemini CLI", "color": "#8E75B2" },
+        { "slug": "opencode", "label": "opencode" },
+        { "slug": "uipath", "label": "UiPath", "color": "#FA4616" },
+        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
+      ]
     },
     {
       "type": "cover",
-      "headline": "Amp Charges For\nThe Computer",
-      "sub": "Sept 13. Free with your own keys, no token fees. You pay for orbs — its remote machines — or run your own for nothing."
+      "headline": "Same Foundation.\nNine Months.",
+      "sub": "Dec 9, 2025: Anthropic donated MCP and OpenAI donated AGENTS.md to the Linux Foundation’s Agentic AI Foundation. Claude Code shipped the read on Sept 18, 2026."
     },
     {
-      "type": "feature",
-      "icon": { "slug": "stackblitz", "label": "Bolt", "color": "#2DA6FF" },
-      "title": "Paid In Sessions",
-      "sub": "Sept 14. Bolt’s new Forge agent: up to 50× usage at no extra cost on Pro until Oct 14, if you opt in to share anonymized builds with Arcee AI."
+      "type": "list",
+      "title": "It’s A Fallback,\nNot A Merge",
+      "items": [
+        "AGENTS.md and no CLAUDE.md above you: Claude reads AGENTS.md",
+        "AGENTS.md plus any CLAUDE.md above you: CLAUDE.md wins, AGENTS.md is skipped entirely",
+        "A CLAUDE.md holding an @AGENTS.md import: both load, once"
+      ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "vercel", "label": "Vercel", "color": "#171717" },
-      "title": "Paid In History",
-      "sub": "Sept 16. Vercel’s free Hobby plan keeps 3 production deployments, down from 10. Over 10GB, the rest delete immediately instead of after 30 days."
+      "type": "cover",
+      "headline": "Your Gitignored File\nBreaks It",
+      "sub": "CLAUDE.local.md counts as a CLAUDE.md. Your teammates’ agents read AGENTS.md; yours silently stops. Same repo, different instructions."
+    },
+    {
+      "type": "cover",
+      "headline": "Load Both,\nOn Purpose",
+      "sub": "/config, Project instructions, claude-md-and-agents-md. Missing on Bedrock, Vertex and Foundry, or with telemetry off — import @AGENTS.md from a CLAUDE.md there."
     },
     {
       "type": "cta",
-      "headline": "Know Which Meter\nYou’re On",
-      "keyword": "METER",
-      "sub": "and I’ll send the three changelogs"
+      "headline": "Stop Syncing\nTwo Files",
+      "keyword": "AGENTS",
+      "sub": "and I’ll send the precedence table"
     }
   ]
 }
