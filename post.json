@@ -1,71 +1,62 @@
 {
-  "slug": "claude-code-reads-openais-file",
-  "title": "Claude Code Reads OpenAI's File",
-  "caption": "Claude Code finally reads the file every other agent already reads.\n\n2.1.277, shipped Sept 18. If there's no CLAUDE.md anywhere above your working directory, it loads AGENTS.md instead. The catch: a gitignored CLAUDE.local.md counts as a CLAUDE.md, so your teammate's agent can read the shared file while yours quietly doesn't.\n\nMy honest take — still a win, just a slow one. Anthropic donated MCP and OpenAI donated AGENTS.md to the same Linux Foundation body back in December. Nine months for Claude Code to read the other half.\n\nWhich file is in your repo?",
+  "slug": "four-agents-never-checked-the-pin",
+  "title": "Four Agents Never Checked the Pin",
+  "caption": "The industry's fix for supply-chain attacks turned out to be the supply-chain attack.\n\nPlugin4Shell, published Sept 17. Claude Code, Codex, Copilot and the Gemini CLI check out a plugin's pinned commit and never verify they landed on it. Name a branch after the 40-character hash and git hands you the branch instead. Claude Code patched in 2.1.179, Codex in 0.146.0 — Copilot has no fix, and Google won't patch the Gemini CLI at all.\n\nThe part that bugs me: disclosed to all four vendors in June, and as of Sept 18 there's still no CVE and no advisory from any of them. Anthropic's own 2.1.179 release notes don't mention the fix. The only public account that it exists is the researchers' blog post.\n\nWhere do your plugins live?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
     "#claudecode",
-    "#cursor",
+    "#codex",
+    "#githubcopilot",
     "#aiagents",
     "#codingagents",
-    "#opensource",
-    "#softwareengineering",
-    "#webdev",
-    "#sideproject"
+    "#supplychainsecurity",
+    "#appsec",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Claude Code Reads\nOpenAI’s File",
-      "sub": "September 18, v2.1.277. With no CLAUDE.md in the repo, Claude Code loads AGENTS.md — the format OpenAI released and then gave away."
+      "headline": "Four Agents Never\nChecked The Pin",
+      "sub": "Plugin4Shell, published Sept 17. Claude Code, Codex, Copilot and the Gemini CLI check out a plugin's pinned commit and never verify they landed on it."
     },
     {
-      "type": "grid",
-      "title": "Every One Of\nThese Reads It",
-      "icons": [
-        { "slug": "cursor", "label": "Cursor" },
-        { "slug": "windsurf", "label": "Windsurf", "color": "#0B100F" },
-        { "slug": "zedindustries", "label": "Zed", "color": "#084CCF" },
-        { "slug": "warp", "label": "Warp", "color": "#01A4FF" },
-        { "slug": "googlejules", "label": "Jules", "color": "#715CD7" },
-        { "slug": "googlegemini", "label": "Gemini CLI", "color": "#8E75B2" },
-        { "slug": "opencode", "label": "opencode" },
-        { "slug": "uipath", "label": "UiPath", "color": "#FA4616" },
-        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
-      ]
+      "type": "feature",
+      "icon": { "slug": "git", "label": "git", "color": "#F14E32" },
+      "title": "Git Prefers\nThe Branch",
+      "sub": "Name a branch after the pinned 40-hex SHA. git checkout resolves the ref, not the commit."
     },
     {
       "type": "cover",
-      "headline": "Same Foundation.\nNine Months.",
-      "sub": "Dec 9, 2025: Anthropic donated MCP and OpenAI donated AGENTS.md to the Linux Foundation’s Agentic AI Foundation. Claude Code shipped the read on Sept 18, 2026."
+      "headline": "Nothing To Click",
+      "sub": "Claude Code and Codex auto-update installed plugins in the background by default. The pin moves, the swap lands."
     },
     {
       "type": "list",
-      "title": "It’s A Fallback,\nNot A Merge",
+      "title": "Two Patched.\nTwo Won't Be.",
       "items": [
-        "AGENTS.md and no CLAUDE.md above you: Claude reads AGENTS.md",
-        "AGENTS.md plus any CLAUDE.md above you: CLAUDE.md wins, AGENTS.md is skipped entirely",
-        "A CLAUDE.md holding an @AGENTS.md import: both load, once"
+        "Claude Code — fixed in 2.1.179. The release notes never mention it",
+        "Codex — fixed in 0.146.0, verified Aug 12",
+        "GitHub Copilot — no patch. Air says Microsoft never responded",
+        "Gemini CLI — no patch ever. Google deprecated it, points users to Antigravity"
       ]
     },
     {
       "type": "cover",
-      "headline": "Your Gitignored File\nBreaks It",
-      "sub": "CLAUDE.local.md counts as a CLAUDE.md. Your teammates’ agents read AGENTS.md; yours silently stops. Same repo, different instructions."
-    },
-    {
-      "type": "cover",
-      "headline": "Load Both,\nOn Purpose",
-      "sub": "/config, Project instructions, claude-md-and-agents-md. Missing on Bedrock, Vertex and Foundry, or with telemetry off — import @AGENTS.md from a CLAUDE.md there."
+      "headline": "GitHub Blocks It.\nBitbucket Doesn't.",
+      "sub": "GitHub rejects hash-shaped branch names. Bitbucket and self-hosted git allow them — and the agents support both.",
+      "icons": [
+        { "slug": "github", "label": "GitHub", "color": "#101411" },
+        { "slug": "bitbucket", "label": "Bitbucket", "color": "#0052CC" }
+      ]
     },
     {
       "type": "cta",
-      "headline": "Stop Syncing\nTwo Files",
-      "keyword": "AGENTS",
-      "sub": "and I’ll send the precedence table"
+      "headline": "Check Where Your\nPlugins Live",
+      "keyword": "PINNED",
+      "sub": "and I'll send the version checklist"
     }
   ]
 }
