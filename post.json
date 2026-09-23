@@ -1,62 +1,37 @@
 {
-  "slug": "four-agents-never-checked-the-pin",
-  "title": "Four Agents Never Checked the Pin",
-  "caption": "The industry's fix for supply-chain attacks turned out to be the supply-chain attack.\n\nPlugin4Shell, published Sept 17. Claude Code, Codex, Copilot and the Gemini CLI check out a plugin's pinned commit and never verify they landed on it. Name a branch after the 40-character hash and git hands you the branch instead. Claude Code patched in 2.1.179, Codex in 0.146.0 — Copilot has no fix, and Google won't patch the Gemini CLI at all.\n\nThe part that bugs me: disclosed to all four vendors in June, and as of Sept 18 there's still no CVE and no advisory from any of them. Anthropic's own 2.1.179 release notes don't mention the fix. The only public account that it exists is the researchers' blog post.\n\nWhere do your plugins live?",
+  "slug": "ai-sends-43-percent-of-tallys-users",
+  "title": "AI Sends 43% of Tally's New Users",
+  "caption": "The biggest growth channel of 2026 is one you can't buy ads on.\n\nTally crossed $6M ARR this week — bootstrapped, team of 10, six years in. And 43% of their new users now arrive from ChatGPT, Claude, Gemini and Perplexity. For five years the loop was word of mouth plus the \"Made with Tally\" badge. That loop still runs. It's just not first anymore.\n\nI keep going back and forth on this one. I've spent months on SEO that an assistant now answers over my head, and Marie's own line is that a model update could reshuffle recommendations overnight. So it's the best channel I have and the one I control least.\n\nWhere did your last 10 users come from?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
+    "#bootstrapped",
+    "#saas",
     "#devtools",
-    "#claudecode",
-    "#codex",
-    "#githubcopilot",
-    "#aiagents",
-    "#codingagents",
-    "#supplychainsecurity",
-    "#appsec",
-    "#softwareengineering"
+    "#aiseo",
+    "#answerengineoptimization",
+    "#chatgpt",
+    "#claudeai",
+    "#productled",
+    "#startupgrowth"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Four Agents Never\nChecked The Pin",
-      "sub": "Plugin4Shell, published Sept 17. Claude Code, Codex, Copilot and the Gemini CLI check out a plugin's pinned commit and never verify they landed on it."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "git", "label": "git", "color": "#F14E32" },
-      "title": "Git Prefers\nThe Branch",
-      "sub": "Name a branch after the pinned 40-hex SHA. git checkout resolves the ref, not the commit."
+      "headline": "AI Sends 43%\nOf New Users",
+      "sub": "Tally crossed $6M ARR this week — bootstrapped, team of 10. 43% of new users now discover it through ChatGPT, Claude, Gemini or Perplexity."
     },
     {
       "type": "cover",
-      "headline": "Nothing To Click",
-      "sub": "Claude Code and Codex auto-update installed plugins in the background by default. The pin moves, the swap lands."
-    },
-    {
-      "type": "list",
-      "title": "Two Patched.\nTwo Won't Be.",
-      "items": [
-        "Claude Code — fixed in 2.1.179. The release notes never mention it",
-        "Codex — fixed in 0.146.0, verified Aug 12",
-        "GitHub Copilot — no patch. Air says Microsoft never responded",
-        "Gemini CLI — no patch ever. Google deprecated it, points users to Antigravity"
-      ]
+      "headline": "The Badge Lost\nFirst Place",
+      "sub": "For five years Tally grew on word of mouth and the “Made with Tally” badge. About 1% of those signups upgrade."
     },
     {
       "type": "cover",
-      "headline": "GitHub Blocks It.\nBitbucket Doesn't.",
-      "sub": "GitHub rejects hash-shaped branch names. Bitbucket and self-hosted git allow them — and the agents support both.",
-      "icons": [
-        { "slug": "github", "label": "GitHub", "color": "#101411" },
-        { "slug": "bitbucket", "label": "Bitbucket", "color": "#0052CC" }
-      ]
-    },
-    {
-      "type": "cta",
-      "headline": "Check Where Your\nPlugins Live",
-      "keyword": "PINNED",
-      "sub": "and I'll send the version checklist"
+      "headline": "You Can’t Buy\nThis Channel",
+      "sub": "Tally never bought it, and says a model update could reshuffle recommendations overnight. The hedge: product, free plan, community.",
+      "arrow": false
     }
   ]
 }
