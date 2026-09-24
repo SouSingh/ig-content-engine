@@ -1,37 +1,53 @@
 {
-  "slug": "ai-sends-43-percent-of-tallys-users",
-  "title": "AI Sends 43% of Tally's New Users",
-  "caption": "The biggest growth channel of 2026 is one you can't buy ads on.\n\nTally crossed $6M ARR this week — bootstrapped, team of 10, six years in. And 43% of their new users now arrive from ChatGPT, Claude, Gemini and Perplexity. For five years the loop was word of mouth plus the \"Made with Tally\" badge. That loop still runs. It's just not first anymore.\n\nI keep going back and forth on this one. I've spent months on SEO that an assistant now answers over my head, and Marie's own line is that a model update could reshuffle recommendations overnight. So it's the best channel I have and the one I control least.\n\nWhere did your last 10 users come from?",
+  "slug": "opus-55-cut-prices-20-costs-40",
+  "title": "Opus 5.5 Cut Prices 20%, Costs 40%",
+  "caption": "Anthropic cut Opus prices 20% and called it 40%.\n\nBoth are true. List went $5/$25 → $4/$20 per million; the rest of the saving is the model burning fewer tokens and generating output 30%+ faster, which only ever shows up on your bill and never on the pricing page. The one I actually care about is cache reads — $0.50 to $0.20. I run agent loops that re-read the same context every turn, so that line is most of my spend.\n\nAdmission: I've stayed on Sonnet for cost reasons all year. I don't think that math holds anymore.\n\nWhat's your default model?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#bootstrapped",
-    "#saas",
     "#devtools",
-    "#aiseo",
-    "#answerengineoptimization",
-    "#chatgpt",
+    "#ai",
     "#claudeai",
-    "#productled",
-    "#startupgrowth"
+    "#claudecode",
+    "#anthropic",
+    "#llm",
+    "#aiagents",
+    "#tokencost",
+    "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "AI Sends 43%\nOf New Users",
-      "sub": "Tally crossed $6M ARR this week — bootstrapped, team of 10. 43% of new users now discover it through ChatGPT, Claude, Gemini or Perplexity."
+      "headline": "40% Cheaper.\nPrices Fell 20%.",
+      "sub": "Anthropic shipped Claude Opus 5.5 on Sept 22. List price fell from $5/$25 to $4/$20 per million tokens."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "Claude Opus 5.5" },
+      "title": "$4 In, $20 Out",
+      "sub": "Down from $5 and $25 on Opus 5. Same 1M context."
     },
     {
       "type": "cover",
-      "headline": "The Badge Lost\nFirst Place",
-      "sub": "For five years Tally grew on word of mouth and the “Made with Tally” badge. About 1% of those signups upgrade."
+      "headline": "Cache Reads\nFell 60%",
+      "sub": "$0.50 to $0.20 per million — the biggest single cut, and the one an agent loop pays every turn."
     },
     {
       "type": "cover",
-      "headline": "You Can’t Buy\nThis Channel",
-      "sub": "Tally never bought it, and says a model update could reshuffle recommendations overnight. The hedge: product, free plan, community.",
-      "arrow": false
+      "headline": "The Rest Is\nFewer Tokens",
+      "sub": "Anthropic’s 40% figure isn’t the price cut. Output generates 30%+ faster and the model spends fewer tokens per task."
+    },
+    {
+      "type": "cover",
+      "headline": "Pro Now Starts\nOn Opus",
+      "sub": "Claude Code 2.1.280 changed the default on Pro and Team Standard from Sonnet to Opus. Five-hour limits went up too."
+    },
+    {
+      "type": "cta",
+      "headline": "The Full\nPrice Table",
+      "keyword": "OPUS",
+      "sub": "and I’ll send the side-by-side"
     }
   ]
 }
