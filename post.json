@@ -1,53 +1,57 @@
 {
-  "slug": "opus-55-cut-prices-20-costs-40",
-  "title": "Opus 5.5 Cut Prices 20%, Costs 40%",
-  "caption": "Anthropic cut Opus prices 20% and called it 40%.\n\nBoth are true. List went $5/$25 → $4/$20 per million; the rest of the saving is the model burning fewer tokens and generating output 30%+ faster, which only ever shows up on your bill and never on the pricing page. The one I actually care about is cache reads — $0.50 to $0.20. I run agent loops that re-read the same context every turn, so that line is most of my spend.\n\nAdmission: I've stayed on Sonnet for cost reasons all year. I don't think that math holds anymore.\n\nWhat's your default model?",
+  "slug": "95-cloud-tokens-three-files-patched",
+  "title": "95 Cloud Tokens, Three Files Patched",
+  "caption": "Google ran an agent that patched three files and spent 95 cloud tokens.\n\nThe split is the whole trick — Gemini 3.8 Flash only ever saw filenames and task descriptions, while a local Gemma 4 did the audit, the patch, the critique and the regression tests. 3,322 of 3,417 tokens never left the machine.\n\nI'm not running this tomorrow. It wants more than 24GB of VRAM and my laptop doesn't have it. But the architecture is the part I'm stealing: let the cheap cloud model plan, let the local one grind.\n\nHow much VRAM you got?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
     "#ai",
-    "#claudeai",
-    "#claudecode",
-    "#anthropic",
-    "#llm",
+    "#localllm",
+    "#ollama",
+    "#gemma",
     "#aiagents",
-    "#tokencost",
+    "#opensourceai",
+    "#coding",
     "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "40% Cheaper.\nPrices Fell 20%.",
-      "sub": "Anthropic shipped Claude Opus 5.5 on Sept 22. List price fell from $5/$25 to $4/$20 per million tokens."
+      "headline": "95 Cloud Tokens.\n3 Files Patched.",
+      "sub": "Google's Antigravity SDK added local models on Sept 23. Its demo audited and patched auth.py, billing.py and database.py."
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Opus 5.5" },
-      "title": "$4 In, $20 Out",
-      "sub": "Down from $5 and $25 on Opus 5. Same 1M context."
+      "icon": { "slug": "googlegemini", "label": "Gemini 3.8 Flash" },
+      "title": "Cloud Plans, Local Builds",
+      "sub": "The planner saw filenames and task descriptions. Local Gemma 4 26B reproduced the bugs, wrote patches, critiqued them, ran tests."
     },
     {
       "type": "cover",
-      "headline": "Cache Reads\nFell 60%",
-      "sub": "$0.50 to $0.20 per million — the biggest single cut, and the one an agent loop pays every turn."
+      "headline": "97.2% Stayed\nOn Your GPU",
+      "sub": "3,322 of 3,417 tokens ran on-device. No API cost, no rate limits, and no source code leaving the machine."
     },
     {
       "type": "cover",
-      "headline": "The Rest Is\nFewer Tokens",
-      "sub": "Anthropic’s 40% figure isn’t the price cut. Output generates 30%+ faster and the model spends fewer tokens per task."
+      "headline": "It Wants 24GB+\nOf VRAM",
+      "sub": "Google recommends more than 24GB of VRAM or unified memory for Gemma 4 26B. One recorded demo, not a guarantee."
     },
     {
-      "type": "cover",
-      "headline": "Pro Now Starts\nOn Opus",
-      "sub": "Claude Code 2.1.280 changed the default on Pro and Team Standard from Sonnet to Opus. Five-hour limits went up too."
+      "type": "grid",
+      "title": "Or Bring Your Own",
+      "icons": [
+        { "slug": "ollama", "label": "Ollama" },
+        { "slug": "lmstudio", "label": "LM Studio" },
+        { "slug": "vllm", "label": "vLLM" }
+      ]
     },
     {
       "type": "cta",
-      "headline": "The Full\nPrice Table",
-      "keyword": "OPUS",
-      "sub": "and I’ll send the side-by-side"
+      "headline": "The Local\nSetup Script",
+      "keyword": "LOCAL",
+      "sub": "and I'll send the config"
     }
   ]
 }
