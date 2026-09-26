@@ -1,57 +1,67 @@
 {
-  "slug": "95-cloud-tokens-three-files-patched",
-  "title": "95 Cloud Tokens, Three Files Patched",
-  "caption": "Google ran an agent that patched three files and spent 95 cloud tokens.\n\nThe split is the whole trick — Gemini 3.8 Flash only ever saw filenames and task descriptions, while a local Gemma 4 did the audit, the patch, the critique and the regression tests. 3,322 of 3,417 tokens never left the machine.\n\nI'm not running this tomorrow. It wants more than 24GB of VRAM and my laptop doesn't have it. But the architecture is the part I'm stealing: let the cheap cloud model plan, let the local one grind.\n\nHow much VRAM you got?",
+  "slug": "jev-is-73x-cheaper-not-100x",
+  "title": "Jev Is 7.3x Cheaper, Not 100x",
+  "caption": "The 100x everyone quoted is measured against a model nobody was using for this.\n\nMatthew O'Riordan sorted 5,595 posts from Jev's launch week and ran the numbers. Against frontier models, TypeSafe's 40 to 400x claim holds. But nobody sends yes-or-no questions to Fable 5.1. Against the small models you'd actually reach for, the median is 7.3x on cost and 4.7x on latency.\n\nThe part I think is underrated: it hands back a probability instead of a verdict, so a 0.51 announces itself as a coin flip. That's worth more to me than the price cut. And it was free on Vercel all week, so read that adoption curve as a ceiling.\n\nWhat would you classify?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
     "#ai",
-    "#localllm",
-    "#ollama",
-    "#gemma",
+    "#llm",
     "#aiagents",
-    "#opensourceai",
+    "#machinelearning",
+    "#vercel",
+    "#cloudflare",
     "#coding",
     "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "95 Cloud Tokens.\n3 Files Patched.",
-      "sub": "Google's Antigravity SDK added local models on Sept 23. Its demo audited and patched auth.py, billing.py and database.py."
+      "headline": "It's 7.3x.\nNot 100x.",
+      "sub": "TypeSafe claimed Jev is 40 to 400x cheaper than frontier models. Measured against the small models you'd actually use: 7.3x."
+    },
+    {
+      "type": "cover",
+      "headline": "It Cannot Write\nA Sentence.",
+      "sub": "Launched Sept 15. State plus a typed question in; a choice, score or probability out in 70 to 500ms."
+    },
+    {
+      "type": "cover",
+      "headline": "$0.042 In.\nOutput Free.",
+      "sub": "Founder Diogo Almeida: output tokens are \"too cheap to meter.\" One writer's four-question scoring request cost $0.000126."
+    },
+    {
+      "type": "cover",
+      "headline": "DeepSeek Is\nCheaper\nPer Token.",
+      "sub": "DeepSeek V4 Flash: $0.030 per million. Jev: $0.042. The 244x only holds if you would have asked Fable 5.1."
     },
     {
       "type": "feature",
-      "icon": { "slug": "googlegemini", "label": "Gemini 3.8 Flash" },
-      "title": "Cloud Plans, Local Builds",
-      "sub": "The planner saw filenames and task descriptions. Local Gemma 4 26B reproduced the bugs, wrote patches, critiqued them, ran tests."
+      "icon": { "slug": "vercel", "label": "Vercel" },
+      "title": "Five To Eighteen\nTimes Faster",
+      "sub": "Vercel's shell-command safety classifier moved off ChatGPT Luna 5.6. Faster, and more accurate. Engineer Pranit Sharma, to TechCrunch."
     },
     {
       "type": "cover",
-      "headline": "97.2% Stayed\nOn Your GPU",
-      "sub": "3,322 of 3,417 tokens ran on-device. No API cost, no rate limits, and no source code leaving the machine."
-    },
-    {
-      "type": "cover",
-      "headline": "It Wants 24GB+\nOf VRAM",
-      "sub": "Google recommends more than 24GB of VRAM or unified memory for Gemma 4 26B. One recorded demo, not a guarantee."
+      "headline": "A Quarter Of Requests.\n2% Of Tokens.",
+      "sub": "Vercel's gateway, Sept 23. And 96% of OpenRouter's Jev traffic comes from anonymous apps."
     },
     {
       "type": "grid",
-      "title": "Or Bring Your Own",
+      "title": "Where It Already Runs",
       "icons": [
-        { "slug": "ollama", "label": "Ollama" },
-        { "slug": "lmstudio", "label": "LM Studio" },
-        { "slug": "vllm", "label": "vLLM" }
+        { "slug": "vercel", "label": "Vercel" },
+        { "slug": "cloudflare", "label": "Cloudflare" },
+        { "slug": "openrouter", "label": "OpenRouter" }
       ]
     },
     {
       "type": "cta",
-      "headline": "The Local\nSetup Script",
-      "keyword": "LOCAL",
-      "sub": "and I'll send the config"
+      "headline": "How To Actually\nTest It",
+      "keyword": "DECIDE",
+      "sub": "and I'll send the checklist"
     }
   ]
 }
