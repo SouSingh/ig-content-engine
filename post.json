@@ -1,54 +1,73 @@
 {
-  "slug": "ram-went-up-cpu-didnt",
-  "title": "RAM Went Up. CPU Didn't.",
-  "caption": "My hosting bill is going up because of AI, and I don't ship any AI.\n\nFly.io emailed customers on Sept 21: from October 1, memory is $6 per GB a month on every preset, up from about $5. CPU pricing doesn't move. Hetzner already did its second round in June, where one US cloud VM went from $46.49 to $141.49. OVHcloud's founder says he now pays 6x what he paid for RAM a year ago.\n\nThe admission: I've been sizing boxes by cores for years, out of habit. Cores turn out to be the part holding steady. Memory is where the bill moved, and I never looked at that line once.\n\nWhat are you running on?",
+  "slug": "anthropic-cut-80-of-its-prompt",
+  "title": "Anthropic Cut 80% of Its Own Prompt",
+  "caption": "I've been adding rules to my CLAUDE.md for months. That was the problem.\n\nAnthropic deleted over 80% of Claude Code's system prompt for the Claude 5 models and their coding evals didn't move. Most of those rules were scaffolding for models that are already gone.\n\nClaude Code just shipped /doctor prompt-audit to find yours. Running it on mine tonight.\n\nWhat's in yours?",
   "hashtags": [
-    "#buildinpublic",
+    "#claudecode",
+    "#anthropic",
+    "#aicoding",
+    "#promptengineering",
+    "#contextengineering",
+    "#devtools",
     "#indiehackers",
     "#solofounder",
-    "#saas",
-    "#devops",
-    "#selfhosted",
-    "#postgres",
-    "#cloudcomputing",
-    "#webdev",
-    "#shipfast",
-    "#infrastructure",
-    "#hetzner"
+    "#buildinpublic",
+    "#agenticai",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "RAM Went Up.\nCPU Didn't.",
-      "sub": "Fly.io, October 1: memory goes to $6 per GB a month, up from about $5. Machine CPU pricing is unchanged.",
-      "icons": [{ "slug": "flydotio", "label": "Fly.io" }]
-    },
-    {
-      "type": "cover",
-      "headline": "Hetzner Tripled\nA US VM.",
-      "sub": "CPX41 in Ashburn: $46.49 to $141.49 on June 15. US cloud prices rose 158% on average.",
-      "icons": [{ "slug": "hetzner", "label": "Hetzner" }]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "ovh", "label": "OVHcloud" },
-      "title": "6x In Twelve Months",
-      "sub": "OVHcloud founder Octave Klaba, June 2026: RAM costs 6x what it did a year earlier. He expects 9x by September."
+      "headline": "Anthropic Cut 80%\nOf Its Prompt",
+      "sub": "Claude Code's system prompt, for Claude 5 models. No measurable loss on their coding evals.",
+      "icons": [
+        {
+          "slug": "anthropic",
+          "label": "Anthropic"
+        },
+        {
+          "slug": "claude",
+          "label": "Claude Code"
+        }
+      ]
     },
     {
       "type": "list",
-      "title": "Multiples, Not Percent",
+      "title": "The Rules Fought\nEach Other",
       "items": [
-        "RAM: 6x in a year, 12x forecast for 2027",
-        "NVMe drives: 7x. Spinning hard drives: 3.5x",
-        "CPUs and motherboards: up 15 to 20%"
+        "System prompt said: \"DO NOT add comments\"",
+        "Another layer said: \"leave documentation as appropriate\"",
+        "Claude spends attention reconciling both before it writes"
+      ]
+    },
+    {
+      "type": "cover",
+      "headline": "39 Words\nBecame 15",
+      "sub": "The replacement: \"Write code that reads like the surrounding code: match its comment density, naming, and idiom.\""
+    },
+    {
+      "type": "feature",
+      "icon": {
+        "slug": "claude",
+        "label": "Claude Code"
+      },
+      "title": "/doctor prompt-audit",
+      "sub": "Shipped Sept 25 in v2.1.283. Scans your CLAUDE.md, skills, agents and commands for prompting written for older models."
+    },
+    {
+      "type": "list",
+      "title": "Rewrite Yours\nFor Judgement",
+      "items": [
+        "Cut rules the model can infer from your codebase",
+        "Drop worked examples — they narrow Claude's exploration space",
+        "Spend the tokens on gotchas, not architecture it can read"
       ]
     },
     {
       "type": "cta",
-      "headline": "Check Your\nMemory Line",
-      "keyword": "MEMORY",
-      "sub": "and I'll send the checklist"
+      "headline": "Your CLAUDE.md\nIs Stale",
+      "keyword": "AUDIT",
+      "sub": "if your CLAUDE.md predates Opus 5"
     }
   ]
 }
