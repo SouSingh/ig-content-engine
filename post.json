@@ -1,73 +1,81 @@
 {
-  "slug": "anthropic-cut-80-of-its-prompt",
-  "title": "Anthropic Cut 80% of Its Own Prompt",
-  "caption": "I've been adding rules to my CLAUDE.md for months. That was the problem.\n\nAnthropic deleted over 80% of Claude Code's system prompt for the Claude 5 models and their coding evals didn't move. Most of those rules were scaffolding for models that are already gone.\n\nClaude Code just shipped /doctor prompt-audit to find yours. Running it on mine tonight.\n\nWhat's in yours?",
+  "slug": "10-correct-builds-4-shipped",
+  "title": "10 Correct Builds. 4 Shipped.",
+  "caption": "The model wrote correct code. The harness threw it away.\n\nGreg Herlein pointed five terminal agents at one local qwen model, ten rounds each. One agent built a correct binary all ten times and finished four — the other six hit a 100-turn cap and exited with the work in the trash.\n\nThen his own agent passed its own 25 tests and rejected nothing malformed. The tests encoded the same misreading as the code, so they agreed perfectly.\n\nI've blamed the model for my own loop more than once. The higher-fidelity build fixed none of it: 1.7x the memory, identical bugs.\n\nWhere does your agent quit?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
-    "#aicoding",
-    "#promptengineering",
-    "#contextengineering",
-    "#devtools",
+    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
+    "#devtools",
+    "#aiagents",
+    "#codingagents",
     "#agenticai",
+    "#claudecode",
+    "#ollama",
+    "#localllm",
+    "#developertools",
     "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Anthropic Cut 80%\nOf Its Prompt",
-      "sub": "Claude Code's system prompt, for Claude 5 models. No measurable loss on their coding evals.",
+      "headline": "10 Correct Builds.\n4 Shipped.",
+      "sub": "One local model. Five coding agents. Ten rounds each.",
       "icons": [
         {
-          "slug": "anthropic",
-          "label": "Anthropic"
+          "slug": "qwen",
+          "label": "Qwen",
+          "color": "#6950EF"
         },
         {
-          "slug": "claude",
-          "label": "Claude Code"
+          "slug": "ollama",
+          "label": "Ollama"
         }
       ]
     },
     {
-      "type": "list",
-      "title": "The Rules Fought\nEach Other",
-      "items": [
-        "System prompt said: \"DO NOT add comments\"",
-        "Another layer said: \"leave documentation as appropriate\"",
-        "Claude spends attention reconciling both before it writes"
-      ]
+      "type": "cover",
+      "headline": "The Code Was Right",
+      "sub": "~0.97 median correctness on the three reliable agents. Finishing was the failure, not thinking."
     },
     {
-      "type": "cover",
-      "headline": "39 Words\nBecame 15",
-      "sub": "The replacement: \"Write code that reads like the surrounding code: match its comment density, naming, and idiom.\""
+      "type": "list",
+      "title": "How the Runs Died",
+      "items": [
+        "hax — correct binary 10 of 10. Six runs died at the 100-turn cap, work discarded.",
+        "kit — declared done after 3 turns. No tests, no Makefile, no binary.",
+        "pi — one run burned 679 turns and 85M tokens without ever stopping."
+      ]
     },
     {
       "type": "feature",
       "icon": {
-        "slug": "claude",
-        "label": "Claude Code"
+        "slug": "go",
+        "label": "Go",
+        "color": "#00ADD8"
       },
-      "title": "/doctor prompt-audit",
-      "sub": "Shipped Sept 25 in v2.1.283. Scans your CLAUDE.md, skills, agents and commands for prompting written for older models."
+      "title": "It Passed Its Own Tests",
+      "sub": "25 test functions, all green. The binary accepted bad CRCs, truncated files and zero-byte garbage."
+    },
+    {
+      "type": "cover",
+      "headline": "Q8 Bought Nothing",
+      "sub": "Same weights at higher fidelity. 1.7x the memory and latency. Identical failures, and two agents got worse."
     },
     {
       "type": "list",
-      "title": "Rewrite Yours\nFor Judgement",
+      "title": "What Actually Worked",
       "items": [
-        "Cut rules the model can infer from your codebase",
-        "Drop worked examples — they narrow Claude's exploration space",
-        "Spend the tokens on gotchas, not architecture it can read"
+        "A done-gate the harness runs: build and test must pass before the agent can finish.",
+        "An independent reviewer against the spec, not the agent's own tests.",
+        "At the budget cap, commit best-effort. Never bin a correct binary."
       ]
     },
     {
       "type": "cta",
-      "headline": "Your CLAUDE.md\nIs Stale",
-      "keyword": "AUDIT",
-      "sub": "if your CLAUDE.md predates Opus 5"
+      "headline": "90% Was the Harness",
+      "keyword": "HARNESS",
+      "sub": "and I'll send the done-gate checklist"
     }
   ]
 }
