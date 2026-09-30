@@ -1,81 +1,70 @@
 {
-  "slug": "10-correct-builds-4-shipped",
-  "title": "10 Correct Builds. 4 Shipped.",
-  "caption": "The model wrote correct code. The harness threw it away.\n\nGreg Herlein pointed five terminal agents at one local qwen model, ten rounds each. One agent built a correct binary all ten times and finished four — the other six hit a 100-turn cap and exited with the work in the trash.\n\nThen his own agent passed its own 25 tests and rejected nothing malformed. The tests encoded the same misreading as the code, so they agreed perfectly.\n\nI've blamed the model for my own loop more than once. The higher-fidelity build fixed none of it: 1.7x the memory, identical bugs.\n\nWhere does your agent quit?",
+  "slug": "four-channels-gone-in-3-days",
+  "title": "Four Channels Gone In 3 Days",
+  "caption": "His posting bot tried too hard. Meta killed all four channels in three days.\n\nPatrick Schoenmaker's autopilot posted too often and retried the instant anything failed. Session invalidated, two days of silence, and everything after 12:22 failing quietly while his dashboard showed green.\n\nHe didn't make it smarter, he made it slower — 180 minutes between posts, no auto-retry, a stop that asks a human. I've shipped that same retry loop; backoff is the unglamorous fix I keep skipping.\n\nSlower or smarter?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
+    "#microsaas",
+    "#solopreneur",
     "#devtools",
-    "#aiagents",
-    "#codingagents",
-    "#agenticai",
-    "#claudecode",
-    "#ollama",
-    "#localllm",
-    "#developertools",
+    "#automation",
+    "#ratelimiting",
+    "#saas",
+    "#shipfast",
+    "#platformrisk",
     "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "10 Correct Builds.\n4 Shipped.",
-      "sub": "One local model. Five coding agents. Ten rounds each.",
+      "headline": "Four Channels\nGone In 3 Days",
+      "sub": "Meta invalidated the session on Aug 4. The cause was his own posting bot.",
       "icons": [
         {
-          "slug": "qwen",
-          "label": "Qwen",
-          "color": "#6950EF"
+          "slug": "instagram",
+          "label": "Instagram"
         },
         {
-          "slug": "ollama",
-          "label": "Ollama"
+          "slug": "facebook",
+          "label": "Facebook"
         }
       ]
     },
     {
       "type": "cover",
-      "headline": "The Code Was Right",
-      "sub": "~0.97 median correctness on the three reliable agents. Finishing was the failure, not thinking."
+      "headline": "It Retried Every Failure",
+      "sub": "Too many posts across three days, and it fired again the instant one failed. Meta's answer: reconnect and wait one to two days."
+    },
+    {
+      "type": "cover",
+      "headline": "The Dashboard\nSaid Green",
+      "sub": "Everything after 12:22 failed quietly. His own panel showed green three times while nothing was live."
     },
     {
       "type": "list",
-      "title": "How the Runs Died",
+      "title": "Three Brakes,\nNot More Brains",
       "items": [
-        "hax — correct binary 10 of 10. Six runs died at the 100-turn cap, work discarded.",
-        "kit — declared done after 3 turns. No tests, no Makefile, no binary.",
-        "pi — one run burned 679 turns and 85M tokens without ever stopping."
+        "180 minutes minimum between two posts, across every project.",
+        "One project per run. No fanning out across channels at once.",
+        "No automatic retry. A failure stops the autopilot and asks a human."
       ]
     },
     {
       "type": "feature",
       "icon": {
-        "slug": "go",
-        "label": "Go",
-        "color": "#00ADD8"
+        "slug": "meta",
+        "label": "Meta"
       },
-      "title": "It Passed Its Own Tests",
-      "sub": "25 test functions, all green. The binary accepted bad CRCs, truncated files and zero-byte garbage."
-    },
-    {
-      "type": "cover",
-      "headline": "Q8 Bought Nothing",
-      "sub": "Same weights at higher fidelity. 1.7x the memory and latency. Identical failures, and two agents got worse."
-    },
-    {
-      "type": "list",
-      "title": "What Actually Worked",
-      "items": [
-        "A done-gate the harness runs: build and test must pass before the agent can finish.",
-        "An independent reviewer against the spec, not the agent's own tests.",
-        "At the budget cap, commit best-effort. Never bin a correct binary."
-      ]
+      "title": "Ask The Platform",
+      "sub": "The dashboard stopped answering from memory. Now it asks Meta whether the post is really there."
     },
     {
       "type": "cta",
-      "headline": "90% Was the Harness",
-      "keyword": "HARNESS",
-      "sub": "and I'll send the done-gate checklist"
+      "headline": "Slower Beat Smarter",
+      "keyword": "BRAKES",
+      "sub": "and I'll send the three brakes"
     }
   ]
 }
