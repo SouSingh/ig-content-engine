@@ -1,70 +1,56 @@
 {
-  "slug": "four-channels-gone-in-3-days",
-  "title": "Four Channels Gone In 3 Days",
-  "caption": "His posting bot tried too hard. Meta killed all four channels in three days.\n\nPatrick Schoenmaker's autopilot posted too often and retried the instant anything failed. Session invalidated, two days of silence, and everything after 12:22 failing quietly while his dashboard showed green.\n\nHe didn't make it smarter, he made it slower — 180 minutes between posts, no auto-retry, a stop that asks a human. I've shipped that same retry loop; backoff is the unglamorous fix I keep skipping.\n\nSlower or smarter?",
+  "slug": "the-median-earner-made-169",
+  "title": "The Median Earner Made $169",
+  "caption": "The median indie product that actually makes money makes $169 a month.\n\nA researcher pulled all 10,150 products off TrustMRR on Sept 4 — Stripe-verified revenue, not screenshots. Half took no money at all in 30 days. 102 products took 76% of everything on the platform.\n\nThe caveat I keep repeating to myself: it's a self-selected list, nobody connects Stripe to display a zero. But developer tools came in at 2.1% above $5k MRR, and that's the category I keep building in.\n\nWhat's your 30-day number?",
   "hashtags": [
-    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
+    "#buildinpublic",
     "#microsaas",
     "#solopreneur",
-    "#devtools",
-    "#automation",
-    "#ratelimiting",
     "#saas",
-    "#shipfast",
-    "#platformrisk",
-    "#softwareengineering"
+    "#devtools",
+    "#mrr",
+    "#bootstrapped",
+    "#startupdata",
+    "#sidehustle",
+    "#shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Four Channels\nGone In 3 Days",
-      "sub": "Meta invalidated the session on Aug 4. The cause was his own posting bot.",
+      "headline": "The Median Earner\nMade $169",
+      "sub": "10,150 payment-verified products, pulled Sept 4. Half of them took no money at all in 30 days.",
       "icons": [
-        {
-          "slug": "instagram",
-          "label": "Instagram"
-        },
-        {
-          "slug": "facebook",
-          "label": "Facebook"
-        }
+        { "slug": "stripe", "label": "Stripe" },
+        { "slug": "revenuecat", "label": "RevenueCat" }
       ]
     },
     {
       "type": "cover",
-      "headline": "It Retried Every Failure",
-      "sub": "Too many posts across three days, and it fired again the instant one failed. Meta's answer: reconnect and wait one to two days."
-    },
-    {
-      "type": "cover",
-      "headline": "The Dashboard\nSaid Green",
-      "sub": "Everything after 12:22 failed quietly. His own panel showed green three times while nothing was live."
+      "headline": "102 Products\nTook 76%",
+      "sub": "Of all revenue on the platform in 30 days. The other 10,048 split what was left."
     },
     {
       "type": "list",
-      "title": "Three Brakes,\nNot More Brains",
+      "title": "2.1% Of Dev Tools\nCleared $5k",
       "items": [
-        "180 minutes minimum between two posts, across every project.",
-        "One project per run. No fanning out across channels at once.",
-        "No automatic retry. A failure stops the autopilot and asks a human."
+        "Artificial Intelligence: 2,156 products, 4.2%",
+        "SaaS: 951 products, 3.7%",
+        "Developer Tools: 581 products, 2.1%",
+        "Productivity: 691 products, 0.6%"
       ]
     },
     {
-      "type": "feature",
-      "icon": {
-        "slug": "meta",
-        "label": "Meta"
-      },
-      "title": "Ask The Platform",
-      "sub": "The dashboard stopped answering from memory. Now it asks Meta whether the post is really there."
+      "type": "cover",
+      "headline": "37 Dead Records,\n37% Of The MRR",
+      "sub": "Of 390 products showing over $5k MRR, 37 had expired or unsynced payment connections. They were 37.4% of all reported MRR."
     },
     {
       "type": "cta",
-      "headline": "Slower Beat Smarter",
-      "keyword": "BRAKES",
-      "sub": "and I'll send the three brakes"
+      "headline": "The Scoreboard Is Lying",
+      "keyword": "CENSUS",
+      "sub": "and I'll send the full breakdown"
     }
   ]
 }
