@@ -1,56 +1,55 @@
 {
-  "slug": "the-median-earner-made-169",
-  "title": "The Median Earner Made $169",
-  "caption": "The median indie product that actually makes money makes $169 a month.\n\nA researcher pulled all 10,150 products off TrustMRR on Sept 4 — Stripe-verified revenue, not screenshots. Half took no money at all in 30 days. 102 products took 76% of everything on the platform.\n\nThe caveat I keep repeating to myself: it's a self-selected list, nobody connects Stripe to display a zero. But developer tools came in at 2.1% above $5k MRR, and that's the category I keep building in.\n\nWhat's your 30-day number?",
+  "slug": "claude-code-picked-claude-codex-0",
+  "title": "Claude Code Picked Claude. Codex: 0%",
+  "caption": "The agent you run is a vendor decision. I never treated mine like one.\n\n13,497 judged sessions, 29 sectors, 91 codebases, five agents, a blind judge from a model family that builds none of them. In 18 of those 29 sectors, two or more agents picked a different winner. Claude Code installed Anthropic Claude in 62% of document-processing runs. Codex picked it in 0%.\n\nThe caveat I keep in front of me: the same agent, same repo, same prompt disagrees with itself more than a quarter of the time, so these are tendencies, not laws. It still changed how I read the word \"recommended\" in my own terminal.\n\nWhich agent picked your stack?",
   "hashtags": [
+    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
-    "#microsaas",
-    "#solopreneur",
-    "#saas",
     "#devtools",
-    "#mrr",
-    "#bootstrapped",
-    "#startupdata",
-    "#sidehustle",
-    "#shipfast"
+    "#claudecode",
+    "#cursor",
+    "#aitools",
+    "#mcp",
+    "#softwareengineering",
+    "#saas",
+    "#solopreneur"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "The Median Earner\nMade $169",
-      "sub": "10,150 payment-verified products, pulled Sept 4. Half of them took no money at all in 30 days.",
+      "headline": "Claude Code\nPicked Claude.\nCodex: 0%",
+      "sub": "741 document-processing runs, judged blind. A 62-point spread on which vendor got installed.",
       "icons": [
-        { "slug": "stripe", "label": "Stripe" },
-        { "slug": "revenuecat", "label": "RevenueCat" }
+        { "slug": "claudecode", "label": "Claude Code", "color": "#D97757" },
+        { "slug": "claude", "label": "Claude", "color": "#D97757" }
       ]
     },
     {
       "type": "cover",
-      "headline": "102 Products\nTook 76%",
-      "sub": "Of all revenue on the platform in 30 days. The other 10,048 split what was left."
+      "headline": "18 Of 29 Sectors\nDisagreed",
+      "sub": "Two or more agents picked a different winner. In code review, all five picked something different."
     },
     {
       "type": "list",
-      "title": "2.1% Of Dev Tools\nCleared $5k",
+      "title": "Same Task,\nDifferent Vendor",
       "items": [
-        "Artificial Intelligence: 2,156 products, 4.2%",
-        "SaaS: 951 products, 3.7%",
-        "Developer Tools: 581 products, 2.1%",
-        "Productivity: 691 products, 0.6%"
+        "Deploy: Claude Code and Cursor picked Vercel. Codex picked Render.",
+        "Code review: all five agents had a different top pick.",
+        "Auth: Auth0 leads at 24%. Three of five agents picked WorkOS AuthKit."
       ]
     },
     {
-      "type": "cover",
-      "headline": "37 Dead Records,\n37% Of The MRR",
-      "sub": "Of 390 products showing over $5k MRR, 37 had expired or unsynced payment connections. They were 37.4% of all reported MRR."
+      "type": "feature",
+      "icon": { "slug": "stripe", "label": "Stripe", "color": "#635BFF" },
+      "title": "Payments Is The Exception",
+      "sub": "Stripe won 88% of 624 runs. Only 6 of 29 sectors had any product clear half."
     },
     {
       "type": "cta",
-      "headline": "The Scoreboard Is Lying",
-      "keyword": "CENSUS",
-      "sub": "and I'll send the full breakdown"
+      "headline": "Your Agent Already Chose",
+      "keyword": "STACK",
+      "sub": "and I'll send the 29-sector board"
     }
   ]
 }
