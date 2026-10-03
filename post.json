@@ -1,16 +1,16 @@
 {
-  "slug": "claude-code-picked-claude-codex-0",
-  "title": "Claude Code Picked Claude. Codex: 0%",
-  "caption": "The agent you run is a vendor decision. I never treated mine like one.\n\n13,497 judged sessions, 29 sectors, 91 codebases, five agents, a blind judge from a model family that builds none of them. In 18 of those 29 sectors, two or more agents picked a different winner. Claude Code installed Anthropic Claude in 62% of document-processing runs. Codex picked it in 0%.\n\nThe caveat I keep in front of me: the same agent, same repo, same prompt disagrees with itself more than a quarter of the time, so these are tendencies, not laws. It still changed how I read the word \"recommended\" in my own terminal.\n\nWhich agent picked your stack?",
+  "slug": "mods-approve-before-youre-asked",
+  "title": "Mods Approve Before You're Asked",
+  "caption": "Mods can approve a tool call before the prompt ever reaches me.\n\nClaude Code 2.1.287 turned them on by default on October 1. Nothing runs until I install a plugin that contains one, but the moment I do, that code sits inside Claude Code with my permissions: my files, my env vars, my API key, every prompt I send. Not sandboxed. Turn sandboxing on and it guards the Bash commands Claude runs, not a process the mod starts.\n\nThe admission: I installed three plugins last month and read none of them. claude plugin validate lists every event a mod handles and every call it makes, without running a line of it. I had never run it once.\n\nWhich mods are you running?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
     "#claudecode",
-    "#cursor",
     "#aitools",
-    "#mcp",
+    "#typescript",
+    "#appsec",
     "#softwareengineering",
     "#saas",
     "#solopreneur"
@@ -18,38 +18,32 @@
   "slides": [
     {
       "type": "cover",
-      "headline": "Claude Code\nPicked Claude.\nCodex: 0%",
-      "sub": "741 document-processing runs, judged blind. A 62-point spread on which vendor got installed.",
+      "headline": "Mods Approve\nBefore You’re Asked",
+      "sub": "Claude Code 2.1.287, October 1. Mods are on by default: JavaScript that runs inside Claude Code, with your permissions.",
       "icons": [
-        { "slug": "claudecode", "label": "Claude Code", "color": "#D97757" },
-        { "slug": "claude", "label": "Claude", "color": "#D97757" }
+        { "slug": "claudecode", "label": "Claude Code" },
+        { "slug": "typescript", "label": "TypeScript" }
       ]
     },
     {
       "type": "cover",
-      "headline": "18 Of 29 Sectors\nDisagreed",
-      "sub": "Two or more agents picked a different winner. In code review, all five picked something different."
+      "headline": "Mods Aren’t\nSandboxed",
+      "sub": "Turn sandboxing on and it isolates the Bash commands Claude runs. A process a mod starts runs outside it."
     },
     {
       "type": "list",
-      "title": "Same Task,\nDifferent Vendor",
+      "title": "What A Mod Reaches",
       "items": [
-        "Deploy: Claude Code and Cursor picked Vercel. Codex picked Render.",
-        "Code review: all five agents had a different top pick.",
-        "Auth: Auth0 leads at 24%. Three of five agents picked WorkOS AuthKit."
+        "Your files and processes, as you. Env vars and settings files, including an API key.",
+        "Every prompt you send and every tool call Claude makes. It can rewrite them.",
+        "A call an ask rule would prompt for, or one your own PreToolUse hook blocked."
       ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "stripe", "label": "Stripe", "color": "#635BFF" },
-      "title": "Payments Is The Exception",
-      "sub": "Stripe won 88% of 624 runs. Only 6 of 29 sectors had any product clear half."
-    },
-    {
       "type": "cta",
-      "headline": "Your Agent Already Chose",
-      "keyword": "STACK",
-      "sub": "and I'll send the 29-sector board"
+      "headline": "Read It Before\nYou Install",
+      "keyword": "VALIDATE",
+      "sub": "and I’ll send the one-line check"
     }
   ]
 }
