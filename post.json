@@ -1,49 +1,52 @@
 {
-  "slug": "mods-approve-before-youre-asked",
-  "title": "Mods Approve Before You're Asked",
-  "caption": "Mods can approve a tool call before the prompt ever reaches me.\n\nClaude Code 2.1.287 turned them on by default on October 1. Nothing runs until I install a plugin that contains one, but the moment I do, that code sits inside Claude Code with my permissions: my files, my env vars, my API key, every prompt I send. Not sandboxed. Turn sandboxing on and it guards the Bash commands Claude runs, not a process the mod starts.\n\nThe admission: I installed three plugins last month and read none of them. claude plugin validate lists every event a mod handles and every call it makes, without running a line of it. I had never run it once.\n\nWhich mods are you running?",
+  "slug": "you-didnt-turn-on-1m-context",
+  "title": "You Didn't Turn On 1M Context",
+  "caption": "My context window quintupled and I didn't ask for it.\n\nClaude Code 2.1.286, Sept 30: Opus 4.7+ and Fable now default to a 1M window on Bedrock, Vertex, Foundry and the Claude apps gateway, with no [1m] suffix. 2.1.285 did the same the day before for anything behind a custom ANTHROPIC_BASE_URL.\n\nWhat I had wrong: I thought the bigger window only cost me once I filled it. But Claude Code sends the whole conversation with every request, and it caps the auto-compact window at the model's context window. That cap was 200K. Compaction was doing my cost control for me, and its ceiling just moved.\n\nCLAUDE_CODE_DISABLE_1M_CONTEXT=1 puts it back. /autocompact 200k keeps the room and summarizes early — that's the one I picked.\n\nWhich one are you running?",
   "hashtags": [
+    "#claudecode",
+    "#devtools",
+    "#aitools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#devtools",
-    "#claudecode",
-    "#aitools",
-    "#typescript",
-    "#appsec",
+    "#solopreneur",
     "#softwareengineering",
-    "#saas",
-    "#solopreneur"
+    "#aiagents",
+    "#codingagents",
+    "#llmops",
+    "#sideproject"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Mods Approve\nBefore You’re Asked",
-      "sub": "Claude Code 2.1.287, October 1. Mods are on by default: JavaScript that runs inside Claude Code, with your permissions.",
+      "headline": "You Didn’t Turn On\n1M Context",
+      "sub": "Claude Code 2.1.286, Sept 30. Opus 4.7+ and Fable now default to a 1M window on Bedrock, Vertex, Foundry and the Claude apps gateway.",
       "icons": [
-        { "slug": "claudecode", "label": "Claude Code" },
-        { "slug": "typescript", "label": "TypeScript" }
+        {
+          "slug": "claude",
+          "label": "Claude Code"
+        }
       ]
     },
     {
       "type": "cover",
-      "headline": "Mods Aren’t\nSandboxed",
-      "sub": "Turn sandboxing on and it isolates the Bash commands Claude runs. A process a mod starts runs outside it."
+      "headline": "Compaction’s\nCeiling Moved",
+      "sub": "Claude Code sends the whole conversation with every request, and caps auto-compaction at the model’s context window. That cap was 200K. Now it’s 1M."
     },
     {
       "type": "list",
-      "title": "What A Mod Reaches",
+      "title": "Put The Ceiling Back",
       "items": [
-        "Your files and processes, as you. Env vars and settings files, including an API key.",
-        "Every prompt you send and every tool call Claude makes. It can rewrite them.",
-        "A call an ask rule would prompt for, or one your own PreToolUse hook blocked."
+        "CLAUDE_CODE_DISABLE_1M_CONTEXT=1 — a 200K window again, and sessions compact at that boundary.",
+        "/autocompact 200k — keeps the 1M room, summarizes at 200K. Saved per model since 2.1.288.",
+        "autoCompactWindow in settings.json — one window for every model, 100K to 1M."
       ]
     },
     {
       "type": "cta",
-      "headline": "Read It Before\nYou Install",
-      "keyword": "VALIDATE",
-      "sub": "and I’ll send the one-line check"
+      "headline": "See Where\nIt Goes",
+      "keyword": "CONTEXT",
+      "sub": "and I’ll send the /usage breakdown"
     }
   ]
 }
