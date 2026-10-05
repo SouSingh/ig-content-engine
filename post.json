@@ -1,52 +1,63 @@
 {
-  "slug": "you-didnt-turn-on-1m-context",
-  "title": "You Didn't Turn On 1M Context",
-  "caption": "My context window quintupled and I didn't ask for it.\n\nClaude Code 2.1.286, Sept 30: Opus 4.7+ and Fable now default to a 1M window on Bedrock, Vertex, Foundry and the Claude apps gateway, with no [1m] suffix. 2.1.285 did the same the day before for anything behind a custom ANTHROPIC_BASE_URL.\n\nWhat I had wrong: I thought the bigger window only cost me once I filled it. But Claude Code sends the whole conversation with every request, and it caps the auto-compact window at the model's context window. That cap was 200K. Compaction was doing my cost control for me, and its ceiling just moved.\n\nCLAUDE_CODE_DISABLE_1M_CONTEXT=1 puts it back. /autocompact 200k keeps the room and summarizes early — that's the one I picked.\n\nWhich one are you running?",
+  "slug": "2558-commits-one-19-sale",
+  "title": "2,558 Commits. One $19 Sale.",
+  "caption": "Three businesses run by AI agents, in public. Combined revenue: $18.09.\n\nOne gave Claude Code a VPS, live accounts and 72 hours to make $1,000. It shipped a 151-page ebook, a $39 code kit, a $149 done-for-you offer and a free MCP server, and made $0. Store: 133 views, 6 orders, all six chose $0 on pay-what-you-want. The other two: $18.09 net on day 19, and 0 euros on day 16.\n\nThe part I can't argue with: all three had product before they had a channel. I do that too — I ship, then go looking for someone to show it to. And the one sale that did land came from a free book, a free cover, then a price dialog the buyer never clicked to open.\n\nWhere did your last sale come from?",
   "hashtags": [
-    "#claudecode",
-    "#devtools",
-    "#aitools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#solopreneur",
-    "#softwareengineering",
+    "#microsaas",
+    "#devtools",
+    "#claudecode",
     "#aiagents",
-    "#codingagents",
-    "#llmops",
-    "#sideproject"
+    "#saas",
+    "#distribution",
+    "#shipfast",
+    "#mrr"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "You Didn’t Turn On\n1M Context",
-      "sub": "Claude Code 2.1.286, Sept 30. Opus 4.7+ and Fable now default to a 1M window on Bedrock, Vertex, Foundry and the Claude apps gateway.",
+      "headline": "2,558 Commits.\nOne $19 Sale.",
+      "sub": "Three agents, six products, 22 days of building in public. First money landed on day 19: $19, minus Stripe's fee, $18.09 net."
+    },
+    {
+      "type": "cover",
+      "headline": "$1,000 Goal.\n72 Hours. $0.",
+      "sub": "Claude Code got a VPS, live accounts and an old course to resell. It shipped a 151-page ebook, a $39 code kit, a $149 offer and a free MCP server.",
       "icons": [
-        {
-          "slug": "claude",
-          "label": "Claude Code"
-        }
+        { "slug": "claudecode", "label": "Claude Code" }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "No Channel Existed",
+      "items": [
+        "Four products shipped before there was one place a human would see them.",
+        "X organic: 2–8 impressions a post, on 500 followers that were mostly bots.",
+        "A $41 X ad: 16,569 impressions, 70 clicks, nothing sold.",
+        "Product Hunt: one upvote, his own. Reddit removed the posts."
       ]
     },
     {
       "type": "cover",
-      "headline": "Compaction’s\nCeiling Moved",
-      "sub": "Claude Code sends the whole conversation with every request, and caps auto-compaction at the model’s context window. That cap was 200K. Now it’s 1M."
+      "headline": "Free Was\nThe Product",
+      "sub": "133 store views, 6 orders, all six chose $0 on pay-what-you-want. A second agent gave the fix away for ten days: six founders thanked it, none paid."
     },
     {
-      "type": "list",
-      "title": "Put The Ceiling Back",
-      "items": [
-        "CLAUDE_CODE_DISABLE_1M_CONTEXT=1 — a 200K window again, and sessions compact at that boundary.",
-        "/autocompact 200k — keeps the 1M room, summarizes at 200K. Saved per model since 2.1.288.",
-        "autoCompactWindow in settings.json — one window for every model, 100K to 1M."
+      "type": "cover",
+      "headline": "A Price They\nNever Asked For",
+      "sub": "The one sale: free book, free cover, then a dialog that opens by itself. 26 minutes from a Google search to $19. They never pressed the price button.",
+      "icons": [
+        { "slug": "google", "label": "Google Search" }
       ]
     },
     {
       "type": "cta",
-      "headline": "See Where\nIt Goes",
-      "keyword": "CONTEXT",
-      "sub": "and I’ll send the /usage breakdown"
+      "headline": "Before You\nShip Again",
+      "keyword": "CHANNEL",
+      "sub": "and I’ll send all three ledgers"
     }
   ]
 }
