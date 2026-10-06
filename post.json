@@ -1,63 +1,42 @@
 {
-  "slug": "2558-commits-one-19-sale",
-  "title": "2,558 Commits. One $19 Sale.",
-  "caption": "Three businesses run by AI agents, in public. Combined revenue: $18.09.\n\nOne gave Claude Code a VPS, live accounts and 72 hours to make $1,000. It shipped a 151-page ebook, a $39 code kit, a $149 done-for-you offer and a free MCP server, and made $0. Store: 133 views, 6 orders, all six chose $0 on pay-what-you-want. The other two: $18.09 net on day 19, and 0 euros on day 16.\n\nThe part I can't argue with: all three had product before they had a channel. I do that too — I ship, then go looking for someone to show it to. And the one sale that did land came from a free book, a free cover, then a price dialog the buyer never clicked to open.\n\nWhere did your last sale come from?",
+  "slug": "9-euro-plan-gone-revenue-up-42",
+  "title": "€9 Plan Gone. Revenue +42%.",
+  "caption": "Two brothers took their €9 plan off the pricing page and revenue jumped 42% in a month.\n\nThe ladder was €9 / €49 / €99 on a B2B virus-scanning API. Sign-ups looked fine. What actually grew was support tickets and churn — €9 was buying developers on side projects. In the same move, they added €249 and €499 tiers.\n\nI have a €9 tier. I added it because I was scared nobody would pay more, and I've been reading its sign-ups as traction ever since.\n\nWhat's your cheapest plan?",
   "hashtags": [
-    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#solopreneur",
     "#microsaas",
-    "#devtools",
-    "#claudecode",
-    "#aiagents",
     "#saas",
-    "#distribution",
-    "#shipfast",
+    "#pricing",
+    "#saaspricing",
+    "#bootstrapped",
+    "#buildinpublic",
+    "#devtools",
+    "#aws",
     "#mrr"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "2,558 Commits.\nOne $19 Sale.",
-      "sub": "Three agents, six products, 22 days of building in public. First money landed on day 19: $19, minus Stripe's fee, $18.09 net."
-    },
-    {
-      "type": "cover",
-      "headline": "$1,000 Goal.\n72 Hours. $0.",
-      "sub": "Claude Code got a VPS, live accounts and an old course to resell. It shipped a 151-page ebook, a $39 code kit, a $149 offer and a free MCP server.",
-      "icons": [
-        { "slug": "claudecode", "label": "Claude Code" }
-      ]
+      "headline": "€9 Plan Gone.\nRevenue +42%.",
+      "sub": "Two brothers pulled the €9 tier of their virus-scan API off the pricing page at the end of July. September revenue grew 42% over August. Churn is down to 4.9% and still falling."
     },
     {
       "type": "list",
-      "title": "No Channel Existed",
+      "title": "€9 Bought Side Projects",
       "items": [
-        "Four products shipped before there was one place a human would see them.",
-        "X organic: 2–8 impressions a post, on 500 followers that were mostly bots.",
-        "A $41 X ad: 16,569 impressions, 70 clicks, nothing sold.",
-        "Product Hunt: one upvote, his own. Reddit removed the posts."
+        "The ladder was Small €9, Medium €49, Large €99 — 10k, 50k and 100k requests a month.",
+        "Sign-ups looked healthy. Revenue rose slowly.",
+        "Support enquiries and churn were the only things growing.",
+        "€9 was selling to developers on side projects, not to businesses."
       ]
     },
     {
       "type": "cover",
-      "headline": "Free Was\nThe Product",
-      "sub": "133 store views, 6 orders, all six chose $0 on pay-what-you-want. A second agent gave the fix away for ten days: six founders thanked it, none paid."
-    },
-    {
-      "type": "cover",
-      "headline": "A Price They\nNever Asked For",
-      "sub": "The one sale: free book, free cover, then a dialog that opens by itself. 26 minutes from a Google search to $19. They never pressed the price button.",
-      "icons": [
-        { "slug": "google", "label": "Google Search" }
-      ]
-    },
-    {
-      "type": "cta",
-      "headline": "Before You\nShip Again",
-      "keyword": "CHANNEL",
-      "sub": "and I’ll send all three ledgers"
+      "headline": "Then They Added\n€499",
+      "sub": "XL at €249 and XXL at €499 went up in the same move, topping out at 500,000 requests a month. Removing the floor was half of it.",
+      "arrow": false
     }
   ]
 }
