@@ -1,42 +1,74 @@
 {
-  "slug": "9-euro-plan-gone-revenue-up-42",
-  "title": "€9 Plan Gone. Revenue +42%.",
-  "caption": "Two brothers took their €9 plan off the pricing page and revenue jumped 42% in a month.\n\nThe ladder was €9 / €49 / €99 on a B2B virus-scanning API. Sign-ups looked fine. What actually grew was support tickets and churn — €9 was buying developers on side projects. In the same move, they added €249 and €499 tiers.\n\nI have a €9 tier. I added it because I was scared nobody would pay more, and I've been reading its sign-ups as traction ever since.\n\nWhat's your cheapest plan?",
+  "slug": "a-015-model-tied-opus-55",
+  "title": "A $0.15 Model Tied Opus 5.5",
+  "caption": "A $0.15-a-task model matched Opus 5.5 on Vercel's Next.js agent evals, once someone handed it the docs.\n\nSame model, same prompt, same 31 tasks. The only difference is an AGENTS.md pointing at the docs bundled inside the next package. GLM 5.2 went from 25 of 31 to 30 of 31. Opus 5.5, GPT 6 Sol and Fable 5.1 gained nothing from that file — they were already at 30.\n\nI've been paying for the expensive model to paper over the fact that I never wrote an AGENTS.md. Embarrassing thing to learn from a leaderboard.\n\nWhich model are you on?",
   "hashtags": [
     "#indiehackers",
     "#solofounder",
     "#solopreneur",
-    "#microsaas",
-    "#saas",
-    "#pricing",
-    "#saaspricing",
-    "#bootstrapped",
     "#buildinpublic",
     "#devtools",
-    "#aws",
-    "#mrr"
+    "#nextjs",
+    "#vercel",
+    "#aicoding",
+    "#claudecode",
+    "#cursor",
+    "#aiagents",
+    "#llm"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "€9 Plan Gone.\nRevenue +42%.",
-      "sub": "Two brothers pulled the €9 tier of their virus-scan API off the pricing page at the end of July. September revenue grew 42% over August. Churn is down to 4.9% and still falling."
+      "headline": "A $0.15 Model\nTied Opus 5.5",
+      "sub": "On Vercel's Next.js agent evals, GLM 5.2 went from 25 of 31 tasks to 30 of 31 — matching Opus 5.5 — once the sandbox got one extra file. Last run 25 September 2026."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "nextdotjs", "label": "Next.js" },
+      "title": "One Extra File",
+      "sub": "Both runs use the same model, the same prompt and the same 31 tasks. One drops in an AGENTS.md telling the agent to read the docs bundled at node_modules/next/dist/docs. That is the whole difference."
     },
     {
       "type": "list",
-      "title": "€9 Bought Side Projects",
+      "title": "Who The Docs Fixed",
       "items": [
-        "The ladder was Small €9, Medium €49, Large €99 — 10k, 50k and 100k requests a month.",
-        "Sign-ups looked healthy. Revenue rose slowly.",
-        "Support enquiries and churn were the only things growing.",
-        "€9 was selling to developers on side projects, not to businesses."
+        "GLM 5.2 — 25 of 31, then 30 of 31. $0.152 a task.",
+        "Claude Sonnet 5 — 25 of 31, then 30 of 31. $0.386 a task.",
+        "Kimi K3 — 26 of 31, then 30 of 31. $0.281 a task.",
+        "Gemini 3.8 Flash — 28 of 31, then 30 of 31. $0.605 a task.",
+        "GPT 6 Astra — 28 of 31, then 30 of 31. $0.891 a task."
+      ]
+    },
+    {
+      "type": "list",
+      "title": "The Top Four Gained Nothing",
+      "items": [
+        "Claude Opus 5.5 — 30 of 31 either way. $0.234 a task.",
+        "GPT 6 Sol — 30 of 31 either way. $0.244 a task.",
+        "Claude Fable 5.1 — 30 of 31 either way. $0.722 a task.",
+        "Grok 4.7 — 29 of 31 either way. $0.109 a task."
       ]
     },
     {
       "type": "cover",
-      "headline": "Then They Added\n€499",
-      "sub": "XL at €249 and XXL at €499 went up in the same move, topping out at 500,000 requests a month. Removing the floor was half of it.",
-      "arrow": false
+      "headline": "Stale Training\nData",
+      "sub": "Vercel says the point of the suite is to \"find places where agents get Next.js wrong because their training data is stale, then fix it by shipping better docs in the next package itself.\" Docs don't raise a model's ceiling. They stop a cheaper one guessing."
+    },
+    {
+      "type": "list",
+      "title": "What This Doesn't Say",
+      "items": [
+        "Scores are pass@4 — a task counts if any of four attempts works.",
+        "31 Next.js tasks. Nothing here about your stack.",
+        "Average list cost per task, not what a seat costs you.",
+        "One leaderboard run, dated 25 September 2026."
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Want The\nFull Table?",
+      "keyword": "DOCS",
+      "sub": "and I'll send the leaderboard"
     }
   ]
 }
