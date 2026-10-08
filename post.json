@@ -1,74 +1,59 @@
 {
-  "slug": "a-015-model-tied-opus-55",
-  "title": "A $0.15 Model Tied Opus 5.5",
-  "caption": "A $0.15-a-task model matched Opus 5.5 on Vercel's Next.js agent evals, once someone handed it the docs.\n\nSame model, same prompt, same 31 tasks. The only difference is an AGENTS.md pointing at the docs bundled inside the next package. GLM 5.2 went from 25 of 31 to 30 of 31. Opus 5.5, GPT 6 Sol and Fable 5.1 gained nothing from that file — they were already at 30.\n\nI've been paying for the expensive model to paper over the fact that I never wrote an AGENTS.md. Embarrassing thing to learn from a leaderboard.\n\nWhich model are you on?",
+  "slug": "same-score-3x-the-bill",
+  "title": "Same Score, 3x The Bill",
+  "caption": "Your agent harness doesn't decide whether it works. It decides what you pay.\n\nFive models, three harnesses, SWE-bench Verified. Claude Code and mini-SWE-agent — heaviest and lightest — land within five points. Swapping harness flips 13% of tasks; rerunning the same one, changing nothing, flips 13% too. Cost per task: up to 3x apart.\n\nI switched harnesses twice this year chasing pass rates. Turns out I was shopping for a bill, not a score.\n\nWhich harness are you on?",
   "hashtags": [
     "#indiehackers",
     "#solofounder",
     "#solopreneur",
     "#buildinpublic",
     "#devtools",
-    "#nextjs",
-    "#vercel",
     "#aicoding",
     "#claudecode",
-    "#cursor",
     "#aiagents",
-    "#llm"
+    "#llm",
+    "#swebench",
+    "#opencode",
+    "#tokencost"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "A $0.15 Model\nTied Opus 5.5",
-      "sub": "On Vercel's Next.js agent evals, GLM 5.2 went from 25 of 31 tasks to 30 of 31 — matching Opus 5.5 — once the sandbox got one extra file. Last run 25 September 2026."
+      "headline": "Same Score,\n3x The Bill",
+      "sub": "Five models through three agent harnesses on SWE-bench Verified. Pass rates land within five points of each other. Cost per task runs up to 3x apart. Shandong University preprint, 7 October 2026."
     },
     {
       "type": "feature",
-      "icon": { "slug": "nextdotjs", "label": "Next.js" },
-      "title": "One Extra File",
-      "sub": "Both runs use the same model, the same prompt and the same 31 tasks. One drops in an AGENTS.md telling the agent to read the docs bundled at node_modules/next/dist/docs. That is the whole difference."
-    },
-    {
-      "type": "list",
-      "title": "Who The Docs Fixed",
-      "items": [
-        "GLM 5.2 — 25 of 31, then 30 of 31. $0.152 a task.",
-        "Claude Sonnet 5 — 25 of 31, then 30 of 31. $0.386 a task.",
-        "Kimi K3 — 26 of 31, then 30 of 31. $0.281 a task.",
-        "Gemini 3.8 Flash — 28 of 31, then 30 of 31. $0.605 a task.",
-        "GPT 6 Astra — 28 of 31, then 30 of 31. $0.891 a task."
-      ]
-    },
-    {
-      "type": "list",
-      "title": "The Top Four Gained Nothing",
-      "items": [
-        "Claude Opus 5.5 — 30 of 31 either way. $0.234 a task.",
-        "GPT 6 Sol — 30 of 31 either way. $0.244 a task.",
-        "Claude Fable 5.1 — 30 of 31 either way. $0.722 a task.",
-        "Grok 4.7 — 29 of 31 either way. $0.109 a task."
-      ]
+      "icon": { "slug": "claude", "label": "Claude Code" },
+      "title": "Heaviest Ties Lightest",
+      "sub": "On 447 SWE-bench Verified tasks, Claude Code — the heaviest harness tested — lands within five points of mini-SWE-agent, the lightest."
     },
     {
       "type": "cover",
-      "headline": "Stale Training\nData",
-      "sub": "Vercel says the point of the suite is to \"find places where agents get Next.js wrong because their training data is stale, then fix it by shipping better docs in the next package itself.\" Docs don't raise a model's ceiling. They stop a cheaper one guessing."
+      "headline": "13% Either Way",
+      "sub": "On a 45-task hard subset with five models, swapping the harness flips 13% of tasks. Rerunning the same harness, changing nothing, flips 13% too. And the tasks a harness wins in one run are not the ones it wins in the next."
+    },
+    {
+      "type": "cover",
+      "headline": "The Preamble\nIs The Bill",
+      "sub": "The 3x gap is set at the first call. Every harness resends its system prompt and tool schemas with each step, multiplied by the number of steps. Per-step growth and tool output differ far less."
     },
     {
       "type": "list",
-      "title": "What This Doesn't Say",
+      "title": "What This Doesn’t Say",
       "items": [
-        "Scores are pass@4 — a task counts if any of four attempts works.",
-        "31 Next.js tasks. Nothing here about your stack.",
-        "Average list cost per task, not what a seat costs you.",
-        "One leaderboard run, dated 25 September 2026."
+        "SWE-bench Verified only. Nothing here about your repo.",
+        "One harness does lose: OpenCode trails by up to 9 points.",
+        "On one model, half that gap is runs cut short by its output cap.",
+        "447 tasks resolve 5 points — coarser than many claimed gains.",
+        "A preprint posted 7 October 2026. Not peer reviewed."
       ]
     },
     {
       "type": "cta",
-      "headline": "Want The\nFull Table?",
-      "keyword": "DOCS",
-      "sub": "and I'll send the leaderboard"
+      "headline": "Want The\nPreprint?",
+      "keyword": "HARNESS",
+      "sub": "and I’ll send the paper"
     }
   ]
 }
