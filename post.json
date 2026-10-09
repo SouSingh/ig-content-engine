@@ -1,59 +1,51 @@
 {
-  "slug": "same-score-3x-the-bill",
-  "title": "Same Score, 3x The Bill",
-  "caption": "Your agent harness doesn't decide whether it works. It decides what you pay.\n\nFive models, three harnesses, SWE-bench Verified. Claude Code and mini-SWE-agent — heaviest and lightest — land within five points. Swapping harness flips 13% of tasks; rerunning the same one, changing nothing, flips 13% too. Cost per task: up to 3x apart.\n\nI switched harnesses twice this year chasing pass rates. Turns out I was shopping for a bill, not a score.\n\nWhich harness are you on?",
+  "slug": "courses-paid-for-your-deploys",
+  "title": "Courses Paid For Your Deploys",
+  "caption": "The deploy tool I pay for got 50% more expensive because people stopped buying programming courses.\n\nHatchbox went from $10 to $15 a server on Oct 1 — everyone, no grandfathering. The reason isn't servers. GoRails, the video-tutorial business that had been subsidizing Hatchbox development for years, will sign fewer new customers in 2026 than in its founder's first year in business. \"AI has been brutal to most education businesses.\" Then, in the same 12 months, he shipped an MCP server for Claude Code.\n\nI price my own stuff off what competitors charge. I never once asked what was quietly paying for theirs.\n\nWhat's subsidizing yours?",
   "hashtags": [
     "#indiehackers",
     "#solofounder",
     "#solopreneur",
     "#buildinpublic",
+    "#bootstrapped",
+    "#saas",
     "#devtools",
+    "#rails",
+    "#ruby",
     "#aicoding",
-    "#claudecode",
-    "#aiagents",
-    "#llm",
-    "#swebench",
-    "#opencode",
-    "#tokencost"
+    "#pricing",
+    "#mcp"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Same Score,\n3x The Bill",
-      "sub": "Five models through three agent harnesses on SWE-bench Verified. Pass rates land within five points of each other. Cost per task runs up to 3x apart. Shandong University preprint, 7 October 2026."
+      "headline": "Courses Paid\nFor Your Deploys",
+      "sub": "Hatchbox, the Rails deploy tool, went from $10 to $15 per server on October 1 — new and existing customers, no grandfathering. The reason has nothing to do with servers."
+    },
+    {
+      "type": "cover",
+      "headline": "Fewer Than\nYear One",
+      "sub": "GoRails, the video-tutorial business that subsidized Hatchbox development for years, will sign fewer new customers in 2026 than in its founder's first year in business. \"AI has been brutal to most education businesses.\""
+    },
+    {
+      "type": "cover",
+      "headline": "Raise, Or\nGet Jobs",
+      "sub": "His two stated options: raise prices and keep building full time, or put Hatchbox on the back burner and get jobs. He ruled out grandfathering because it would have left most revenue at the old rates."
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code" },
-      "title": "Heaviest Ties Lightest",
-      "sub": "On 447 SWE-bench Verified tasks, Claude Code — the heaviest harness tested — lands within five points of mini-SWE-agent, the lightest."
-    },
-    {
-      "type": "cover",
-      "headline": "13% Either Way",
-      "sub": "On a 45-task hard subset with five models, swapping the harness flips 13% of tasks. Rerunning the same harness, changing nothing, flips 13% too. And the tasks a harness wins in one run are not the ones it wins in the next."
-    },
-    {
-      "type": "cover",
-      "headline": "The Preamble\nIs The Bill",
-      "sub": "The 3x gap is set at the first call. Every harness resends its system prompt and tool schemas with each step, multiplied by the number of steps. Per-step growth and tool output differ far less."
-    },
-    {
-      "type": "list",
-      "title": "What This Doesn’t Say",
-      "items": [
-        "SWE-bench Verified only. Nothing here about your repo.",
-        "One harness does lose: OpenCode trails by up to 9 points.",
-        "On one model, half that gap is runs cut short by its output cap.",
-        "447 tasks resolve 5 points — coarser than many claimed gains.",
-        "A preprint posted 7 October 2026. Not peer reviewed."
-      ]
+      "icon": {
+        "slug": "claude",
+        "label": "Claude Code"
+      },
+      "title": "Then He Shipped MCP",
+      "sub": "Shipped in the same 12 months: a revamped API and an MCP server that wires Hatchbox deploys into Claude Code, Codex and Cursor."
     },
     {
       "type": "cta",
-      "headline": "Want The\nPreprint?",
-      "keyword": "HARNESS",
-      "sub": "and I’ll send the paper"
+      "headline": "Want The\nBreakdown?",
+      "keyword": "SUBSIDY",
+      "sub": "and I’ll send the announcement"
     }
   ]
 }
