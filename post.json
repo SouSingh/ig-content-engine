@@ -1,51 +1,57 @@
 {
-  "slug": "rollbacks-expire-october-23",
-  "title": "Your Rollbacks Expire October 23",
-  "caption": "I kept a year of Vercel rollback history and never once opened the setting that controls it.\n\nPro teams now default to 30-day retention, and deployments older than that start getting deleted October 23 unless you opt out. Vercel's own stated reason: coding agents raised deploy frequency, so stored history turned into a cost line. Either way it meters at $0.10 per GB-month now.\n\nMy entire incident plan was \"roll back to whatever last worked.\" That plan just got an expiry date.\n\nHow far back do you actually roll back?",
+  "slug": "github-wasnt-scanning-supabase-keys",
+  "title": "GitHub Wasn't Scanning Your Supabase Keys",
+  "caption": "I've never once checked whether GitHub actually scans my private repos.\n\nOn October 5 it added detectors for supabase_oauth_access_token, supabase_scoped_personal_access_token, lovable_api_key and two Pydantic tokens. Lovable joined the partner program too, so one of its keys found in a public repo gets forwarded to Lovable to revoke. A Supabase token only raises an alert — the rotating is yours.\n\nThe part I keep forgetting: secret scanning is on by default for public repos only. The private repo I actually build in gets nothing unless it's an org on GitHub Team with Secret Protection.\n\nPublic or private — where does your Supabase key live?",
   "hashtags": [
-    "#vercel",
-    "#nextjs",
-    "#devops",
-    "#deployment",
+    "#supabase",
+    "#lovable",
+    "#github",
+    "#secretscanning",
+    "#apikeys",
+    "#devsecurity",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#bootstrapped",
+    "#vibecoding",
     "#saas",
-    "#devtools",
-    "#aicoding",
-    "#claudecode"
+    "#devtools"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Your Rollbacks\nExpire October 23",
-      "sub": "Vercel starts deleting Pro deployments older than 30 days on October 23. Deleted ones can't be rolled back."
+      "headline": "GitHub Wasn't\nScanning Your\nSupabase Keys",
+      "sub": "Detectors for Supabase, Lovable and Pydantic tokens landed October 5. Until then: no alert."
     },
     {
-      "type": "cover",
-      "headline": "One Year,\nNow 30 Days",
-      "sub": "Vercel's retention docs still list the Pro production default as 1 year, pre-production as 180 days. New default: 30 days."
+      "type": "list",
+      "title": "Five New Detectors",
+      "items": [
+        "lovable_api_key",
+        "logfire_token",
+        "pydantic_ai_gateway_api_key",
+        "supabase_oauth_access_token",
+        "supabase_scoped_personal_access_token"
+      ]
     },
     {
       "type": "feature",
       "icon": {
-        "slug": "vercel",
-        "label": "Vercel"
+        "slug": "supabase",
+        "label": "Supabase"
       },
-      "title": "Agents Caused This",
-      "sub": "Vercel's reason, verbatim: \"Coding agents have accelerated development, increasing deployment frequency and the amount of stored deployment history.\""
+      "title": "Yours To Revoke",
+      "sub": "Lovable joined the partner program — leaked keys go to Lovable. Supabase tokens only alert you."
     },
     {
       "type": "cover",
-      "headline": "Opt Out\nBefore Oct 23",
-      "sub": "Settings / Security / Deployment Retention Policy. Opting out bills it at $0.10 per GB-month."
+      "headline": "Default On,\nPublic Only",
+      "sub": "Secret scanning runs by default on public repos only. Private needs GitHub Secret Protection."
     },
     {
       "type": "cta",
-      "headline": "Want The\nSettings Path?",
-      "keyword": "RETENTION",
-      "sub": "and I'll send the changelog"
+      "headline": "Want The\nDetector List?",
+      "keyword": "SCAN",
+      "sub": "and I'll send GitHub's changelog"
     }
   ]
 }
