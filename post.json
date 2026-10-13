@@ -1,46 +1,47 @@
 {
-  "slug": "deno-deploy-shuts-down-no-date",
-  "title": "Deno Deploy Shuts Down. No Date.",
-  "caption": "I almost moved a side project onto Deno Deploy in August.\n\nOn October 9 Ryan Dahl announced the entire Deno team is joining Cloudflare. Deploy keeps operating for six months and then shuts down. The runtime gets twelve more months of monthly bug-fix and security releases, then Deno ends its development of it. JSR stays up, with its infrastructure moving to Cloudflare.\n\nThe part I keep staring at: there is no calendar date anywhere in that post. Everyone is counting six months from October 9 and printing April 2027, but that is our arithmetic, not Deno's commitment. And the migration support to Workers was promised to paying customers — the free tier never comes up.\n\nDeploy, Workers, or somewhere else?",
+  "slug": "your-scheduled-task-stays-asleep",
+  "title": "Your Scheduled Task Stays Asleep",
+  "caption": "I run a scheduled Claude Code session every morning, so this one landed badly.\n\nOctober 5: 2.1.290 fixed cloud sessions staying asleep after a container restart lost a pending /loop wakeup. October 7: 2.1.293 reverted it. The changelog's own words: \"Claude is no longer told, and the session stays asleep.\"\n\nThe asymmetry is what I can't unsee. A day later, 2.1.295 fixed the same silence for local background sessions, where \"the session now says so and Claude is told.\" Cloud never got it back, and 2.1.296 is still the current release.\n\nA silent no-op is worse than a crash, so I check my routine actually ran now. Do you check your automations ran?",
   "hashtags": [
-    "#deno",
-    "#denodeploy",
-    "#cloudflare",
-    "#cloudflareworkers",
-    "#jsr",
-    "#serverless",
-    "#typescript",
-    "#javascript",
+    "#claudecode",
+    "#anthropic",
+    "#aiagents",
+    "#mcp",
+    "#devtools",
+    "#automation",
+    "#cronjobs",
+    "#changelog",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#devtools"
+    "#devops"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Deno Deploy\nShuts Down.\nNo Date.",
-      "sub": "Announced October 9. Six months from a start date Deno never named.",
+      "headline": "Your Scheduled\nTask Stays Asleep",
+      "sub": "Claude Code fixed this on October 5 and reverted it on October 7.",
       "icons": [
-        { "slug": "deno", "label": "Deno" }
+        {
+          "slug": "claudecode",
+          "label": "Claude Code"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "The Two-Day Round Trip",
+      "items": [
+        "Oct 5: 2.1.290 fixes it. Claude is told, and can reschedule.",
+        "Oct 7: 2.1.293 reverts it. Claude is no longer told.",
+        "Oct 9: 2.1.296 ships. Still reverted."
       ]
     },
     {
       "type": "cover",
-      "headline": "Two Clocks,\nNot One",
-      "sub": "Deploy: six months, then it shuts down. The runtime: a year of fixes, then development ends."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "cloudflare", "label": "Cloudflare" },
-      "title": "Paying Customers Only",
-      "sub": "Migration help to Workers was promised to paying customers. Deno's post doesn't mention the free tier."
-    },
-    {
-      "type": "cta",
-      "headline": "Want The\nAnnouncement?",
-      "keyword": "DENO",
-      "sub": "and I'll send Ryan's post"
+      "headline": "Local Was Told.\nCloud Wasn't.",
+      "sub": "2.1.295 made background sessions report a missed wakeup. Cloud sessions still don't, as of 2.1.296.",
+      "arrow": false
     }
   ]
 }
