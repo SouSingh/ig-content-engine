@@ -1,47 +1,113 @@
 {
-  "slug": "your-scheduled-task-stays-asleep",
-  "title": "Your Scheduled Task Stays Asleep",
-  "caption": "I run a scheduled Claude Code session every morning, so this one landed badly.\n\nOctober 5: 2.1.290 fixed cloud sessions staying asleep after a container restart lost a pending /loop wakeup. October 7: 2.1.293 reverted it. The changelog's own words: \"Claude is no longer told, and the session stays asleep.\"\n\nThe asymmetry is what I can't unsee. A day later, 2.1.295 fixed the same silence for local background sessions, where \"the session now says so and Claude is told.\" Cloud never got it back, and 2.1.296 is still the current release.\n\nA silent no-op is worse than a crash, so I check my routine actually ran now. Do you check your automations ran?",
+  "slug": "three-apps-in-august-21-now",
+  "title": "3 Apps In August. 21 Now.",
+  "caption": "Cursor is rebuilding GitHub's app marketplace, and it took 57 days.\n\nOrigin launched August 17 with three integrations: Vercel, Depot, Buildkite. The October 13 changelog lists 21 apps across deployments, CI, code review, security, monitoring and project management — and submissions are now open to any team building dev tools.\n\nThe part I keep rereading is the API. Origin apps sign in with app JWTs, take webhook events, and write back check runs, PR comments and reviews. That's GitHub Apps, reproduced surface for surface.\n\nI'm still not moving. Origin isn't on free plans, and a repo mirrored from GitHub keeps its CI on GitHub, so for me it's a second tab, not a host. Would you put a repo there?",
   "hashtags": [
-    "#claudecode",
-    "#anthropic",
-    "#aiagents",
-    "#mcp",
+    "#cursor",
+    "#origin",
+    "#github",
     "#devtools",
-    "#automation",
-    "#cronjobs",
-    "#changelog",
+    "#aicoding",
+    "#codereview",
+    "#cicd",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#devops"
+    "#devops",
+    "#saas"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Your Scheduled\nTask Stays Asleep",
-      "sub": "Claude Code fixed this on October 5 and reverted it on October 7.",
+      "headline": "3 Apps In August.\n21 Now.",
+      "sub": "Cursor's Origin marketplace opened to public submissions on October 13.",
       "icons": [
         {
-          "slug": "claudecode",
-          "label": "Claude Code"
+          "slug": "cursor",
+          "label": "Cursor"
         }
       ]
     },
     {
-      "type": "list",
-      "title": "The Two-Day Round Trip",
-      "items": [
-        "Oct 5: 2.1.290 fixes it. Claude is told, and can reschedule.",
-        "Oct 7: 2.1.293 reverts it. Claude is no longer told.",
-        "Oct 9: 2.1.296 ships. Still reverted."
+      "type": "grid",
+      "title": "Six Categories, 21 Apps",
+      "icons": [
+        {
+          "slug": "vercel",
+          "label": "Vercel"
+        },
+        {
+          "slug": "cloudflare",
+          "label": "Cloudflare"
+        },
+        {
+          "slug": "netlify",
+          "label": "Netlify"
+        },
+        {
+          "slug": "buildkite",
+          "label": "Buildkite"
+        },
+        {
+          "slug": "circleci",
+          "label": "CircleCI"
+        },
+        {
+          "slug": "coderabbit",
+          "label": "CodeRabbit"
+        },
+        {
+          "slug": "socket",
+          "label": "Socket"
+        },
+        {
+          "slug": "sentry",
+          "label": "Sentry"
+        },
+        {
+          "slug": "linear",
+          "label": "Linear"
+        }
       ]
     },
     {
+      "type": "feature",
+      "icon": {
+        "slug": "github",
+        "label": "GitHub"
+      },
+      "title": "GitHub Apps, Rebuilt",
+      "sub": "Origin apps sign in with app JWTs, take webhook events, and write back check runs, PR comments and reviews."
+    },
+    {
       "type": "cover",
-      "headline": "Local Was Told.\nCloud Wasn't.",
-      "sub": "2.1.295 made background sessions report a missed wakeup. Cloud sessions still don't, as of 2.1.296.",
-      "arrow": false
+      "headline": "Your CI Stays\nOn GitHub",
+      "sub": "Depot and Buildkite run on Origin-hosted repos only. Mirror a GitHub repo and its CI never moves.",
+      "icons": [
+        {
+          "slug": "buildkite",
+          "label": "Buildkite"
+        },
+        {
+          "slug": "github",
+          "label": "GitHub"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": {
+        "slug": "cursor",
+        "label": "Cursor"
+      },
+      "title": "Not On Free Plans",
+      "sub": "Origin needs Start, Pro, Pro+, Ultra, Teams or Enterprise. Cursor's docs: \"It is not available on free plans.\""
+    },
+    {
+      "type": "cta",
+      "headline": "Want The Full List?",
+      "keyword": "ORIGIN",
+      "sub": "and I'll send all 21"
     }
   ]
 }
