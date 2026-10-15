@@ -1,113 +1,83 @@
 {
-  "slug": "three-apps-in-august-21-now",
-  "title": "3 Apps In August. 21 Now.",
-  "caption": "Cursor is rebuilding GitHub's app marketplace, and it took 57 days.\n\nOrigin launched August 17 with three integrations: Vercel, Depot, Buildkite. The October 13 changelog lists 21 apps across deployments, CI, code review, security, monitoring and project management — and submissions are now open to any team building dev tools.\n\nThe part I keep rereading is the API. Origin apps sign in with app JWTs, take webhook events, and write back check runs, PR comments and reviews. That's GitHub Apps, reproduced surface for surface.\n\nI'm still not moving. Origin isn't on free plans, and a repo mirrored from GitHub keeps its CI on GitHub, so for me it's a second tab, not a host. Would you put a repo there?",
+  "slug": "zero-credentials-1500-packages-exposed",
+  "title": "Zero Credentials. 1,500 Packages Exposed.",
+  "caption": "I let my coding agent pick dependencies, and I have never once checked who publishes them.\n\nBloom Security found npm's Trusted Publishing was binding each package to a GitHub repo name, not the permanent numeric ID GitHub puts in the very same token. Rename or delete that repo and the name frees up. Claim it, add a workflow file with the matching name, trigger it, and npm hands you a publish token for a package you don't own. No stolen credential. No compromised account. 1,500+ packages with 10M+ downloads were exposed.\n\nNobody knows whether it was ever used in the wild. What gets me is the attestation: a release published this way is still signed, just against the attacker's repo, so anything that only asks \"is it signed\" waves it through.\n\nReported June 6. Last reply July 8. Six follow-ups, no answer. The fix landed October 2, and Bloom only found out by re-running its own test. PyPI has checked the numeric ID since launch. Do you audit your deps?",
   "hashtags": [
-    "#cursor",
-    "#origin",
+    "#npm",
+    "#supplychain",
+    "#devsecops",
+    "#appsec",
     "#github",
-    "#devtools",
     "#aicoding",
-    "#codereview",
-    "#cicd",
+    "#claudecode",
+    "#cursor",
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#devops",
-    "#saas"
+    "#nodejs"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "3 Apps In August.\n21 Now.",
-      "sub": "Cursor's Origin marketplace opened to public submissions on October 13.",
+      "headline": "Zero Credentials.\n1,500 Packages Exposed.",
+      "sub": "npm's Trusted Publishing bound each package to a GitHub repo name. Claim the abandoned name, get a publish token.",
       "icons": [
-        {
-          "slug": "cursor",
-          "label": "Cursor"
-        }
+        { "slug": "npm", "label": "npm" },
+        { "slug": "github", "label": "GitHub" }
       ]
-    },
-    {
-      "type": "grid",
-      "title": "Six Categories, 21 Apps",
-      "icons": [
-        {
-          "slug": "vercel",
-          "label": "Vercel"
-        },
-        {
-          "slug": "cloudflare",
-          "label": "Cloudflare"
-        },
-        {
-          "slug": "netlify",
-          "label": "Netlify"
-        },
-        {
-          "slug": "buildkite",
-          "label": "Buildkite"
-        },
-        {
-          "slug": "circleci",
-          "label": "CircleCI"
-        },
-        {
-          "slug": "coderabbit",
-          "label": "CodeRabbit"
-        },
-        {
-          "slug": "socket",
-          "label": "Socket"
-        },
-        {
-          "slug": "sentry",
-          "label": "Sentry"
-        },
-        {
-          "slug": "linear",
-          "label": "Linear"
-        }
-      ]
-    },
-    {
-      "type": "feature",
-      "icon": {
-        "slug": "github",
-        "label": "GitHub"
-      },
-      "title": "GitHub Apps, Rebuilt",
-      "sub": "Origin apps sign in with app JWTs, take webhook events, and write back check runs, PR comments and reviews."
     },
     {
       "type": "cover",
-      "headline": "Your CI Stays\nOn GitHub",
-      "sub": "Depot and Buildkite run on Origin-hosted repos only. Mirror a GitHub repo and its CI never moves.",
+      "headline": "70 Packages A Month",
+      "sub": "Bloom's telemetry across dozens of orgs: about 70 agent installs a month per endpoint, close to 350 on developer machines.",
       "icons": [
-        {
-          "slug": "buildkite",
-          "label": "Buildkite"
-        },
-        {
-          "slug": "github",
-          "label": "GitHub"
-        }
+        { "slug": "claude", "label": "Claude Code" },
+        { "slug": "cursor", "label": "Cursor" }
       ]
     },
     {
       "type": "feature",
-      "icon": {
-        "slug": "cursor",
-        "label": "Cursor"
-      },
-      "title": "Not On Free Plans",
-      "sub": "Origin needs Start, Pro, Pro+, Ultra, Teams or Enterprise. Cursor's docs: \"It is not available on free plans.\""
+      "icon": { "slug": "npm", "label": "npm" },
+      "title": "The Name, Not The ID",
+      "sub": "GitHub's token carries repository_id, a number that survives renames. npm stored only the owner/repo slug and never checked it."
+    },
+    {
+      "type": "list",
+      "title": "Four Steps, No Theft",
+      "items": [
+        "Claim the freed owner/repo slug on GitHub",
+        "Add a workflow file with the bound filename",
+        "Trigger it. GitHub mints an OIDC token",
+        "Exchange it at npm for a publish credential"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "githubactions", "label": "GitHub Actions" },
+      "title": "Signed By The Attacker",
+      "sub": "The release carries a valid provenance attestation signed against the attacker's repo. Tooling that only asks \"is it signed\" passes it."
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "github", "label": "GitHub" },
+      "title": "Six Follow-Ups, No Reply",
+      "sub": "Reported June 6, validated June 9, last reply July 8. Fix shipped October 2. Bloom found out by retesting."
+    },
+    {
+      "type": "list",
+      "title": "Run npm trust list",
+      "items": [
+        "Check each binding still points at a repo you own",
+        "Renamed or transferred? Re-create the binding",
+        "Publish once right after creating a binding",
+        "Delete the binding before the repo"
+      ]
     },
     {
       "type": "cta",
-      "headline": "Want The Full List?",
-      "keyword": "ORIGIN",
-      "sub": "and I'll send all 21"
+      "headline": "Want The Checklist?",
+      "keyword": "SLUGFEST",
+      "sub": "and I'll send the audit steps"
     }
   ]
 }
