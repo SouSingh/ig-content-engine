@@ -1,83 +1,57 @@
 {
-  "slug": "zero-credentials-1500-packages-exposed",
-  "title": "Zero Credentials. 1,500 Packages Exposed.",
-  "caption": "I let my coding agent pick dependencies, and I have never once checked who publishes them.\n\nBloom Security found npm's Trusted Publishing was binding each package to a GitHub repo name, not the permanent numeric ID GitHub puts in the very same token. Rename or delete that repo and the name frees up. Claim it, add a workflow file with the matching name, trigger it, and npm hands you a publish token for a package you don't own. No stolen credential. No compromised account. 1,500+ packages with 10M+ downloads were exposed.\n\nNobody knows whether it was ever used in the wild. What gets me is the attestation: a release published this way is still signed, just against the attacker's repo, so anything that only asks \"is it signed\" waves it through.\n\nReported June 6. Last reply July 8. Six follow-ups, no answer. The fix landed October 2, and Bloom only found out by re-running its own test. PyPI has checked the numeric ID since launch. Do you audit your deps?",
+  "slug": "2500-merges-a-day-then-30000",
+  "title": "2,500 Merges A Day. Then 30,000.",
+  "caption": "My bottleneck has never once been typing the code.\n\nAnthropic's monorepo went from about 2,500 merges a day in May to over 30,000 in September, and git stopped keeping up. Almost 100 GB of main-branch history. On the order of 25 million CI checkouts a day. Several hundred git mirrors that outgrew their own disks. So they left git and migrated the whole monorepo to something they built themselves, in five months, with seven people.\n\nThe part I keep thinking about: Claude wrote most of the replacement for the problem Claude caused, and the engineers said their actual job was telling it no — steering it off over-engineering for hypothetical concerns. They're not releasing it either. They say it only makes sense if you have tens of thousands of engineers or swarms of agents.\n\nI'm nowhere near that scale and my CI is still the slowest thing I own. What's your bottleneck?",
   "hashtags": [
-    "#npm",
-    "#supplychain",
-    "#devsecops",
-    "#appsec",
-    "#github",
+    "#git",
+    "#monorepo",
+    "#devtools",
+    "#cicd",
+    "#devops",
     "#aicoding",
     "#claudecode",
-    "#cursor",
+    "#anthropic",
+    "#softwareengineering",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
-    "#nodejs"
+    "#buildinpublic"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Zero Credentials.\n1,500 Packages Exposed.",
-      "sub": "npm's Trusted Publishing bound each package to a GitHub repo name. Claim the abandoned name, get a publish token.",
+      "headline": "2,500 Merges.\nThen 30,000.",
+      "sub": "Anthropic's monorepo went from 2,500 merges a day in May to over 30,000 in September. It migrated off git.",
       "icons": [
-        { "slug": "npm", "label": "npm" },
-        { "slug": "github", "label": "GitHub" }
+        {
+          "slug": "anthropic",
+          "label": "Anthropic"
+        },
+        {
+          "slug": "git",
+          "label": "git"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Built For Human Scale",
+      "items": [
+        "25 million CI code checkouts a day",
+        "Almost 100 GB of main-branch history",
+        "Several hundred git mirrors outgrew their disks"
       ]
     },
     {
       "type": "cover",
-      "headline": "70 Packages A Month",
-      "sub": "Bloom's telemetry across dozens of orgs: about 70 agent installs a month per endpoint, close to 350 on developer machines.",
+      "headline": "Seven People.\nFive Months.",
+      "sub": "Claude's output caused the surge and wrote most of the replacement. The engineers said their job was telling it no.",
       "icons": [
-        { "slug": "claude", "label": "Claude Code" },
-        { "slug": "cursor", "label": "Cursor" }
-      ]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "npm", "label": "npm" },
-      "title": "The Name, Not The ID",
-      "sub": "GitHub's token carries repository_id, a number that survives renames. npm stored only the owner/repo slug and never checked it."
-    },
-    {
-      "type": "list",
-      "title": "Four Steps, No Theft",
-      "items": [
-        "Claim the freed owner/repo slug on GitHub",
-        "Add a workflow file with the bound filename",
-        "Trigger it. GitHub mints an OIDC token",
-        "Exchange it at npm for a publish credential"
-      ]
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "githubactions", "label": "GitHub Actions" },
-      "title": "Signed By The Attacker",
-      "sub": "The release carries a valid provenance attestation signed against the attacker's repo. Tooling that only asks \"is it signed\" passes it."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "github", "label": "GitHub" },
-      "title": "Six Follow-Ups, No Reply",
-      "sub": "Reported June 6, validated June 9, last reply July 8. Fix shipped October 2. Bloom found out by retesting."
-    },
-    {
-      "type": "list",
-      "title": "Run npm trust list",
-      "items": [
-        "Check each binding still points at a repo you own",
-        "Renamed or transferred? Re-create the binding",
-        "Publish once right after creating a binding",
-        "Delete the binding before the repo"
-      ]
-    },
-    {
-      "type": "cta",
-      "headline": "Want The Checklist?",
-      "keyword": "SLUGFEST",
-      "sub": "and I'll send the audit steps"
+        {
+          "slug": "claude",
+          "label": "Claude"
+        }
+      ],
+      "arrow": false
     }
   ]
 }
