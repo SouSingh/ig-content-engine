@@ -1,57 +1,77 @@
 {
-  "slug": "2500-merges-a-day-then-30000",
-  "title": "2,500 Merges A Day. Then 30,000.",
-  "caption": "My bottleneck has never once been typing the code.\n\nAnthropic's monorepo went from about 2,500 merges a day in May to over 30,000 in September, and git stopped keeping up. Almost 100 GB of main-branch history. On the order of 25 million CI checkouts a day. Several hundred git mirrors that outgrew their own disks. So they left git and migrated the whole monorepo to something they built themselves, in five months, with seven people.\n\nThe part I keep thinking about: Claude wrote most of the replacement for the problem Claude caused, and the engineers said their actual job was telling it no — steering it off over-engineering for hypothetical concerns. They're not releasing it either. They say it only makes sense if you have tens of thousands of engineers or swarms of agents.\n\nI'm nowhere near that scale and my CI is still the slowest thing I own. What's your bottleneck?",
+  "slug": "cursor-plus-is-8-grok-only",
+  "title": "Cursor Plus Is $8. Grok Only.",
+  "caption": "Cursor's cheapest paid plan is $8 now and it can't run Claude at all.\n\nI only checked because I assumed cheaper was just cheaper. On the new tiers the Grok models come out of one weekly pool, and Claude, GPT and Gemini bill at API list price from prepaid credit — Premium and up only.\n\nI'm still on the legacy plan and I'm not switching until someone shows me the math.\n\nStill on your old plan?",
   "hashtags": [
-    "#git",
-    "#monorepo",
-    "#devtools",
-    "#cicd",
-    "#devops",
-    "#aicoding",
-    "#claudecode",
-    "#anthropic",
-    "#softwareengineering",
-    "#indiehackers",
-    "#solofounder",
-    "#buildinpublic"
+    "cursor",
+    "aicoding",
+    "devtools",
+    "buildinpublic",
+    "indiehackers",
+    "solofounder",
+    "claudecode",
+    "coding",
+    "softwaredevelopment",
+    "indiedev",
+    "vibecoding",
+    "aitools"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "2,500 Merges.\nThen 30,000.",
-      "sub": "Anthropic's monorepo went from 2,500 merges a day in May to over 30,000 in September. It migrated off git.",
+      "headline": "Cursor Plus Is $8.\nGrok Only.",
+      "sub": "Cursor is now sold inside The X Subscription.",
       "icons": [
         {
-          "slug": "anthropic",
-          "label": "Anthropic"
+          "slug": "cursor",
+          "label": "Cursor"
         },
         {
-          "slug": "git",
-          "label": "git"
+          "slug": "x",
+          "label": "X"
         }
       ]
     },
     {
       "type": "list",
-      "title": "Built For Human Scale",
+      "title": "One pool, five tiers",
       "items": [
-        "25 million CI code checkouts a day",
-        "Almost 100 GB of main-branch history",
-        "Several hundred git mirrors outgrew their disks"
+        "Free $0 — limited Agent and Chat",
+        "Plus $8 — Grok and Composer only",
+        "Premium $30 — Claude, GPT, Gemini unlocked",
+        "Super $100 — 15x the Plus usage pool",
+        "Ultra $200 — 50x the Plus usage pool"
       ]
     },
     {
+      "type": "feature",
+      "icon": {
+        "slug": "claude",
+        "label": "Claude"
+      },
+      "title": "Unlocked, Not Included",
+      "sub": "Claude, GPT and Gemini bill at API list price from the first request, out of prepaid credit."
+    },
+    {
       "type": "cover",
-      "headline": "Seven People.\nFive Months.",
-      "sub": "Claude's output caused the surge and wrote most of the replacement. The engineers said their job was telling it no.",
+      "headline": "Legacy Plans\nKeep Claude",
+      "sub": "Pro, Pro+ and Ultra keep two monthly pools, one of them for third-party models. Switching gives that up.",
       "icons": [
+        {
+          "slug": "cursor",
+          "label": "Legacy Cursor"
+        },
         {
           "slug": "claude",
           "label": "Claude"
         }
-      ],
-      "arrow": false
+      ]
+    },
+    {
+      "type": "cta",
+      "headline": "Check Before You Switch",
+      "keyword": "SWITCH",
+      "sub": "and I'll send the full ladder"
     }
   ]
 }
