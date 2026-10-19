@@ -1,77 +1,76 @@
 {
-  "slug": "cursor-plus-is-8-grok-only",
-  "title": "Cursor Plus Is $8. Grok Only.",
-  "caption": "Cursor's cheapest paid plan is $8 now and it can't run Claude at all.\n\nI only checked because I assumed cheaper was just cheaper. On the new tiers the Grok models come out of one weekly pool, and Claude, GPT and Gemini bill at API list price from prepaid credit — Premium and up only.\n\nI'm still on the legacy plan and I'm not switching until someone shows me the math.\n\nStill on your old plan?",
+  "slug": "agents-made-review-49-slower",
+  "title": "Agents Made Review 49% Slower",
+  "caption": "I've been generating my own backlog and calling it velocity.\n\nHarvard and Jellyfish tracked 718 firms and 300 million work events. After coding agents landed: 30% more lines, 20% more commits, 23% more pull requests. Submit-to-merge went from 7.03 days to 10.5. Change requests nearly doubled, comments per PR up 35%, and the PRs weren't any bigger.\n\nThe part that got me: resolved Jira issues didn't move. The estimate rules out any gain above 12%. It held even at firms already running AI review tools.\n\nI'm solo, so I'm also the reviewer. The queue didn't disappear, it just moved to me.\n\nWhat's actually blocking you?",
   "hashtags": [
-    "cursor",
     "aicoding",
+    "codingagents",
+    "claudecode",
     "devtools",
+    "codereview",
     "buildinpublic",
     "indiehackers",
     "solofounder",
-    "claudecode",
-    "coding",
-    "softwaredevelopment",
-    "indiedev",
-    "vibecoding",
-    "aitools"
+    "softwareengineering",
+    "githubcopilot",
+    "cursor",
+    "developerproductivity"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Cursor Plus Is $8.\nGrok Only.",
-      "sub": "Cursor is now sold inside The X Subscription.",
+      "headline": "Agents Made Review\n49% Slower",
+      "sub": "718 firms. Pull request to merge: 7.03 days, now 10.5.",
       "icons": [
         {
           "slug": "cursor",
           "label": "Cursor"
         },
         {
-          "slug": "x",
-          "label": "X"
+          "slug": "claude",
+          "label": "Claude Code"
         }
       ]
     },
     {
       "type": "list",
-      "title": "One pool, five tiers",
+      "title": "The Volume Arrived",
       "items": [
-        "Free $0 — limited Agent and Chat",
-        "Plus $8 — Grok and Composer only",
-        "Premium $30 — Claude, GPT, Gemini unlocked",
-        "Super $100 — 15x the Plus usage pool",
-        "Ultra $200 — 50x the Plus usage pool"
+        "Lines of code per engineer: +30%",
+        "Commits per engineer: +20%",
+        "Pull requests per engineer: +23%"
       ]
     },
     {
       "type": "feature",
       "icon": {
-        "slug": "claude",
-        "label": "Claude"
+        "slug": "github"
       },
-      "title": "Unlocked, Not Included",
-      "sub": "Claude, GPT and Gemini bill at API list price from the first request, out of prepaid credit."
+      "title": "Twice The Change Requests",
+      "sub": "Before agents, 13% of PRs drew a formal request for changes. Now 25%. Comments per PR up 35%."
     },
     {
-      "type": "cover",
-      "headline": "Legacy Plans\nKeep Claude",
-      "sub": "Pro, Pro+ and Ultra keep two monthly pools, one of them for third-party models. Switching gives that up.",
-      "icons": [
-        {
-          "slug": "cursor",
-          "label": "Legacy Cursor"
-        },
-        {
-          "slug": "claude",
-          "label": "Claude"
-        }
+      "type": "feature",
+      "icon": {
+        "slug": "jira"
+      },
+      "title": "Output Didn't Move",
+      "sub": "Jira issues and epics: no significant increase. The estimate rules out any gain above 12%."
+    },
+    {
+      "type": "list",
+      "title": "Already Ruled Out",
+      "items": [
+        "Bigger PRs: no, size held at 1,168 lines",
+        "Fewer engineers: no, a precise zero",
+        "AI review tools: bottleneck held anyway"
       ]
     },
     {
       "type": "cta",
-      "headline": "Check Before You Switch",
-      "keyword": "SWITCH",
-      "sub": "and I'll send the full ladder"
+      "headline": "Want The Paper?",
+      "keyword": "REVIEW",
+      "sub": "and I'll send the link"
     }
   ]
 }
