@@ -1,53 +1,89 @@
 {
-  "slug": "91-works-25-is-secure",
-  "title": "91% Works. 25% Is Secure.",
-  "caption": "I ship when the tests go green. That's the whole bug.\n\nA new benchmark cut 450 tasks out of 150 real vulnerabilities and asked six agents to rebuild the missing code. The spec only described features, security never came up, same as every prompt I write. Best of the six was Claude Fable 5: 91.1% of tasks worked, 25.1% worked and were secure.\n\nAcross all 2,700 runs, 66% ended with code that runs and keeps the vulnerability. 56% of tasks were secured by none of the six. Only 12% of flaws got handled at every scope. Five of the six ran inside Claude Code, so it isn't the harness.\n\nI don't read the diffs. I read the checkmark.\n\nWho reviews your code?",
+  "slug": "1700-overnight-not-your-requests",
+  "title": "$1,700 Overnight. Not Your Requests.",
+  "caption": "I have one API key and it is pasted in four places.\n\nOpenCode says someone reached a legacy system it was decommissioning on the night of Oct 16, and that provider keys saved in Console workspaces may have been exposed. It emailed 1.4% of Console users the next morning. They posted bills they never ran: $281 on OpenAI, $168 on Anthropic, one over $1,700 overnight. Google suspended some projects for activity consistent with hijacked resources.\n\nThe line that got me: deleting the key out of Console does not revoke it, and a Console budget cannot cap it either, because Console only meters what passes through its own gateway. Only the provider's dashboard kills a key. Keys added in the CLI or desktop app sit in SQLite on your machine and never reached OpenCode.\n\nAnthropic revoked keys it believed were affected, Google blocked exposed Gemini keys, OpenAI says it refunded credits drawn in the attack. OpenCode calls it a large-scale distillation attack and says its own investigation stalled when the models it was using refused the requests.\n\nRotating mine tonight. How many keys do you have?",
   "hashtags": [
+    "opencode",
     "aicoding",
-    "vibecoding",
-    "claudecode",
     "codingagents",
-    "appsec",
+    "apikeys",
     "devsecops",
-    "buildinpublic",
+    "appsec",
     "indiehackers",
     "solofounder",
-    "softwareengineering",
-    "codereview",
-    "cybersecurity"
+    "buildinpublic",
+    "claudecode",
+    "cybersecurity",
+    "developers"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "91% Works.\n25% Is Secure.",
-      "sub": "450 tasks cut from 150 real vulnerabilities. Six agents. The spec never mentions security.",
+      "headline": "$1,700 Overnight.\nNot Your Requests.",
+      "sub": "One user's reported bill after the OpenCode Console breach. 1.4% of Console users got the email.",
       "icons": [
-        { "slug": "claude", "label": "Claude Fable 5" }
+        {
+          "slug": "opencode",
+          "label": "OpenCode Console"
+        }
       ]
     },
     {
       "type": "list",
-      "title": "Functional And Secure",
+      "title": "What OpenCode Said",
       "items": [
-        "Claude Fable 5: 25.1%",
-        "GPT-5.6-Sol: 24.7%",
-        "Qwen3.8-Max: 22.0%",
-        "GLM-5.3: 21.3%",
-        "DeepSeek-V4-Pro: 18.0%",
-        "Kimi-K3: 16.4%"
+        "Oct 16, night: a legacy system was reached",
+        "It was already being decommissioned",
+        "Console-saved provider keys may be exposed",
+        "1.4% of Console users emailed Oct 17",
+        "Earliest exposure: Oct 17, 00:30 UTC",
+        "Still ongoing. No key count. No user count."
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Fable 5" },
-      "title": "66% Shipped The Flaw",
-      "sub": "Across 2,700 runs the feature worked and the attack still landed. The best agent included."
+      "icon": {
+        "slug": "sqlite",
+        "label": "SQLite"
+      },
+      "title": "CLI Keys Stayed Local",
+      "sub": "Terminal and desktop keys sit in SQLite on your machine. Only Console keys were at risk."
+    },
+    {
+      "type": "list",
+      "title": "Deleting Isn't Revoking",
+      "items": [
+        "A provider key is a bearer credential.",
+        "Removing it from Console doesn't revoke it.",
+        "A Console budget can't cap it either.",
+        "Console only meters its own gateway.",
+        "Only the provider's dashboard kills a key."
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": {
+        "slug": "googlecloud",
+        "label": "Google Cloud"
+      },
+      "title": "Projects Got Suspended",
+      "sub": "Google flagged activity consistent with hijacked resources. Projects went down too."
+    },
+    {
+      "type": "list",
+      "title": "Rotate, Then Split",
+      "items": [
+        "New key first, then revoke the old one.",
+        "Check provider billing back to Oct 16.",
+        "Replace it in CI secrets and env files.",
+        "One key per tool, with a spend limit."
+      ]
     },
     {
       "type": "cta",
-      "headline": "Want The Benchmark?",
-      "keyword": "SECURE",
-      "sub": "and I'll send the paper"
+      "headline": "Want The Checklist?",
+      "keyword": "ROTATE",
+      "sub": "and I'll send the steps"
     }
   ]
 }
