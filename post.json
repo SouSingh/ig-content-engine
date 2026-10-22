@@ -1,89 +1,55 @@
 {
-  "slug": "1700-overnight-not-your-requests",
-  "title": "$1,700 Overnight. Not Your Requests.",
-  "caption": "I have one API key and it is pasted in four places.\n\nOpenCode says someone reached a legacy system it was decommissioning on the night of Oct 16, and that provider keys saved in Console workspaces may have been exposed. It emailed 1.4% of Console users the next morning. They posted bills they never ran: $281 on OpenAI, $168 on Anthropic, one over $1,700 overnight. Google suspended some projects for activity consistent with hijacked resources.\n\nThe line that got me: deleting the key out of Console does not revoke it, and a Console budget cannot cap it either, because Console only meters what passes through its own gateway. Only the provider's dashboard kills a key. Keys added in the CLI or desktop app sit in SQLite on your machine and never reached OpenCode.\n\nAnthropic revoked keys it believed were affected, Google blocked exposed Gemini keys, OpenAI says it refunded credits drawn in the attack. OpenCode calls it a large-scale distillation attack and says its own investigation stalled when the models it was using refused the requests.\n\nRotating mine tonight. How many keys do you have?",
+  "slug": "791-releases-48-percent-unchecked",
+  "title": "791 Releases. 48% Unchecked.",
+  "caption": "I have never once opened a browser to check what my agents shipped.\n\nPanche Isajeski published the audit of running his one-person payments company on nine AI agents: 114 days, 1,033 active hours, 3,313 agent runs, 791 releases. 161 of them in a single week. 48% with no browser check after. Only 6% of his sessions started with a plan, and 59% of his code edits came from the agents.\n\nWhat stopped me is which gate he bothered to enforce. Sending, publishing, paying, deploying and deleting are blocked or ask him first — 109 emails drafted in that window and he sent every one by hand. His customers' inbox was protected. His own codebase wasn't. He runs the whole thing for about $320 a month, and estimates the same nine roles as part-time freelancers at ~$15k. Every figure here is his own count of his own work.\n\nBrowser check goes in tonight. What do you check before shipping?",
   "hashtags": [
-    "opencode",
-    "aicoding",
-    "codingagents",
-    "apikeys",
-    "devsecops",
-    "appsec",
     "indiehackers",
     "solofounder",
+    "solopreneur",
     "buildinpublic",
+    "aiagents",
     "claudecode",
-    "cybersecurity",
-    "developers"
+    "aicoding",
+    "codingagents",
+    "microsaas",
+    "devtools",
+    "automation",
+    "shipfast"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "$1,700 Overnight.\nNot Your Requests.",
-      "sub": "One user's reported bill after the OpenCode Console breach. 1.4% of Console users got the email.",
-      "icons": [
-        {
-          "slug": "opencode",
-          "label": "OpenCode Console"
-        }
+      "headline": "791 Releases.\n48% Unchecked.",
+      "sub": "Panche Isajeski ran his one-person payments company on nine AI agents from 25 June to 16 October, then published the count on himself."
+    },
+    {
+      "type": "list",
+      "title": "The Numbers He Published",
+      "items": [
+        "1,033 active hours in 114 days",
+        "3,313 agent runs",
+        "791 releases, 161 in one week",
+        "48% had no browser check after",
+        "6% of sessions started with a plan",
+        "59% of his code edits came from agents"
       ]
     },
     {
       "type": "list",
-      "title": "What OpenCode Said",
+      "title": "He Never Let Them Send",
       "items": [
-        "Oct 16, night: a legacy system was reached",
-        "It was already being decommissioned",
-        "Console-saved provider keys may be exposed",
-        "1.4% of Console users emailed Oct 17",
-        "Earliest exposure: Oct 17, 00:30 UTC",
-        "Still ongoing. No key count. No user count."
-      ]
-    },
-    {
-      "type": "feature",
-      "icon": {
-        "slug": "sqlite",
-        "label": "SQLite"
-      },
-      "title": "CLI Keys Stayed Local",
-      "sub": "Terminal and desktop keys sit in SQLite on your machine. Only Console keys were at risk."
-    },
-    {
-      "type": "list",
-      "title": "Deleting Isn't Revoking",
-      "items": [
-        "A provider key is a bearer credential.",
-        "Removing it from Console doesn't revoke it.",
-        "A Console budget can't cap it either.",
-        "Console only meters its own gateway.",
-        "Only the provider's dashboard kills a key."
-      ]
-    },
-    {
-      "type": "feature",
-      "icon": {
-        "slug": "googlecloud",
-        "label": "Google Cloud"
-      },
-      "title": "Projects Got Suspended",
-      "sub": "Google flagged activity consistent with hijacked resources. Projects went down too."
-    },
-    {
-      "type": "list",
-      "title": "Rotate, Then Split",
-      "items": [
-        "New key first, then revoke the old one.",
-        "Check provider billing back to Oct 16.",
-        "Replace it in CI secrets and env files.",
-        "One key per tool, with a spend limit."
+        "109 emails drafted in 114 days",
+        "He sent every one himself",
+        "Agents read, draft and propose",
+        "Send, publish, pay, deploy, delete",
+        "All blocked, or they ask him first"
       ]
     },
     {
       "type": "cta",
-      "headline": "Want The Checklist?",
-      "keyword": "ROTATE",
-      "sub": "and I'll send the steps"
+      "headline": "Want His Nine Roles?",
+      "keyword": "AGENTS",
+      "sub": "and I'll send the list"
     }
   ]
 }
