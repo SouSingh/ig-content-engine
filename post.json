@@ -1,55 +1,63 @@
 {
-  "slug": "791-releases-48-percent-unchecked",
-  "title": "791 Releases. 48% Unchecked.",
-  "caption": "I have never once opened a browser to check what my agents shipped.\n\nPanche Isajeski published the audit of running his one-person payments company on nine AI agents: 114 days, 1,033 active hours, 3,313 agent runs, 791 releases. 161 of them in a single week. 48% with no browser check after. Only 6% of his sessions started with a plan, and 59% of his code edits came from the agents.\n\nWhat stopped me is which gate he bothered to enforce. Sending, publishing, paying, deploying and deleting are blocked or ask him first — 109 emails drafted in that window and he sent every one by hand. His customers' inbox was protected. His own codebase wasn't. He runs the whole thing for about $320 a month, and estimates the same nine roles as part-time freelancers at ~$15k. Every figure here is his own count of his own work.\n\nBrowser check goes in tonight. What do you check before shipping?",
+  "slug": "1000-became-4000-he-left",
+  "title": "$1,000 Became $4,000. He Left.",
+  "caption": "beehiiv's CEO posted the full backlog of what it takes to clone beehiiv. The next day, someone shipped one.\n\nMarc Lou had paid beehiiv for two years. First yearly bill $1,000, renewal headed for $4,000 after the third price raise. He churned on Oct 9, open-sourced his replacement on Oct 10, and launched MailCheap.ai on Oct 15 at $19/month — $109 is what beehiiv Lite wanted for the same 4,000 subscribers.\n\nHonest admission: I don't think most of us should do this. Deliverability, bounce handling and billing edge cases are where the weekends actually go, and his own delivery number comes with a \"not enough data yet\" attached. But a vendor that raises prices three times in two years is now shipping its own competitors.\n\nWhich tool would you rebuild first?",
   "hashtags": [
-    "indiehackers",
-    "solofounder",
-    "solopreneur",
-    "buildinpublic",
-    "aiagents",
-    "claudecode",
-    "aicoding",
-    "codingagents",
-    "microsaas",
-    "devtools",
-    "automation",
-    "shipfast"
+    "#indiehackers",
+    "#solofounder",
+    "#buildinpublic",
+    "#microsaas",
+    "#vibecoding",
+    "#opensource",
+    "#claudecode",
+    "#newsletter",
+    "#devtools",
+    "#bootstrapped",
+    "#saas"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "791 Releases.\n48% Unchecked.",
-      "sub": "Panche Isajeski ran his one-person payments company on nine AI agents from 25 June to 16 October, then published the count on himself."
+      "headline": "$1,000 Became\n$4,000. He Left.",
+      "sub": "beehiiv's third price raise in two years. He rebuilt it for under $300 a year."
     },
     {
-      "type": "list",
-      "title": "The Numbers He Published",
-      "items": [
-        "1,033 active hours in 114 days",
-        "3,313 agent runs",
-        "791 releases, 161 in one week",
-        "48% had no browser check after",
-        "6% of sessions started with a plan",
-        "59% of his code edits came from agents"
+      "type": "cover",
+      "headline": "Backlog Posted.\nShipped Next Day.",
+      "sub": "Oct 14, beehiiv's CEO listed what a weekend clone would need. Oct 15, MailCheap.ai shipped."
+    },
+    {
+      "type": "grid",
+      "title": "Built With These",
+      "icons": [
+        {
+          "slug": "claude",
+          "label": "Opus 5.5"
+        },
+        {
+          "slug": "nextdotjs",
+          "label": "Next.js"
+        },
+        {
+          "slug": "mongodb",
+          "label": "MongoDB"
+        }
       ]
     },
     {
       "type": "list",
-      "title": "He Never Let Them Send",
+      "title": "Thirteen Days In",
       "items": [
-        "109 emails drafted in 114 days",
-        "He sent every one himself",
-        "Agents read, draft and propose",
-        "Send, publish, pay, deploy, delete",
-        "All blocked, or they ask him first"
+        "1,250 stars, 317 forks on the public repo",
+        "Three-figure MRR, 99.2% delivery — his own numbers",
+        "$19/month at 4,000 subs. beehiiv Lite: $109"
       ]
     },
     {
       "type": "cta",
-      "headline": "Want His Nine Roles?",
-      "keyword": "AGENTS",
-      "sub": "and I'll send the list"
+      "headline": "Check Your Last Invoice",
+      "keyword": "REBUILD",
+      "sub": "and I'll send the repo"
     }
   ]
 }
