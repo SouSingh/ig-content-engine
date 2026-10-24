@@ -1,63 +1,50 @@
 {
-  "slug": "1000-became-4000-he-left",
-  "title": "$1,000 Became $4,000. He Left.",
-  "caption": "beehiiv's CEO posted the full backlog of what it takes to clone beehiiv. The next day, someone shipped one.\n\nMarc Lou had paid beehiiv for two years. First yearly bill $1,000, renewal headed for $4,000 after the third price raise. He churned on Oct 9, open-sourced his replacement on Oct 10, and launched MailCheap.ai on Oct 15 at $19/month — $109 is what beehiiv Lite wanted for the same 4,000 subscribers.\n\nHonest admission: I don't think most of us should do this. Deliverability, bounce handling and billing edge cases are where the weekends actually go, and his own delivery number comes with a \"not enough data yet\" attached. But a vendor that raises prices three times in two years is now shipping its own competitors.\n\nWhich tool would you rebuild first?",
+  "slug": "6-of-9-wont-name-the-cap",
+  "title": "6 of 9 Won't Name the Cap",
+  "caption": "I pay for two of these and still can't tell you what either one actually gives me.\n\nLimitDex re-read 9 vendors, 37 plans, on Oct 18: only Copilot, Bolt and Lovable publish an allowance you can plan against. Anthropic names a five-hour limit and a weekly limit, then prints no figure for either. Cursor sells Premium as 4x of a Plus number it never published.\n\nHonest admission: I have never hit a wall and known beforehand how close I was. I budget by vibes and get surprised.\n\nWhich tool surprised you?",
   "hashtags": [
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
-    "#microsaas",
-    "#vibecoding",
-    "#opensource",
-    "#claudecode",
-    "#newsletter",
     "#devtools",
-    "#bootstrapped",
-    "#saas"
+    "#claudecode",
+    "#cursor",
+    "#githubcopilot",
+    "#aicoding",
+    "#vibecoding",
+    "#microsaas",
+    "#saas",
+    "#developerlife"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "$1,000 Became\n$4,000. He Left.",
-      "sub": "beehiiv's third price raise in two years. He rebuilt it for under $300 a year."
+      "headline": "6 of 9 won't\nname the cap",
+      "sub": "9 AI coding tools, 37 plans, re-read Oct 18.\nOnly Copilot, Bolt and Lovable publish a real allowance."
     },
     {
-      "type": "cover",
-      "headline": "Backlog Posted.\nShipped Next Day.",
-      "sub": "Oct 14, beehiiv's CEO listed what a weekend clone would need. Oct 15, MailCheap.ai shipped."
+      "type": "feature",
+      "icon": { "slug": "claude", "label": "Claude Code" },
+      "title": "$200. No number.",
+      "sub": "Anthropic names a five-hour limit and a weekly limit on Pro and Max, then publishes no figure for either."
     },
     {
-      "type": "grid",
-      "title": "Built With These",
-      "icons": [
-        {
-          "slug": "claude",
-          "label": "Opus 5.5"
-        },
-        {
-          "slug": "nextdotjs",
-          "label": "Next.js"
-        },
-        {
-          "slug": "mongodb",
-          "label": "MongoDB"
-        }
-      ]
+      "type": "feature",
+      "icon": { "slug": "cursor", "label": "Cursor" },
+      "title": "4x of what?",
+      "sub": "Cursor sells Premium as 4x more usage than Plus. Super is 15x, Ultra 50x. Plus has no published allowance."
     },
     {
-      "type": "list",
-      "title": "Thirteen Days In",
-      "items": [
-        "1,250 stars, 317 forks on the public repo",
-        "Three-figure MRR, 99.2% delivery — his own numbers",
-        "$19/month at 4,000 subs. beehiiv Lite: $109"
-      ]
+      "type": "feature",
+      "icon": { "slug": "githubcopilot", "label": "GitHub Copilot" },
+      "title": "1 credit = $0.01",
+      "sub": "Copilot Pro: $10 for 1,500 AI credits, worth $15 of model usage. The one big name publishing hard numbers."
     },
     {
       "type": "cta",
-      "headline": "Check Your Last Invoice",
-      "keyword": "REBUILD",
-      "sub": "and I'll send the repo"
+      "headline": "Which cap bit you?",
+      "keyword": "LIMITS",
+      "sub": "and I'll send the full table"
     }
   ]
 }
