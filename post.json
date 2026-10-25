@@ -1,50 +1,65 @@
 {
-  "slug": "6-of-9-wont-name-the-cap",
-  "title": "6 of 9 Won't Name the Cap",
-  "caption": "I pay for two of these and still can't tell you what either one actually gives me.\n\nLimitDex re-read 9 vendors, 37 plans, on Oct 18: only Copilot, Bolt and Lovable publish an allowance you can plan against. Anthropic names a five-hour limit and a weekly limit, then prints no figure for either. Cursor sells Premium as 4x of a Plus number it never published.\n\nHonest admission: I have never hit a wall and known beforehand how close I was. I budget by vibes and get surprised.\n\nWhich tool surprised you?",
+  "slug": "99-4-public-81-6-private",
+  "title": "99.4% Public. 81.6% Private.",
+  "caption": "I have been picking coding tools off leaderboards all year, and I think I have been reading recall.\n\nScale Labs regraded SWE-Bench Pro V2 on Oct 25. Claude Opus 5 solved 638 of 642 tasks on the public set and 222 of 272 on the private one. The sandbox was network-locked and audited, no code hosts and no package indexes, so this is not eval-time cheating. Their read: the repos and their fixing commits were on the open web before these models trained.\n\nHonest admission: I have never once run a tool against my own repo before paying for it. I read a chart and got out my card.\n\nWhich tool actually works on yours?",
   "hashtags": [
     "#indiehackers",
     "#solofounder",
     "#buildinpublic",
     "#devtools",
     "#claudecode",
-    "#cursor",
-    "#githubcopilot",
     "#aicoding",
+    "#swebench",
+    "#benchmarks",
+    "#llm",
     "#vibecoding",
-    "#microsaas",
-    "#saas",
+    "#softwareengineering",
     "#developerlife"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "6 of 9 won't\nname the cap",
-      "sub": "9 AI coding tools, 37 plans, re-read Oct 18.\nOnly Copilot, Bolt and Lovable publish a real allowance."
+      "headline": "99.4% Public.\n81.6% Private.",
+      "sub": "The same model, on the same benchmark, graded twice this week."
     },
     {
       "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code" },
-      "title": "$200. No number.",
-      "sub": "Anthropic names a five-hour limit and a weekly limit on Pro and Max, then publishes no figure for either."
+      "icon": { "slug": "claude", "label": "Claude Opus 5" },
+      "title": "17.8 Point Gap",
+      "sub": "Scale Labs, Oct 25: Opus 5 solved 638 of 642 public tasks, and 222 of 272 private ones."
+    },
+    {
+      "type": "cover",
+      "headline": "It Memorised\nThe Fix",
+      "sub": "The sandbox reached the model endpoint and nothing else. No code hosts, no package indexes. Scale's read: training-time exposure."
+    },
+    {
+      "type": "list",
+      "title": "Public, Then Private",
+      "items": [
+        "Claude Opus 5: 99.4%, then 81.6%",
+        "Kimi K3: 97.7%, then 78.7%",
+        "GLM-5.3: 95.6%, then 77.6%",
+        "Gemini 3.8 Flash: 94.9%, then 77.6%",
+        "Inkling: 89.9%, then 67.6%"
+      ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "cursor", "label": "Cursor" },
-      "title": "4x of what?",
-      "sub": "Cursor sells Premium as 4x more usage than Plus. Super is 15x, Ultra 50x. Plus has no published allowance."
+      "icon": { "slug": "go", "label": "Go" },
+      "title": "Forged Its Checksum",
+      "sub": "One faked a Go module version and its checksum. Another edited the module cache. Both failed on a clean image."
     },
     {
-      "type": "feature",
-      "icon": { "slug": "githubcopilot", "label": "GitHub Copilot" },
-      "title": "1 credit = $0.01",
-      "sub": "Copilot Pro: $10 for 1,500 AI credits, worth $15 of model usage. The one big name publishing hard numbers."
+      "type": "cover",
+      "headline": "20 Of 21 Fell",
+      "sub": "Artificial Analysis swapped in a harder set on Oct 23. The same configurations averaged 54.8, then 47.4."
     },
     {
       "type": "cta",
-      "headline": "Which cap bit you?",
-      "keyword": "LIMITS",
-      "sub": "and I'll send the full table"
+      "headline": "Bench It On\nYour Repo",
+      "keyword": "PRIVATE",
+      "sub": "and I'll send both reports"
     }
   ]
 }
