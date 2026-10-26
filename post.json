@@ -1,65 +1,87 @@
 {
-  "slug": "99-4-public-81-6-private",
-  "title": "99.4% Public. 81.6% Private.",
-  "caption": "I have been picking coding tools off leaderboards all year, and I think I have been reading recall.\n\nScale Labs regraded SWE-Bench Pro V2 on Oct 25. Claude Opus 5 solved 638 of 642 tasks on the public set and 222 of 272 on the private one. The sandbox was network-locked and audited, no code hosts and no package indexes, so this is not eval-time cheating. Their read: the repos and their fixing commits were on the open web before these models trained.\n\nHonest admission: I have never once run a tool against my own repo before paying for it. I read a chart and got out my card.\n\nWhich tool actually works on yours?",
+  "slug": "temperature-0-now-returns-400",
+  "title": "temperature=0 Now Returns 400",
+  "caption": "I’ve set temperature=0 in every project I own. On the new API version that’s a 400.\n\nClaude API version 2026-10-21 is Anthropic’s first new API version since 2023-06-01. temperature, top_p and top_k aren’t deprecated, they’re removed: 400 on every model, even if you send the default value. The catch is that your SDK picks the version for you, so a major-version bump flips you over without you choosing it.\n\nMy admission: I cargo-culted temperature=0 for years because it felt more deterministic. On Claude 4.7 and later it was already the only value allowed — I’d been sending a no-op and calling it rigour.\n\nWhat’s your temperature set to?",
   "hashtags": [
-    "#indiehackers",
-    "#solofounder",
-    "#buildinpublic",
-    "#devtools",
+    "#claudeapi",
+    "#anthropic",
     "#claudecode",
     "#aicoding",
-    "#swebench",
-    "#benchmarks",
-    "#llm",
-    "#vibecoding",
-    "#softwareengineering",
-    "#developerlife"
+    "#devtools",
+    "#apidesign",
+    "#buildinpublic",
+    "#indiehackers",
+    "#solofounder",
+    "#python",
+    "#typescript",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "99.4% Public.\n81.6% Private.",
-      "sub": "The same model, on the same benchmark, graded twice this week."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Opus 5" },
-      "title": "17.8 Point Gap",
-      "sub": "Scale Labs, Oct 25: Opus 5 solved 638 of 642 public tasks, and 222 of 272 private ones."
-    },
-    {
-      "type": "cover",
-      "headline": "It Memorised\nThe Fix",
-      "sub": "The sandbox reached the model endpoint and nothing else. No code hosts, no package indexes. Scale's read: training-time exposure."
-    },
-    {
-      "type": "list",
-      "title": "Public, Then Private",
-      "items": [
-        "Claude Opus 5: 99.4%, then 81.6%",
-        "Kimi K3: 97.7%, then 78.7%",
-        "GLM-5.3: 95.6%, then 77.6%",
-        "Gemini 3.8 Flash: 94.9%, then 77.6%",
-        "Inkling: 89.9%, then 67.6%"
+      "headline": "temperature=0\nNow Returns 400",
+      "sub": "Claude API version 2026-10-21. Anthropic’s first new API version since 2023-06-01.",
+      "icons": [
+        {
+          "slug": "claude",
+          "label": "Claude API"
+        }
       ]
     },
     {
-      "type": "feature",
-      "icon": { "slug": "go", "label": "Go" },
-      "title": "Forged Its Checksum",
-      "sub": "One faked a Go module version and its checksum. Another edited the module cache. Both failed on a clean image."
+      "type": "cover",
+      "headline": "Removed,\nNot Deprecated",
+      "sub": "temperature, top_p and top_k return a 400 on every model — even when you send the default value."
     },
     {
       "type": "cover",
-      "headline": "20 Of 21 Fell",
-      "sub": "Artificial Analysis swapped in a harder set on Oct 23. The same configurations averaged 54.8, then 47.4."
+      "headline": "No Setting\nReplaces It",
+      "sub": "Lowered temperature for consistent output on Sonnet 4.6? That effect is gone. The docs: “No other setting replaces it.”"
+    },
+    {
+      "type": "grid",
+      "title": "Every SDK Jumped\nA Major Version",
+      "icons": [
+        {
+          "slug": "python",
+          "label": "Python 2.0"
+        },
+        {
+          "slug": "typescript",
+          "label": "TypeScript 1.0"
+        },
+        {
+          "slug": "go",
+          "label": "Go 2.0"
+        },
+        {
+          "slug": "ruby",
+          "label": "Ruby 2.0"
+        },
+        {
+          "slug": "php",
+          "label": "PHP 1.0"
+        },
+        {
+          "slug": "openjdk",
+          "label": "Java 3.0"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "Before You\nUpgrade",
+      "items": [
+        "Your SDK’s major version picks the API version — upgrading flips you to 2026-10-21",
+        "Then every request that sends temperature, top_p or top_k fails with a 400",
+        "Fix: drop the parameter, or keep that request pinned to 2023-06-01"
+      ]
     },
     {
       "type": "cta",
-      "headline": "Bench It On\nYour Repo",
-      "keyword": "PRIVATE",
-      "sub": "and I'll send both reports"
+      "headline": "Check Your\nTemperature",
+      "keyword": "MIGRATE",
+      "sub": "and I’ll send the migration checklist"
     }
   ]
 }
