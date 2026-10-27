@@ -1,87 +1,48 @@
 {
-  "slug": "temperature-0-now-returns-400",
-  "title": "temperature=0 Now Returns 400",
-  "caption": "I’ve set temperature=0 in every project I own. On the new API version that’s a 400.\n\nClaude API version 2026-10-21 is Anthropic’s first new API version since 2023-06-01. temperature, top_p and top_k aren’t deprecated, they’re removed: 400 on every model, even if you send the default value. The catch is that your SDK picks the version for you, so a major-version bump flips you over without you choosing it.\n\nMy admission: I cargo-culted temperature=0 for years because it felt more deterministic. On Claude 4.7 and later it was already the only value allowed — I’d been sending a no-op and calling it rigour.\n\nWhat’s your temperature set to?",
+  "slug": "20-of-21-scored-lower",
+  "title": "20 of 21 Agent Configs Scored Lower",
+  "caption": "Every coding agent on the leaderboard got worse last week. None of them changed.\n\nArtificial Analysis shipped Coding Agent Index v2.0 on October 23. Of the 21 configurations measured on both versions, 20 scored lower and the mean fell from 54.8 to 47.4. Almost all of it is one swap: FrontierCode v1.1 replaced DeepSWE v1.1, and the same configs that averaged 65.6% on the old benchmark average 45.1% on the new one. Fail a single blocking check on FrontierCode and the attempt scores zero even if the code runs, because it is graded on whether a maintainer would merge it.\n\nMy admission: I have quoted index numbers in arguments without once checking which version they came from. I was comparing screenshots, not tools.\n\nWhich benchmark do you actually trust?",
   "hashtags": [
-    "#claudeapi",
-    "#anthropic",
     "#claudecode",
+    "#codingagents",
     "#aicoding",
     "#devtools",
-    "#apidesign",
+    "#benchmarks",
+    "#anthropic",
+    "#aiagents",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#python",
-    "#typescript",
-    "#softwareengineering"
+    "#softwareengineering",
+    "#llm"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "temperature=0\nNow Returns 400",
-      "sub": "Claude API version 2026-10-21. Anthropic’s first new API version since 2023-06-01.",
-      "icons": [
-        {
-          "slug": "claude",
-          "label": "Claude API"
-        }
-      ]
+      "headline": "20 of 21\nScored Lower",
+      "sub": "Artificial Analysis Coding Agent Index v2.0, October 23. Mean score across the same 21 configs: 54.8 down to 47.4."
     },
     {
       "type": "cover",
-      "headline": "Removed,\nNot Deprecated",
-      "sub": "temperature, top_p and top_k return a 400 on every model — even when you send the default value."
+      "headline": "65.6% Became 45.1%",
+      "sub": "FrontierCode v1.1 replaced DeepSWE v1.1. Same 21 configs, 20 points lower. Terminal-Bench 4.0 never changed."
     },
     {
       "type": "cover",
-      "headline": "No Setting\nReplaces It",
-      "sub": "Lowered temperature for consistent output on Sonnet 4.6? That effect is gone. The docs: “No other setting replaces it.”"
+      "headline": "Working Code\nScores Zero",
+      "sub": "Fail one blocking check and the attempt scores zero, even if the code runs. Graded like a maintainer."
     },
     {
-      "type": "grid",
-      "title": "Every SDK Jumped\nA Major Version",
-      "icons": [
-        {
-          "slug": "python",
-          "label": "Python 2.0"
-        },
-        {
-          "slug": "typescript",
-          "label": "TypeScript 1.0"
-        },
-        {
-          "slug": "go",
-          "label": "Go 2.0"
-        },
-        {
-          "slug": "ruby",
-          "label": "Ruby 2.0"
-        },
-        {
-          "slug": "php",
-          "label": "PHP 1.0"
-        },
-        {
-          "slug": "openjdk",
-          "label": "Java 3.0"
-        }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Before You\nUpgrade",
-      "items": [
-        "Your SDK’s major version picks the API version — upgrading flips you to 2026-10-21",
-        "Then every request that sends temperature, top_p or top_k fails with a 400",
-        "Fix: drop the parameter, or keep that request pinned to 2023-06-01"
-      ]
+      "type": "feature",
+      "icon": { "slug": "claudecode", "label": "Claude Code" },
+      "title": "61.7 Is The New Top",
+      "sub": "Claude Code with Opus 5.5 (max) leads v2.0. A v1.5 screenshot is not comparable to it."
     },
     {
       "type": "cta",
-      "headline": "Check Your\nTemperature",
-      "keyword": "MIGRATE",
-      "sub": "and I’ll send the migration checklist"
+      "headline": "Compare Within\nA Version",
+      "keyword": "INDEX",
+      "sub": "and I’ll send the v2.0 board"
     }
   ]
 }
