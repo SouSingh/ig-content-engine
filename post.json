@@ -1,48 +1,62 @@
 {
-  "slug": "20-of-21-scored-lower",
-  "title": "20 of 21 Agent Configs Scored Lower",
-  "caption": "Every coding agent on the leaderboard got worse last week. None of them changed.\n\nArtificial Analysis shipped Coding Agent Index v2.0 on October 23. Of the 21 configurations measured on both versions, 20 scored lower and the mean fell from 54.8 to 47.4. Almost all of it is one swap: FrontierCode v1.1 replaced DeepSWE v1.1, and the same configs that averaged 65.6% on the old benchmark average 45.1% on the new one. Fail a single blocking check on FrontierCode and the attempt scores zero even if the code runs, because it is graded on whether a maintainer would merge it.\n\nMy admission: I have quoted index numbers in arguments without once checking which version they came from. I was comparing screenshots, not tools.\n\nWhich benchmark do you actually trust?",
+  "slug": "40-of-agent-prs-never-merge",
+  "title": "40% of Agent PRs Never Merge",
+  "caption": "Agent-written pull requests get abandoned twice as often as the ones you write yourself.\n\nJellyfish's October AI Engineering Trends report covers 1,300+ companies and 100M+ pull requests. Human-authored PRs fail to merge about 20% of the time. Agent-authored ones, 40%. At the median company AI is the only reviewer on 0.5% of merges, and roughly 2x the pull requests across 2026 bought only 40-50% more shipped features.\n\nMy admission: I have been measuring myself by PRs opened, which is the one number an agent inflates for free. The thing in the report that actually tracked with merged work was boring. Six or more edits to your agent context files, 2.3 more merged PRs a week.\n\nWhat's in your CLAUDE.md?",
   "hashtags": [
     "#claudecode",
     "#codingagents",
+    "#aiagents",
     "#aicoding",
     "#devtools",
-    "#benchmarks",
-    "#anthropic",
-    "#aiagents",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#softwareengineering",
+    "#pullrequests",
+    "#devops",
     "#llm"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "20 of 21\nScored Lower",
-      "sub": "Artificial Analysis Coding Agent Index v2.0, October 23. Mean score across the same 21 configs: 54.8 down to 47.4."
+      "headline": "40% Of Agent PRs\nNever Merge",
+      "sub": "Jellyfish, 1,300+ companies. Human-authored PRs fail to merge about 20% of the time. Agent-authored ones, double."
     },
     {
       "type": "cover",
-      "headline": "65.6% Became 45.1%",
-      "sub": "FrontierCode v1.1 replaced DeepSWE v1.1. Same 21 configs, 20 points lower. Terminal-Bench 4.0 never changed."
+      "headline": "0.5% Ship\nWithout You",
+      "sub": "Share of merged PRs where AI was the only reviewer, at the median company. Lead adopters: 9%."
     },
     {
       "type": "cover",
-      "headline": "Working Code\nScores Zero",
-      "sub": "Fail one blocking check and the attempt scores zero, even if the code runs. Graded like a maintainer."
+      "headline": "2x The PRs.\n40% More Features.",
+      "sub": "Across 2026 Jellyfish measured roughly double the pull requests. Features shipped rose only 40-50%."
     },
     {
       "type": "feature",
       "icon": { "slug": "claudecode", "label": "Claude Code" },
-      "title": "61.7 Is The New Top",
-      "sub": "Claude Code with Opus 5.5 (max) leads v2.0. A v1.5 screenshot is not comparable to it."
+      "title": "$252 Per Developer",
+      "sub": "Median Claude Code spend in late September: $63 per active developer per week. About $252 a month."
+    },
+    {
+      "type": "cover",
+      "headline": "3.8x Spend.\n98% Headcount.",
+      "sub": "The median company ended Q3 at 98% of its Q1 engineering headcount while paying 3.8x more per engineer."
+    },
+    {
+      "type": "list",
+      "title": "What Actually Paid",
+      "items": [
+        "Six or more context-file edits: 2.3 more merged PRs a week",
+        "Each doubling of context investment: 29% more merges",
+        "Cost per merged PR fell from $1,202 to $820"
+      ]
     },
     {
       "type": "cta",
-      "headline": "Compare Within\nA Version",
-      "keyword": "INDEX",
-      "sub": "and I’ll send the v2.0 board"
+      "headline": "Your Bottleneck\nMoved",
+      "keyword": "MERGE",
+      "sub": "and I’ll send the report"
     }
   ]
 }
