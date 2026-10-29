@@ -1,61 +1,45 @@
 {
-  "slug": "40-of-agent-prs-never-merge",
-  "title": "40% of Agent PRs Never Merge",
-  "caption": "Agent-written pull requests get abandoned twice as often as the ones you write yourself.\n\nJellyfish's October AI Engineering Trends report covers 1,300+ companies and 100M+ pull requests. Human-authored PRs fail to merge about 20% of the time. Agent-authored ones, 40%. At the median company AI is the only reviewer on 0.5% of merges, and roughly 2x the pull requests across 2026 bought only 40-50% more shipped features.\n\nMy admission: I have been measuring myself by PRs opened, which is the one number an agent inflates for free. The thing in the report that actually tracked with merged work was boring. Six or more edits to your agent context files, 2.3 more merged PRs a week.\n\nWhat's in your CLAUDE.md?",
+  "slug": "17-9b-pushes-one-year",
+  "title": "17.9B Pushes in One Year",
+  "caption": "GitHub logged more pushes in the last 12 months than in 2024 and 2025 combined.\n\n17.9 billion pushes. 34.3 billion commits. Actions ran a job 1,440 times every second — 124 million a day, more than triple last year. And from June onward, 55% of all commits came from repos created this year.\n\nMy honest read: I have spent this year polishing three old repos, and the data says the momentum is sitting in the ones nobody has started yet. Noted.\n\nWhat are you starting?",
   "hashtags": [
-    "#claudecode",
-    "#codingagents",
-    "#aiagents",
-    "#aicoding",
-    "#devtools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
+    "#devtools",
+    "#github",
+    "#githubactions",
+    "#octoverse",
+    "#aicoding",
+    "#codingagents",
+    "#opensource",
     "#softwareengineering",
-    "#pullrequests",
-    "#devops",
-    "#llm"
+    "#devops"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "40% Of Agent PRs\nNever Merge",
-      "sub": "Jellyfish, 1,300+ companies. Human-authored PRs fail to merge about 20% of the time. Agent-authored ones, double."
-    },
-    {
-      "type": "cover",
-      "headline": "0.5% Ship\nWithout You",
-      "sub": "Share of merged PRs where AI was the only reviewer, at the median company. Lead adopters: 9%."
-    },
-    {
-      "type": "cover",
-      "headline": "2x The PRs.\n40% More Features.",
-      "sub": "Across 2026 Jellyfish measured roughly double the pull requests. Features shipped rose only 40-50%."
+      "headline": "17.9B Pushes.\nOne Year.",
+      "sub": "More than 2024 and 2025 combined. GitHub's Octoverse report, 12 months to September 30."
     },
     {
       "type": "feature",
-      "icon": { "slug": "claudecode", "label": "Claude Code" },
-      "title": "$252 Per Developer",
-      "sub": "Median Claude Code spend in late September: $63 per active developer per week. About $252 a month."
+      "icon": {
+        "slug": "githubactions",
+        "label": "GitHub Actions"
+      },
+      "title": "1,440 Jobs Per Second",
+      "sub": "124 million runs a day, more than 3x last year's total."
     },
     {
       "type": "cover",
-      "headline": "3.8x Spend.\n98% Headcount.",
-      "sub": "The median company ended Q3 at 98% of its Q1 engineering headcount while paying 3.8x more per engineer."
-    },
-    {
-      "type": "list",
-      "title": "What Actually Paid",
-      "items": [
-        "Six or more context-file edits: 2.3 more merged PRs a week",
-        "Each doubling of context investment: 29% more merges",
-        "Cost per merged PR fell from $1,202 to $820"
-      ]
+      "headline": "55% From\nNew Repos",
+      "sub": "From June onward, 55% of all commits came from repositories created this year."
     },
     {
       "type": "cta",
-      "headline": "Your Bottleneck\nMoved",
-      "keyword": "MERGE",
+      "headline": "The Pace Changed",
+      "keyword": "OCTOVERSE",
       "sub": "and I’ll send the report"
     }
   ]
