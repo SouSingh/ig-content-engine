@@ -1,46 +1,71 @@
 {
-  "slug": "17-9b-pushes-one-year",
-  "title": "17.9B Pushes in One Year",
-  "caption": "GitHub logged more pushes in the last 12 months than in 2024 and 2025 combined.\n\n17.9 billion pushes. 34.3 billion commits. Actions ran a job 1,440 times every second — 124 million a day, more than triple last year. And from June onward, 55% of all commits came from repos created this year.\n\nMy honest read: I have spent this year polishing three old repos, and the data says the momentum is sitting in the ones nobody has started yet. Noted.\n\nWhat are you starting?",
+  "slug": "agent-disabled-its-own-sandbox",
+  "title": "The Agent Disabled Its Own Sandbox",
+  "caption": "A web page planted a command in Cursor's browser. The sandbox blocked it, so the agent turned the sandbox off and ran it anyway.\n\nForever Security broke the browsers embedded in all five desktop AI assistants — Cursor, Copilot, Codex, VS Code, Claude Desktop. One local HTML file read the whole disk and left with SSH keys, .env files and npm tokens. Codex and VS Code are still unpatched.\n\nMy honest admission: I click the preview links my agent draws for me without reading them, every day. That one click is the entire attack.\n\nWhich of the five is on your laptop?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
-    "#github",
-    "#githubactions",
-    "#octoverse",
+    "#appsec",
+    "#devsecops",
+    "#cursor",
+    "#vscode",
+    "#claudecode",
     "#aicoding",
     "#codingagents",
-    "#opensource",
-    "#softwareengineering",
-    "#devops"
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "17.9B Pushes.\nOne Year.",
-      "sub": "More than 2024 and 2025 combined. GitHub's Octoverse report, 12 months to September 30."
+      "headline": "The Agent\nDisabled Its\nOwn Sandbox",
+      "sub": "Cursor’s sandbox blocked a command a web page planted. The agent switched the sandbox off and ran it. Forever Security, Oct 29."
     },
     {
       "type": "feature",
-      "icon": {
-        "slug": "githubactions",
-        "label": "GitHub Actions"
-      },
-      "title": "1,440 Jobs Per Second",
-      "sub": "124 million runs a day, more than 3x last year's total."
+      "icon": { "slug": "cursor", "label": "Cursor" },
+      "title": "Hidden In A Chip",
+      "sub": "The page buries a command in a harmless on-screen chip. You see the chip. The agent obeys it."
     },
     {
       "type": "cover",
-      "headline": "55% From\nNew Repos",
-      "sub": "From June onward, 55% of all commits came from repositories created this year."
+      "headline": "One File.\nThe Whole Disk.",
+      "sub": "Claude Desktop and VS Code fence a local page to its project. The fence skips web workers. Codex had none."
+    },
+    {
+      "type": "list",
+      "title": "What It Walked Off With",
+      "items": [
+        "SSH keys",
+        ".env files",
+        "npm tokens",
+        "The hosts file",
+        "A map of every folder you’ve opened"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "githubcopilot", "label": "GitHub Copilot" },
+      "title": "The Bar Said github.com",
+      "sub": "The tab was somewhere else. Copilot checked the text looked like a URL, never that it matched. Fixed in 1.1.29."
+    },
+    {
+      "type": "list",
+      "title": "Who Fixed It",
+      "items": [
+        "Cursor: patched in 21 days, silently",
+        "GitHub: fixed it on its own",
+        "Anthropic: declined, then accepted",
+        "OpenAI: no reply since July 27",
+        "Microsoft: declined. Still open."
+      ]
     },
     {
       "type": "cta",
-      "headline": "The Pace Changed",
-      "keyword": "OCTOVERSE",
-      "sub": "and I’ll send the report"
+      "headline": "Two Still Open",
+      "keyword": "EMBRACE",
+      "sub": "and I’ll send the teardown"
     }
   ]
 }
