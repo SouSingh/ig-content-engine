@@ -1,57 +1,76 @@
 {
-  "slug": "40-percent-upfront-64-in-stages",
-  "title": "40% Upfront. 64% Drip-Fed.",
-  "caption": "Writing a longer spec made the agent worse, not better.\n\nTencent and CUHK ran 61 tasks from 34 repos through 12 frontier models, every one of them on Claude Code. Whole spec upfront: 40.3% finished. Same requirements fed in stages, with the user reporting bugs: 64.1%. Identical tasks, identical acceptance tests.\n\nMy admission: I've been writing three-page PRDs before letting Claude Code touch anything, convinced I was saving myself turns. The turns were the point.\n\nSpec first or stages?",
+  "slug": "real-publisher-real-backdoor",
+  "title": "Real Publisher. Real Backdoor.",
+  "caption": "The publisher was real. That is the part that should scare you.\n\nA tampered Claude Code extension sat in Cursor's marketplace for about 11 hours on Oct 29, reaching up to 5,000 developers. It went out under anthropic.claude-code, the genuine publisher ID, and Cursor auto-updates extensions by default. So most of the people who got it never chose to install anything. It planted an SSH key labelled svc-telemetry, installed persistence that retries every 60 seconds, and shipped the names of up to 40 env vars that looked like credentials.\n\nMy admission: I have never once audited what an editor extension does after it updates itself. I check the publisher and move on. That is the exact check that failed here.\n\nChecked your authorized_keys yet?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
     "#devtools",
     "#aicoding",
-    "#codingagents",
     "#claudecode",
-    "#promptengineering",
-    "#contextengineering",
-    "#softwareengineering",
-    "#llm",
-    "#agents"
+    "#cursor",
+    "#supplychainsecurity",
+    "#devsecops",
+    "#appsec",
+    "#codingagents",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "40% Upfront.\n64% Drip-Fed.",
-      "sub": "Same 61 tasks. Same acceptance tests. Only the delivery changed. FeatureLoop, Oct 26."
-    },
-    {
-      "type": "feature",
-      "icon": { "slug": "claude", "label": "Claude Code" },
-      "title": "12 Models. One Harness.",
-      "sub": "61 tasks, 34 repos, 2,196 runs. Every model ran inside Claude Code, so the harness was never the variable."
-    },
-    {
-      "type": "list",
-      "title": "Three Ways To Ask",
-      "items": [
-        "Whole spec upfront, one session: 40.3%",
-        "Fed in order as work proceeds: 51.6%",
-        "Same, plus reported failures: 64.1%"
+      "headline": "Real Publisher.\nReal Backdoor.",
+      "sub": "A tampered Claude Code extension sat in Cursor's marketplace for about 11 hours on Oct 29. Up to 5,000 developers.",
+      "icons": [
+        { "slug": "cursor", "label": "Cursor" },
+        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
       ]
     },
     {
       "type": "cover",
-      "headline": "You Report It.\nIt Stays Broken.",
-      "sub": "Only 15.4% of failed stages came fully right within two revisions. And 20.9% of fixes left another requirement unmet."
+      "headline": "Shipped Under\nThe Real ID",
+      "sub": "Not an impersonation. It was published as anthropic.claude-code, the genuine publisher identity, in versions 2.1.312 and 2.1.313. Cursor auto-updates extensions by default."
+    },
+    {
+      "type": "list",
+      "title": "What It Planted",
+      "items": [
+        "An SSH key labelled svc-telemetry, appended to authorized_keys",
+        "A reverse SSH tunnel out to 134.209.82.225",
+        "LaunchAgent on macOS, a SysMon task on Windows, cron on Linux",
+        "Background scripts retrying the tunnel every 60 seconds"
+      ]
     },
     {
       "type": "cover",
-      "headline": "It Checked\nA Stub Instead",
-      "sub": "In 75.3% of failed runs the agent skipped the real user path, or validated a helper, stub or proxy in its place."
+      "headline": "40 Env Var Names",
+      "sub": "It sent the names of up to 40 variables matching keys, tokens, passwords and AWS or GCP creds. Values stayed local. The list told the attacker which machines to hit first."
+    },
+    {
+      "type": "cover",
+      "headline": "Uninstalling\nDoesn't Fix It",
+      "sub": "The payload drops standalone persistence scripts that keep running after the extension is gone. Cursor says to assess whether the host should be rebuilt."
+    },
+    {
+      "type": "list",
+      "title": "Not Affected",
+      "items": [
+        "Microsoft VS Code Marketplace: never served it",
+        "Open VSX: no publication record found for 2.1.313",
+        "npm @anthropic-ai/claude-code: unaffected",
+        "Anthropic's own systems: not breached"
+      ]
+    },
+    {
+      "type": "cover",
+      "headline": "One Line To Check",
+      "sub": "grep -qs svc-telemetry ~/.ssh/authorized_keys\n\nThen move to 2.1.314 and rotate anything that host could reach."
     },
     {
       "type": "cta",
-      "headline": "Ship It In Stages",
-      "keyword": "STAGES",
-      "sub": "and I’ll send the paper"
+      "headline": "Check Your Keys",
+      "keyword": "KEYS",
+      "sub": "and I'll send the IOC list"
     }
   ]
 }
