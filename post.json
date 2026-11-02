@@ -1,7 +1,7 @@
 {
-  "slug": "real-publisher-real-backdoor",
-  "title": "Real Publisher. Real Backdoor.",
-  "caption": "The publisher was real. That is the part that should scare you.\n\nA tampered Claude Code extension sat in Cursor's marketplace for about 11 hours on Oct 29, reaching up to 5,000 developers. It went out under anthropic.claude-code, the genuine publisher ID, and Cursor auto-updates extensions by default. So most of the people who got it never chose to install anything. It planted an SSH key labelled svc-telemetry, installed persistence that retries every 60 seconds, and shipped the names of up to 40 env vars that looked like credentials.\n\nMy admission: I have never once audited what an editor extension does after it updates itself. I check the publisher and move on. That is the exact check that failed here.\n\nChecked your authorized_keys yet?",
+  "slug": "two-corrections-fix-15",
+  "title": "Two Corrections Fix 15%",
+  "caption": "I judge coding agents on the first try. Two new papers say that is the wrong try.\n\nFeatureLoop put 61 feature tasks through 12 models, 2,196 runs, all in the Claude Code harness. The best model finished 72.1% of tasks. But when a stage failed, two rounds of corrective feedback repaired it only 15.4% of the time — and in 75.3% of unsuccessful runs the agent skipped the real user-path check or validated a helper, stub or proxy instead. SWE-Shift, from a different team, resumed 17 agent systems from identical state and changed one task-relevant thing mid-run: 67.35% clean, 24.79% shifted. All 17 dropped. For tool and session changes, nothing recovered at all.\n\nMy admission: when an agent fails, I correct it and assume it understood. I almost never check whether the fix touched the real path instead of a stub. That is the exact habit both papers punish.\n\nHow many corrections before you restart?",
   "hashtags": [
     "#buildinpublic",
     "#indiehackers",
@@ -9,68 +9,51 @@
     "#devtools",
     "#aicoding",
     "#claudecode",
-    "#cursor",
-    "#supplychainsecurity",
-    "#devsecops",
-    "#appsec",
     "#codingagents",
-    "#softwareengineering"
+    "#benchmarks",
+    "#softwareengineering",
+    "#vibecoding",
+    "#developerlife"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Real Publisher.\nReal Backdoor.",
-      "sub": "A tampered Claude Code extension sat in Cursor's marketplace for about 11 hours on Oct 29. Up to 5,000 developers.",
+      "headline": "Two Corrections\nFix 15%",
+      "sub": "FeatureLoop, Oct 26: 61 feature tasks, 12 models, 2,196 runs. When a stage failed, two corrections repaired it 15.4% of the time.",
       "icons": [
-        { "slug": "cursor", "label": "Cursor" },
         { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
       ]
     },
     {
       "type": "cover",
-      "headline": "Shipped Under\nThe Real ID",
-      "sub": "Not an impersonation. It was published as anthropic.claude-code, the genuine publisher identity, in versions 2.1.312 and 2.1.313. Cursor auto-updates extensions by default."
+      "headline": "It Validated\nA Stub",
+      "sub": "In 75.3% of unsuccessful runs the agent skipped the real user-path check — or validated a helper, stub or proxy instead."
+    },
+    {
+      "type": "cover",
+      "headline": "67% Clean.\n25% Shifted.",
+      "sub": "SWE-Shift resumed 17 agent systems from identical state, then changed one task-relevant thing mid-run. GPT-6 Astra: 67.35% before, 24.79% after."
     },
     {
       "type": "list",
-      "title": "What It Planted",
+      "title": "Zero. Every System.",
       "items": [
-        "An SSH key labelled svc-telemetry, appended to authorized_keys",
-        "A reverse SSH tunnel out to 134.209.82.225",
-        "LaunchAgent on macOS, a SysMon task on Windows, cron on Linux",
-        "Background scripts retrying the tunnel every 60 seconds"
+        "All 17 systems scored lower after the mid-run change",
+        "Tool and session changes: zero paired success",
+        "Stale evidence: zero paired success",
+        "Clean success ranged 10.71%–67.35%. Shifted: 1.16%–24.79%"
       ]
     },
     {
       "type": "cover",
-      "headline": "40 Env Var Names",
-      "sub": "It sent the names of up to 40 variables matching keys, tokens, passwords and AWS or GCP creds. Values stayed local. The list told the attacker which machines to hit first."
-    },
-    {
-      "type": "cover",
-      "headline": "Uninstalling\nDoesn't Fix It",
-      "sub": "The payload drops standalone persistence scripts that keep running after the extension is gone. Cursor says to assess whether the host should be rebuilt."
-    },
-    {
-      "type": "list",
-      "title": "Not Affected",
-      "items": [
-        "Microsoft VS Code Marketplace: never served it",
-        "Open VSX: no publication record found for 2.1.313",
-        "npm @anthropic-ai/claude-code: unaffected",
-        "Anthropic's own systems: not breached"
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "One Line To Check",
-      "sub": "grep -qs svc-telemetry ~/.ssh/authorized_keys\n\nThen move to 2.1.314 and rotate anything that host could reach."
+      "headline": "The Gains Are\nYour Corrections",
+      "sub": "FeatureLoop's pooled pass rate: 40.3% from the request alone, 51.6% with clarifications, 64.1% once failures were reported back."
     },
     {
       "type": "cta",
-      "headline": "Check Your Keys",
-      "keyword": "KEYS",
-      "sub": "and I'll send the IOC list"
+      "headline": "Count Your Retries",
+      "keyword": "RETRY",
+      "sub": "and I'll send both papers"
     }
   ]
 }
