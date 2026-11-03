@@ -1,59 +1,56 @@
 {
-  "slug": "two-corrections-fix-15",
-  "title": "Two Corrections Fix 15%",
-  "caption": "I judge coding agents on the first try. Two new papers say that is the wrong try.\n\nFeatureLoop put 61 feature tasks through 12 models, 2,196 runs, all in the Claude Code harness. The best model finished 72.1% of tasks. But when a stage failed, two rounds of corrective feedback repaired it only 15.4% of the time — and in 75.3% of unsuccessful runs the agent skipped the real user-path check or validated a helper, stub or proxy instead. SWE-Shift, from a different team, resumed 17 agent systems from identical state and changed one task-relevant thing mid-run: 67.35% clean, 24.79% shifted. All 17 dropped. For tool and session changes, nothing recovered at all.\n\nMy admission: when an agent fails, I correct it and assume it understood. I almost never check whether the fix touched the real path instead of a stub. That is the exact habit both papers punish.\n\nHow many corrections before you restart?",
+  "slug": "stripe-fell-75-to-70",
+  "title": "Stripe Fell From 75% To 70%",
+  "caption": "I picked my checkout provider in 2021 and have not looked at the decision since.\n\nJason Zhu counts new checkout links across 8 payment platforms every week. In October, Stripe took 70% of new indie sellers, down from 75% in September. Polar went 2.4% to 4.0%, Lemon Squeezy 3.9% to 5.0%. Dodo and Creem more than doubled in count and still barely moved in share.\n\nHis own caveat is the part I keep failing to apply to my own dashboards: October's 23,200 new sellers against September's 11,000 is partly just the index crawling faster. The ratios moved. The headline number is softer than it looks.\n\nWhere do you take money?",
   "hashtags": [
-    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#devtools",
-    "#aicoding",
-    "#claudecode",
-    "#codingagents",
-    "#benchmarks",
-    "#softwareengineering",
-    "#vibecoding",
-    "#developerlife"
+    "#buildinpublic",
+    "#saas",
+    "#microsaas",
+    "#solopreneur",
+    "#stripe",
+    "#polar",
+    "#lemonsqueezy",
+    "#payments",
+    "#indiedev",
+    "#bootstrapping"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Two Corrections\nFix 15%",
-      "sub": "FeatureLoop, Oct 26: 61 feature tasks, 12 models, 2,196 runs. When a stage failed, two corrections repaired it 15.4% of the time.",
-      "icons": [
-        { "slug": "claude", "label": "Claude Code", "color": "#D97757" }
-      ]
-    },
-    {
-      "type": "cover",
-      "headline": "It Validated\nA Stub",
-      "sub": "In 75.3% of unsuccessful runs the agent skipped the real user-path check — or validated a helper, stub or proxy instead."
-    },
-    {
-      "type": "cover",
-      "headline": "67% Clean.\n25% Shifted.",
-      "sub": "SWE-Shift resumed 17 agent systems from identical state, then changed one task-relevant thing mid-run. GPT-6 Astra: 67.35% before, 24.79% after."
+      "headline": "Stripe Fell From\n75% To 70%",
+      "sub": "Share of new indie checkout links, September to October. 23,200 new sellers tracked across 8 platforms.",
+      "icons": [{ "slug": "stripe", "label": "Stripe" }]
     },
     {
       "type": "list",
-      "title": "Zero. Every System.",
+      "title": "Who Took The Points",
       "items": [
-        "All 17 systems scored lower after the mid-run change",
-        "Tool and session changes: zero paired success",
-        "Stale evidence: zero paired success",
-        "Clean success ranged 10.71%–67.35%. Shifted: 1.16%–24.79%"
+        "Polar: 2.4% to 4.0% of new sellers. 263 in September, 918 in October.",
+        "Lemon Squeezy: 3.9% to 5.0%. 431 in September, 1,150 in October."
       ]
     },
     {
-      "type": "cover",
-      "headline": "The Gains Are\nYour Corrections",
-      "sub": "FeatureLoop's pooled pass rate: 40.3% from the request alone, 51.6% with clarifications, 64.1% once failures were reported back."
+      "type": "feature",
+      "icon": { "slug": "dodopayments", "label": "Dodo Payments" },
+      "title": "Doubled, Barely Moved",
+      "sub": "Dodo went 107 new sellers to 250. Creem 44 to 112. Their share still barely moved."
+    },
+    {
+      "type": "list",
+      "title": "Read Ratios, Not Counts",
+      "items": [
+        "Software: 18.4% of new sellers in both months.",
+        "AI products: about 60% of software in both months.",
+        "October's 23,200 against September's 11,000 is partly faster indexing."
+      ]
     },
     {
       "type": "cta",
-      "headline": "Count Your Retries",
-      "keyword": "RETRY",
-      "sub": "and I'll send both papers"
+      "headline": "Where Do You\nTake Money?",
+      "keyword": "CHECKOUT",
+      "sub": "and I'll send the platform numbers"
     }
   ]
 }
