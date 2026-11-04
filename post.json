@@ -1,56 +1,69 @@
 {
-  "slug": "stripe-fell-75-to-70",
-  "title": "Stripe Fell From 75% To 70%",
-  "caption": "I picked my checkout provider in 2021 and have not looked at the decision since.\n\nJason Zhu counts new checkout links across 8 payment platforms every week. In October, Stripe took 70% of new indie sellers, down from 75% in September. Polar went 2.4% to 4.0%, Lemon Squeezy 3.9% to 5.0%. Dodo and Creem more than doubled in count and still barely moved in share.\n\nHis own caveat is the part I keep failing to apply to my own dashboards: October's 23,200 new sellers against September's 11,000 is partly just the index crawling faster. The ratios moved. The headline number is softer than it looks.\n\nWhere do you take money?",
+  "slug": "stop-killing-the-flailing-run",
+  "title": "Stop Killing The Flailing Run",
+  "caption": "I kill agent runs that look stuck. Turns out that is the expensive habit.\n\nFour researchers at NC State replayed 147,002 SWE-agent and OpenHands traces. Under a shared 75k-token cap, letting a run continue solved 28.71% of attempts at 68.10k mean tokens. Restarting on a learned failure score solved 20.66% at 69.93k. Worse, and dearer. Across 224 budget-threshold configurations, continuing won 216.\n\nMy admission: I have watched a step counter climb and felt certain the run was cooked. What I was reading was task difficulty. A monitor fine-tuned on 32,406 attempts scored a within-task AUC of 0.50 — a coin flip. I was looking at which ticket I drew, not at the agent.\n\nWorth knowing: these are cold restarts on open-weight setups. Restarting with the context the first attempt earned is untested.\n\nDo you kill stuck runs?",
   "hashtags": [
+    "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#buildinpublic",
-    "#saas",
-    "#microsaas",
-    "#solopreneur",
-    "#stripe",
-    "#polar",
-    "#lemonsqueezy",
-    "#payments",
-    "#indiedev",
-    "#bootstrapping"
+    "#devtools",
+    "#aicoding",
+    "#codingagents",
+    "#claudecode",
+    "#sweagent",
+    "#openhands",
+    "#aiagents",
+    "#llm",
+    "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Stripe Fell From\n75% To 70%",
-      "sub": "Share of new indie checkout links, September to October. 23,200 new sellers tracked across 8 platforms.",
-      "icons": [{ "slug": "stripe", "label": "Stripe" }]
+      "headline": "Stop Killing The\nFlailing Run",
+      "sub": "147,002 agent runs replayed. Continuing beat restarting in 216 of 224 budget configurations, on solve rate and on token cost.",
+      "icons": [
+        {
+          "slug": "qwen",
+          "label": "Qwen"
+        },
+        {
+          "slug": "minimax",
+          "label": "MiniMax"
+        }
+      ]
     },
     {
       "type": "list",
-      "title": "Who Took The Points",
+      "title": "Restart Solved Less",
       "items": [
-        "Polar: 2.4% to 4.0% of new sellers. 263 in September, 918 in October.",
-        "Lemon Squeezy: 3.9% to 5.0%. 431 in September, 1,150 in October."
+        "Continue: 28.71% of attempts solved, 68.10k mean tokens.",
+        "Learned restart: 20.66% solved, 69.93k mean tokens.",
+        "SWE-agent with Qwen3.5-122B, shared 75k-token cap."
       ]
     },
     {
       "type": "feature",
-      "icon": { "slug": "dodopayments", "label": "Dodo Payments" },
-      "title": "Doubled, Barely Moved",
-      "sub": "Dodo went 107 new sellers to 250. Creem 44 to 112. Their share still barely moved."
+      "icon": {
+        "slug": "qwen",
+        "label": "Qwen3-0.6B"
+      },
+      "title": "A Coin Flip",
+      "sub": "Fine-tuned monitor, 32,406 attempts, within-task AUC 0.50. Step counts reveal which task you drew, not whether this run recovers."
     },
     {
       "type": "list",
-      "title": "Read Ratios, Not Counts",
+      "title": "What It Doesn't Say",
       "items": [
-        "Software: 18.4% of new sellers in both months.",
-        "AI products: about 60% of software in both months.",
-        "October's 23,200 against September's 11,000 is partly faster indexing."
+        "Cold restarts only. State-preserving recovery was out of scope.",
+        "Four open-weight setups, mostly Python. No closed frontier agents.",
+        "Token counts ignore caching discounts and latency."
       ]
     },
     {
       "type": "cta",
-      "headline": "Where Do You\nTake Money?",
-      "keyword": "CHECKOUT",
-      "sub": "and I'll send the platform numbers"
+      "headline": "Do You Kill\nStuck Runs?",
+      "keyword": "CONTINUE",
+      "sub": "and I'll send the paper"
     }
   ]
 }
