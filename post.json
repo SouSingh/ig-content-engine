@@ -1,69 +1,48 @@
 {
-  "slug": "stop-killing-the-flailing-run",
-  "title": "Stop Killing The Flailing Run",
-  "caption": "I kill agent runs that look stuck. Turns out that is the expensive habit.\n\nFour researchers at NC State replayed 147,002 SWE-agent and OpenHands traces. Under a shared 75k-token cap, letting a run continue solved 28.71% of attempts at 68.10k mean tokens. Restarting on a learned failure score solved 20.66% at 69.93k. Worse, and dearer. Across 224 budget-threshold configurations, continuing won 216.\n\nMy admission: I have watched a step counter climb and felt certain the run was cooked. What I was reading was task difficulty. A monitor fine-tuned on 32,406 attempts scored a within-task AUC of 0.50 — a coin flip. I was looking at which ticket I drew, not at the agent.\n\nWorth knowing: these are cold restarts on open-weight setups. Restarting with the context the first attempt earned is untested.\n\nDo you kill stuck runs?",
+  "slug": "35-percent-faster-same-bill",
+  "title": "35% Faster. Same Bill.",
+  "caption": "I assumed message threads would cut my bill. They don't.\n\nAnthropic's own launch post says it plainly: each request gets smaller, but Claude still reads the whole conversation every turn, so token usage stays the same. What you actually get is about 35% off median time to first token on 500k-1M token requests, plus a 5-minute expiry that 404s if you didn't keep your own history.\n\nFaster is still worth having. I just stopped budgeting for a discount that was never there.\n\nLatency or cost: which one hurts you more?",
   "hashtags": [
+    "#claudecode",
+    "#anthropic",
+    "#claudeapi",
+    "#aiagents",
+    "#latency",
+    "#apidesign",
+    "#devtools",
     "#buildinpublic",
     "#indiehackers",
     "#solofounder",
-    "#devtools",
-    "#aicoding",
-    "#codingagents",
-    "#claudecode",
-    "#sweagent",
-    "#openhands",
-    "#aiagents",
-    "#llm",
+    "#tokencost",
     "#softwareengineering"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Stop Killing The\nFlailing Run",
-      "sub": "147,002 agent runs replayed. Continuing beat restarting in 216 of 224 budget configurations, on solve rate and on token cost.",
-      "icons": [
-        {
-          "slug": "qwen",
-          "label": "Qwen"
-        },
-        {
-          "slug": "minimax",
-          "label": "MiniMax"
-        }
-      ]
-    },
-    {
-      "type": "list",
-      "title": "Restart Solved Less",
-      "items": [
-        "Continue: 28.71% of attempts solved, 68.10k mean tokens.",
-        "Learned restart: 20.66% solved, 69.93k mean tokens.",
-        "SWE-agent with Qwen3.5-122B, shared 75k-token cap."
-      ]
+      "headline": "35% Faster.\nSame Bill.",
+      "sub": "Claude Code turned message threads on by default.\nMedian time to first token, 500k-1M token requests.",
+      "icons": [{ "slug": "claude", "label": "Claude Code" }]
     },
     {
       "type": "feature",
-      "icon": {
-        "slug": "qwen",
-        "label": "Qwen3-0.6B"
-      },
-      "title": "A Coin Flip",
-      "sub": "Fine-tuned monitor, 32,406 attempts, within-task AUC 0.50. Step counts reveal which task you drew, not whether this run recovers."
+      "icon": { "slug": "anthropic", "label": "Anthropic" },
+      "title": "Transport, Not Compute",
+      "sub": "You send only the new messages. Claude still reads the whole conversation every turn."
     },
     {
       "type": "list",
-      "title": "What It Doesn't Say",
+      "title": "The Five-Minute Catch",
       "items": [
-        "Cold restarts only. State-preserving recovery was out of scope.",
-        "Four open-weight setups, mostly Python. No closed frontier agents.",
-        "Token counts ignore caching discounts and latency."
+        "Expires 5 minutes after the last request",
+        "Continue after that and you get a 404",
+        "Keep your own history. Replay it."
       ]
     },
     {
       "type": "cta",
-      "headline": "Do You Kill\nStuck Runs?",
-      "keyword": "CONTINUE",
-      "sub": "and I'll send the paper"
+      "headline": "Check Your\nReplay Path",
+      "keyword": "THREADS",
+      "sub": "and I'll send the replay snippet"
     }
   ]
 }
