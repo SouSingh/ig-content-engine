@@ -1,75 +1,72 @@
 {
-  "slug": "same-model-24-points-apart",
-  "title": "Same Model. 24 Points Apart.",
-  "caption": "I spent two years picking models and never once questioned the wrapper around them.\n\nJoel Niklaus ran 28,849 trials holding the model, provider and reasoning effort fixed, changing only the coding-agent harness. A bash-only agent, mini-swe-agent, came out top at 51.4%. OpenClaw, same model, 27.3%. Claude Code is one of four harnesses that only statistically tie the bash shell. And the cost column is wilder than the score column: Pi solves a task for $0.29, OpenCode for $3.35.\n\nThe part that changed my setup: the winner flips per model. mini-swe-agent on GLM-5.3-Flash, Hermes Agent on DeepSeek-V4.1-Flash, Kimi Code on Flint. In his separate SWE-bench Pro run the rank correlation between two models was -0.05, basically nothing.\n\nMy admission: I picked my harness off a launch video, not a number.\n\nWhich harness are you running?",
+  "slug": "claimed-84k-stripe-said-62946",
+  "title": "Claimed $84k. Stripe Said $62,946.",
+  "caption": "I almost bought this one.\n\nHeyron is a $49/month hosted AI agent for solo founders, founded February 2026. In July the founder posted that his agent had built an $84k/month business. Stripe's best month ever was $62,946 — back in April. July itself came in at $33,133.\n\nVerified revenue went $62,946 in April, $33,133 in July, $18,225 in October. On Nov 8 TrustMRR read $17,490 MRR from 605 subscriptions and $312,797 all time, straight off the Stripe API. Median across 58 ranked AI businesses is $21,900, so it is sitting under the pack. The product is real — hosted agent, 1,000+ app connections, a community. The attention just didn't renew.\n\nMy admission: I have quoted a peak month as if it were my run rate. Most people building in public have.\n\nWhich month are you in?",
   "hashtags": [
-    "#claudecode",
-    "#codingagents",
-    "#aiagents",
-    "#devtools",
-    "#buildinpublic",
-    "#indiehackers",
-    "#solofounder",
-    "#opensource",
-    "#llm",
-    "#softwareengineering",
-    "#huggingface",
-    "#terminalbench"
+    "buildinpublic",
+    "indiehackers",
+    "solofounder",
+    "solopreneur",
+    "microsaas",
+    "aiagents",
+    "mrr",
+    "bootstrapped",
+    "saas",
+    "startuprevenue",
+    "devtools",
+    "aitools"
   ],
   "slides": [
     {
       "type": "cover",
-      "headline": "Same Model.\n24 Points Apart.",
-      "sub": "28,849 trials. Nine harnesses. Only the wrapper\naround the model changed.",
+      "headline": "Claimed $84k.\nStripe said\n$62,946.",
+      "sub": "Heyron's best month ever, read straight off the Stripe API. The $84k month isn't in there."
+    },
+    {
+      "type": "list",
+      "title": "Founded February.\nPeaked April.",
+      "items": [
+        "Founded February 2026",
+        "April — $62,946, the best month there is",
+        "July — $33,133, and the $84k claim",
+        "October — $18,225",
+        "Nov 8 — $17,490 MRR, 605 subscriptions"
+      ]
+    },
+    {
+      "type": "feature",
+      "icon": { "slug": "tiktok", "label": "TikTok" },
+      "title": "$100 And A TikTok",
+      "sub": "He gave an agent $100 and told it to make money. The TikTok passed a million views."
+    },
+    {
+      "type": "grid",
+      "title": "1,000+ Apps\nFor $49 A Month",
       "icons": [
-        {
-          "slug": "huggingface",
-          "label": "Hugging Face"
-        }
+        { "slug": "gmail", "label": "Gmail" },
+        { "slug": "googlesheets", "label": "Sheets" },
+        { "slug": "notion", "label": "Notion" },
+        { "slug": "github", "label": "GitHub" },
+        { "slug": "telegram", "label": "Telegram" },
+        { "slug": "whatsapp", "label": "WhatsApp" }
       ]
     },
     {
-      "type": "feature",
-      "icon": {
-        "slug": "gnubash",
-        "label": "GNU Bash"
-      },
-      "title": "A Bash Shell Won",
-      "sub": "mini-swe-agent, a bash-only agent, solved 51.4%.\nOpenClaw, same model, 27.3%."
+      "type": "cover",
+      "headline": "Below The Median",
+      "sub": "$21,900 is the median MRR across 58 ranked AI businesses synced in the last 30 days. Heyron: $17,490.",
+      "icons": [{ "slug": "stripe", "label": "Stripe" }]
     },
     {
-      "type": "feature",
-      "icon": {
-        "slug": "claude",
-        "label": "Claude Code"
-      },
-      "title": "Claude Code Only Ties It",
-      "sub": "Four harnesses sit inside the leader's confidence\ninterval. Claude Code is one of them."
-    },
-    {
-      "type": "list",
-      "title": "Cost Is The Real Gap",
-      "items": [
-        "Pi: $0.29 per solved task, at a 49.4% solve rate",
-        "mini-swe-agent: $0.53 per solved task, at 51.4%",
-        "OpenCode: $3.35 per solved task. 11.7x Pi, and not in the top five."
-      ]
-    },
-    {
-      "type": "list",
-      "title": "The Rank Does Not Transfer",
-      "items": [
-        "A second run: 250 SWE-bench Pro tasks, ten harnesses, two models",
-        "On GLM-5.2, swapping the harness moved pass@1 from 23.2% to 52.4%",
-        "Rank correlation between the two models: -0.05",
-        "Vendor harnesses fell on the small model. Model-agnostic ones climbed."
-      ]
+      "type": "cover",
+      "headline": "Launch Week Was\nThe Easy Part",
+      "sub": "$312,797 all time. The best month was the third one."
     },
     {
       "type": "cta",
-      "headline": "Test It On\nYour Own Model",
-      "keyword": "HARNESS",
-      "sub": "and I'll send the leaderboard"
+      "headline": "Which Month\nAre You In?",
+      "keyword": "RECEIPTS",
+      "sub": "and I'll send the full teardown"
     }
   ]
 }
